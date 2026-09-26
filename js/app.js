@@ -171,4 +171,119 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  /* -----------------------------------------------------------
+     7. Business Discovery Form Handling
+  ----------------------------------------------------------- */
+  const discoveryForm = document.getElementById('business-discovery-form');
+  const businessTypeSelect = document.getElementById('business-type');
+  const otherTypeGroup = document.getElementById('other-business-type-group');
+  const otherTypeInput = document.getElementById('other-business-type');
+  const confirmationBlock = document.getElementById('form-confirmation');
+
+  // Toggle 'Other' business type field
+  if (businessTypeSelect && otherTypeGroup) {
+    businessTypeSelect.addEventListener('change', (e) => {
+      if (e.target.value === 'Other') {
+        otherTypeGroup.style.display = 'flex';
+        if (otherTypeInput) otherTypeInput.required = true;
+      } else {
+        otherTypeGroup.style.display = 'none';
+        if (otherTypeInput) otherTypeInput.required = false;
+      }
+    });
+  }
+
+  // Handle Form Submission
+  if (discoveryForm) {
+    discoveryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Check that at least one need is selected
+      const checkedNeeds = discoveryForm.querySelectorAll('input[name="needs[]"]:checked');
+      if (checkedNeeds.length === 0) {
+        alert('Please select at least one area where you need assistance (or choose "Not Sure Yet").');
+        return;
+      }
+
+      const submitBtn = document.getElementById('submit-discovery-btn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Processing Request...</span>`;
+      }
+
+      // Simulate clean asynchronous submission
+      setTimeout(() => {
+        discoveryForm.style.display = 'none';
+        if (confirmationBlock) {
+          confirmationBlock.style.display = 'block';
+          confirmationBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 600);
+    });
+  }
+
+  /* -----------------------------------------------------------
+     8. Bilingual Language Switcher (EN / AR)
+  ----------------------------------------------------------- */
+  function applyLanguage(lang) {
+    const translations = (typeof window.TRANSLATIONS !== 'undefined' ? window.TRANSLATIONS : (typeof TRANSLATIONS !== 'undefined' ? TRANSLATIONS : null));
+    if (!translations || !translations[lang]) return;
+    const dict = translations[lang];
+
+    // Set direction & lang attributes on document
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.body.classList.toggle('rtl-mode', lang === 'ar');
+
+    // Update text elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        if (el.getAttribute('data-i18n-html') === 'true') {
+          el.innerHTML = dict[key];
+        } else {
+          el.textContent = dict[key];
+        }
+      }
+    });
+
+    // Update placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) {
+        el.placeholder = dict[key];
+      }
+    });
+
+    // Update active state on language switcher buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const btnLang = btn.getAttribute('data-lang');
+      if (btnLang === lang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    localStorage.setItem('preferred_language', lang);
+  }
+
+  // Setup language switcher click events
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (btn) {
+      const lang = btn.getAttribute('data-lang');
+      if (lang) {
+        applyLanguage(lang);
+      }
+    }
+  });
+
+  // Initialize Language (Default EN, or from saved preference)
+  const savedLang = localStorage.getItem('preferred_language') || 'en';
+  applyLanguage(savedLang);
 });
+
+
+

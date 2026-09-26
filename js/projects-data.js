@@ -1,7 +1,7 @@
 /**
- * ATEF ELASKLANY PORTFOLIO — CENTRALIZED PROJECT DATA
+ * [COMPANY NAME] — CENTRALIZED SELECTED WORK DATA
  * Single source of truth for all projects.
- * Used by: index.html (featured preview), projects.html (full catalog), admin.html (management)
+ * Used by: index.html (featured preview), projects.html (full catalog)
  */
 
 const PROJECTS = [
@@ -9,14 +9,14 @@ const PROJECTS = [
     id: "yoc-travel",
     title: "YOC (Your Only Chance) Youth Travel Platform",
     category: "systems",
-    categoryLabel: "Graduation Project • Smart Travel Ecosystem",
+    categoryLabel: "AI & Travel Platform • Systems Architecture",
     description: "An AI-powered youth travel booking & exploration platform built for Egyptian tourism. Features AI Vibe trip planning, instant Stripe checkout in EGP/USD, custom itineraries, and community trip suggestions.",
     coverImage: "assets/yoc_hero.jpg",
     tools: ["Business Analysis", "System Design", "Stripe API", "AI Travel Planner", "Agile Management"],
     metrics: [
-      { value: "Grade A", label: "Graduation Project" },
+      { value: "AI-Powered", label: "Vibe Planner" },
       { value: "End-to-End", label: "Booking & Checkout" },
-      { value: "AI-Powered", label: "Vibe Planner" }
+      { value: "Full Prototype", label: "Architecture" }
     ],
     featured: true,
     status: "completed",
