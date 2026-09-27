@@ -283,7 +283,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Language (Default EN, or from saved preference)
   const savedLang = localStorage.getItem('preferred_language') || 'en';
   applyLanguage(savedLang);
+
+  /* -----------------------------------------------------------
+     9. SOLVEXA Opening Brand Intro Sequence
+  ----------------------------------------------------------- */
+  const introOverlay = document.getElementById('solvexa-intro-overlay');
+  const skipBtn = document.getElementById('solvexa-skip-btn');
+
+  function dismissIntro() {
+    if (!introOverlay) return;
+    introOverlay.classList.add('fade-out');
+    sessionStorage.setItem('solvexa_intro_seen', 'true');
+    setTimeout(() => {
+      introOverlay.style.display = 'none';
+    }, 800);
+  }
+
+  if (introOverlay) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasSeenIntro = sessionStorage.getItem('solvexa_intro_seen');
+
+    if (hasSeenIntro === 'true' || prefersReducedMotion) {
+      introOverlay.style.display = 'none';
+    } else {
+      // Auto-transition after sequence finishes (~5.2s)
+      const introTimer = setTimeout(() => {
+        dismissIntro();
+      }, 5200);
+
+      if (skipBtn) {
+        skipBtn.addEventListener('click', () => {
+          clearTimeout(introTimer);
+          dismissIntro();
+        });
+      }
+    }
+  }
 });
+
 
 
 

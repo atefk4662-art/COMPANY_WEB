@@ -1,11 +1,20 @@
 /**
- * [COMPANY NAME] — BILINGUAL TRANSLATION DICTIONARY (EN / AR)
+ * SOLVEXA — BILINGUAL TRANSLATION DICTIONARY (EN / AR)
  * Clean, human-crafted translations with business-first terminology.
  */
 
 window.TRANSLATIONS = {
   en: {
+    // Intro Sequence
+    "intro.skip": "Skip",
+    "intro.descriptor": "BUSINESS SOLUTIONS",
+    "intro.core_statement": "Built Around Your Business",
+    "intro.phil_1": "Business First.",
+    "intro.phil_2": "Technology Second.",
+
     // Navigation
+    "nav.brand_name": "SOLVEXA",
+    "nav.descriptor": "BUSINESS SOLUTIONS",
     "nav.solutions": "Solutions",
     "nav.how_we_work": "How We Work",
     "nav.why_us": "Why Choose Us",
@@ -15,12 +24,12 @@ window.TRANSLATIONS = {
     "nav.cta": "Tell Us About Your Business",
 
     // Hero
-    "hero.badge": "Business-First Technology Company",
-    "hero.title_part1": "We don't start with software.",
-    "hero.title_part2": "We start with your business.",
-    "hero.subtitle": "We help businesses organize operations, streamline workflows, and build customized digital solutions around how they actually work.",
+    "hero.badge": "SOLVEXA • BUSINESS SOLUTIONS",
+    "hero.title_part1": "Built Around",
+    "hero.title_part2": "Your Business.",
+    "hero.subtitle": "We understand your business, identify what can be improved, and build the right solutions around it.",
     "hero.cta_primary": "Tell Us About Your Business",
-    "hero.cta_secondary": "Explore Our Work",
+    "hero.cta_secondary": "Explore Our Solutions",
     "hero.node1_title": "Business Operations",
     "hero.node1_desc": "Understanding real-world workflows, teams, and daily challenges.",
     "hero.node2_title": "Process & Bottleneck Analysis",
@@ -185,12 +194,21 @@ window.TRANSLATIONS = {
 
     // Footer
     "footer.desc": "A business-first technology company helping businesses understand, organize, and improve their operations through customized digital solutions.",
-    "footer.rights": "[COMPANY NAME] © 2026. All rights reserved.",
+    "footer.rights": "SOLVEXA © 2026. All rights reserved.",
     "footer.slogan": "Business First. Technology Second."
   },
 
   ar: {
+    // Intro Sequence
+    "intro.skip": "تخطي",
+    "intro.descriptor": "حلول الأعمال",
+    "intro.core_statement": "مصمم حول طريقة عملك",
+    "intro.phil_1": "الـ Business أولًا.",
+    "intro.phil_2": "والتكنولوجيا ثانيًا.",
+
     // Navigation
+    "nav.brand_name": "سولفيكسا",
+    "nav.descriptor": "حلول الأعمال",
     "nav.solutions": "الحلول",
     "nav.how_we_work": "كيف نعمل",
     "nav.why_us": "لماذا تختارنا؟",
@@ -200,12 +218,12 @@ window.TRANSLATIONS = {
     "nav.cta": "أخبرنا عن عملك",
 
     // Hero
-    "hero.badge": "شركة تكنولوجيا تبدأ من الأعمال",
-    "hero.title_part1": "لا نبدأ بالبرمجيات.",
-    "hero.title_part2": "بل نبدأ بفهم عملك.",
-    "hero.subtitle": "نساعد الشركات على تنظيم عملياتها، تحسين مسارات العمل، وبناء حلول رقمية مخصصة تناسب طريقة عملها الفعلية.",
+    "hero.badge": "سولفيكسا • حلول الأعمال",
+    "hero.title_part1": "مصمم حول",
+    "hero.title_part2": "طريقة عملك.",
+    "hero.subtitle": "نفهم طبيعة عملك، نحدد ما يمكن تحسينه وتطويره، ونبني الحلول المناسبة حوله.",
     "hero.cta_primary": "أخبرنا عن عملك",
-    "hero.cta_secondary": "استكشف أعمالنا",
+    "hero.cta_secondary": "استكشف حلولنا",
     "hero.node1_title": "العمليات التجارية",
     "hero.node1_desc": "فهم مسارات العمل الفعلية، الفرق، والتحديات اليومية.",
     "hero.node2_title": "تحليل العمليات ونقاط الاختناق",
@@ -370,7 +388,7 @@ window.TRANSLATIONS = {
 
     // Footer
     "footer.desc": "شركة تكنولوجيا تبدأ من الأعمال، تساعد الشركات على فهم وتنظيم وتحسين عملياتها عبر حلول رقمية مخصصة.",
-    "footer.rights": "[COMPANY NAME] © 2026. جميع الحقوق محفوظة.",
+    "footer.rights": "سولفيكسا © 2026. جميع الحقوق محفوظة.",
     "footer.slogan": "الـ Business أولًا. والتكنولوجيا ثانيًا."
   }
 };

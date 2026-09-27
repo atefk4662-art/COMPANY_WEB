@@ -1,5 +1,5 @@
 /**
- * [COMPANY NAME] — CENTRALIZED SELECTED WORK DATA
+ * SOLVEXA — CENTRALIZED SELECTED WORK DATA
  * Single source of truth for all projects.
  * Used by: index.html (featured preview), projects.html (full catalog)
  */

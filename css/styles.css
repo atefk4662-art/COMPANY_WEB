@@ -4042,10 +4042,271 @@ body.dark-theme {
 [dir="rtl"] .btn-icon-right.hover-icon-down svg {
   transform: none;
 }
-[dir="rtl"] .step-number,
-[dir="rtl"] .why-num {
-  align-self: flex-start;
+/* ==========================================================================
+   SOLVEXA BRAND IDENTITY & OPENING EXPERIENCE
+   ========================================================================== */
+
+/* Brand Custom Variables */
+:root {
+  --solv-blue: #2563EB;
+  --solv-blue-light: #38BDF8;
+  --solv-purple: #7C3AED;
+  --solv-purple-light: #A855F7;
+  --solv-gradient: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+  --solv-gradient-text: linear-gradient(135deg, #38BDF8 0%, #C084FC 100%);
+  --solv-glow: rgba(124, 58, 237, 0.25);
+  --solv-glow-blue: rgba(37, 99, 235, 0.2);
 }
+
+/* Header Brand Lockup */
+.brand-logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+.brand-logo-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px var(--solv-glow-blue));
+}
+.brand-logo-text-group {
+  display: flex;
+  flex-direction: column;
+}
+.brand-wordmark-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--solv-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+.brand-descriptor-tag {
+  font-family: var(--font-heading);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* --- SOLVEXA Intro Overlay --- */
+.solvexa-intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-canvas);
+  background-image: 
+    radial-gradient(circle at 50% 35%, rgba(37, 99, 235, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 50% 65%, rgba(124, 58, 237, 0.15) 0%, transparent 60%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.solvexa-intro-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.02);
+}
+
+/* Skip Button */
+.solvexa-skip-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-medium);
+  border-radius: 50px;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 1.1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+.solvexa-skip-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+  border-color: var(--border-focus);
+}
+
+/* Intro Content Layout */
+.intro-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 640px;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Symbol SVG Animation */
+.intro-symbol-wrapper {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  filter: drop-shadow(0 0 25px var(--solv-glow));
+}
+.intro-symbol-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Step 2 Keyframe animations */
+.intro-circle {
+  stroke-dasharray: 470;
+  stroke-dashoffset: 470;
+  animation: drawCircle 1.4s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.intro-arrow-group {
+  opacity: 0;
+  transform: translate(-15px, 15px);
+  animation: arrowGlide 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+}
+@keyframes arrowGlide {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.intro-s-curve {
+  stroke-dasharray: 380;
+  stroke-dashoffset: 380;
+  animation: drawS 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+}
+@keyframes drawS {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Step 3: Brand Wordmark */
+.intro-brand-block {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: introReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
+}
+.intro-wordmark {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--solv-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.2rem;
+  line-height: 1;
+}
+.intro-descriptor {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Step 4: Emotional Positioning */
+.intro-core-statement {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: introReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
+  margin-bottom: 1.2rem;
+}
+
+/* Step 5: Philosophy Statement */
+.intro-philosophy-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  flex-wrap: wrap;
+}
+.intro-phil-1 {
+  font-weight: 700;
+  color: var(--accent-cyan-light);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: introReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 3.3s forwards;
+}
+.intro-phil-2 {
+  font-weight: 600;
+  color: var(--text-secondary);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: introReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 3.8s forwards;
+}
+
+@keyframes introReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .intro-circle,
+  .intro-s-curve,
+  .intro-arrow-group,
+  .intro-brand-block,
+  .intro-core-statement,
+  .intro-phil-1,
+  .intro-phil-2 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+  .solvexa-intro-overlay {
+    transition: opacity 0.3s ease !important;
+  }
+}
+
+/* RTL Adjustments for Intro */
+[dir="rtl"] .solvexa-skip-btn {
+  right: auto;
+  left: 2rem;
+}
+[dir="rtl"] .brand-logo-lockup {
+  flex-direction: row;
+}
+[dir="rtl"] .brand-logo-text-group {
+  text-align: right;
+}
+
 
 
 
