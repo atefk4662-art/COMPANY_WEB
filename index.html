@@ -241,30 +241,148 @@
 
     <!-- ================= 02. UNDERSTANDING YOUR BUSINESS ================= -->
     <section class="section-spacing section-dark understanding-section" id="built-for-work">
-      <div class="container">
+      <!-- Ambient Blueprint Layer (Subtle, non-distracting) -->
+      <div class="understanding-bg-layer" aria-hidden="true">
+        <svg class="understanding-bg-svg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-80 500 C280 500 420 180 880 180 C1180 180 1320 420 1560 420" stroke="rgba(37, 99, 235, 0.05)" stroke-width="1.5" stroke-dasharray="6 6" />
+          <circle cx="880" cy="180" r="160" stroke="rgba(59, 130, 246, 0.03)" stroke-width="1.5" />
+          <circle cx="880" cy="180" r="260" stroke="rgba(124, 58, 237, 0.02)" stroke-width="1" />
+          <!-- Cropped faint S-curve watermark from SOLVEXA logo -->
+          <path d="M 960 130 C 950 100 920 85 880 85 C 840 85 810 105 810 140 C 810 210 950 170 950 230 C 950 270 915 285 875 285 C 830 285 800 265 795 230" stroke="rgba(37, 99, 235, 0.035)" stroke-width="18" stroke-linecap="round" fill="none" />
+        </svg>
+      </div>
+
+      <div class="container relative-z">
         
-        <!-- Part 1: Narrative Intro -->
-        <div class="understanding-intro reveal-on-scroll">
-          <div class="editorial-divider">
-            <span class="divider-line"></span>
-            <span class="divider-text" data-i18n="problems.tag">UNDERSTANDING YOUR BUSINESS</span>
-          </div>
+        <!-- Part 1: Narrative Intro & Business Mapping Visual -->
+        <div class="understanding-hero-grid">
           
-          <h2 class="section-heading understanding-heading" data-i18n="problems.title">We Understand Your Business First</h2>
-          
-          <div class="understanding-narrative">
-            <p class="narrative-lead" data-i18n="problems.subtitle">Before we build anything, we learn how your business actually works.</p>
-            <p class="narrative-body" data-i18n="problems.subtitle2">We look at your daily work, the tools you use, the information you manage, and the steps that slow your team down. Then we identify where a better solution can make a real difference.</p>
+          <!-- Left Column: Story & Value Proposition -->
+          <div class="understanding-hero-content reveal-on-scroll">
+            <div class="editorial-divider">
+              <span class="divider-line"></span>
+              <span class="divider-text" data-i18n="problems.tag">UNDERSTANDING YOUR BUSINESS</span>
+            </div>
+            
+            <h2 class="section-heading understanding-heading" data-i18n="problems.title">We Understand Your Business First</h2>
+            
+            <div class="understanding-narrative">
+              <p class="narrative-lead" data-i18n="problems.subtitle">Before we build anything, we learn how your business actually works.</p>
+              <p class="narrative-body" data-i18n="problems.subtitle2">We look at your daily work, the tools you use, the information you manage, and the steps that slow your team down. Then we identify where a better solution can make a real difference.</p>
+            </div>
+
+            <!-- Value Proposition Box -->
+            <div class="understanding-value-box">
+              <p class="value-line value-line-bold" data-i18n="problems.box_line1">Your business doesn't have to fit the software.</p>
+              <p class="value-line value-line-accent" data-i18n="problems.box_line2">We build the solution around the way you work.</p>
+            </div>
           </div>
 
-          <!-- Value Proposition Box -->
-          <div class="understanding-value-box">
-            <p class="value-line value-line-bold" data-i18n="problems.box_line1">Your business doesn't have to fit the software.</p>
-            <p class="value-line value-line-accent" data-i18n="problems.box_line2">We build the solution around the way you work.</p>
+          <!-- Right Column: Business Mapping Visual (Business -> Understand -> Identify -> Design -> Build) -->
+          <div class="understanding-hero-visual reveal-on-scroll">
+            <div class="business-mapping-card" aria-label="SOLVEXA Business Process Visual">
+              
+              <div class="mapping-card-header">
+                <span class="mapping-eyebrow" data-i18n="mapping.eyebrow">SOLVEXA PROCESS SEQUENCE</span>
+                <span class="mapping-status-pill" data-i18n="mapping.badge">Business First</span>
+              </div>
+
+              <div class="mapping-flow-list">
+                <!-- 01: YOUR BUSINESS -->
+                <div class="mapping-flow-item">
+                  <div class="mapping-node">
+                    <span class="mapping-node-dot node-dot-origin"></span>
+                    <span class="mapping-node-stem"></span>
+                  </div>
+                  <div class="mapping-info">
+                    <div class="mapping-title-row">
+                      <h4 class="mapping-name" data-i18n="mapping.step1_title">Your Business</h4>
+                      <span class="mapping-tag" data-i18n="mapping.step1_tag">Real Operations</span>
+                    </div>
+                    <p class="mapping-desc" data-i18n="mapping.step1_desc">Workflows, teams, tools & daily operational reality.</p>
+                  </div>
+                </div>
+
+                <!-- 02: UNDERSTAND -->
+                <div class="mapping-flow-item">
+                  <div class="mapping-node">
+                    <span class="mapping-node-dot"></span>
+                    <span class="mapping-node-stem"></span>
+                  </div>
+                  <div class="mapping-info">
+                    <div class="mapping-title-row">
+                      <h4 class="mapping-name" data-i18n="mapping.step2_title">Understand</h4>
+                      <span class="mapping-tag" data-i18n="mapping.step2_tag">Deep Dive</span>
+                    </div>
+                    <p class="mapping-desc" data-i18n="mapping.step2_desc">How work actually happens across your organization.</p>
+                  </div>
+                </div>
+
+                <!-- 03: IDENTIFY -->
+                <div class="mapping-flow-item">
+                  <div class="mapping-node">
+                    <span class="mapping-node-dot"></span>
+                    <span class="mapping-node-stem"></span>
+                  </div>
+                  <div class="mapping-info">
+                    <div class="mapping-title-row">
+                      <h4 class="mapping-name" data-i18n="mapping.step3_title">Identify</h4>
+                      <span class="mapping-tag" data-i18n="mapping.step3_tag">Diagnostics</span>
+                    </div>
+                    <p class="mapping-desc" data-i18n="mapping.step3_desc">Bottlenecks, manual overhead, and visibility gaps.</p>
+                  </div>
+                </div>
+
+                <!-- 04: DESIGN -->
+                <div class="mapping-flow-item">
+                  <div class="mapping-node">
+                    <span class="mapping-node-dot"></span>
+                    <span class="mapping-node-stem"></span>
+                  </div>
+                  <div class="mapping-info">
+                    <div class="mapping-title-row">
+                      <h4 class="mapping-name" data-i18n="mapping.step4_title">Design</h4>
+                      <span class="mapping-tag" data-i18n="mapping.step4_tag">Architecture</span>
+                    </div>
+                    <p class="mapping-desc" data-i18n="mapping.step4_desc">Architecture engineered to fit your specific process.</p>
+                  </div>
+                </div>
+
+                <!-- 05: BUILD (Integrated SOLVEXA Emblem) -->
+                <div class="mapping-flow-item mapping-flow-final">
+                  <div class="mapping-node">
+                    <div class="mapping-solvexa-icon-wrap" title="SOLVEXA Custom Solution">
+                      <svg class="mapping-solvexa-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <linearGradient id="map-sym-grad" x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#38BDF8" />
+                            <stop offset="50%" stop-color="#3B82F6" />
+                            <stop offset="100%" stop-color="#818CF8" />
+                          </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="37" stroke="url(#map-sym-grad)" stroke-width="7" />
+                        <line x1="24" y1="76" x2="76" y2="24" stroke="url(#map-sym-grad)" stroke-width="7" stroke-linecap="round" />
+                        <path d="M62 20 L82 18 L80 38 Z" fill="url(#map-sym-grad)" />
+                        <path d="M 66 39 C 65 32 59 29 50 29 C 41 29 34 33 34 40 C 34 56 67 47 67 61 C 67 69 59 72 50 72 C 40 72 33 68 32 60" stroke="url(#map-sym-grad)" stroke-width="8" stroke-linecap="round" fill="none" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="mapping-info">
+                    <div class="mapping-title-row">
+                      <h4 class="mapping-name mapping-name-highlight" data-i18n="mapping.step5_title">Build</h4>
+                      <span class="mapping-tag mapping-tag-solution" data-i18n="mapping.step5_tag">Custom Solution</span>
+                    </div>
+                    <p class="mapping-desc" data-i18n="mapping.step5_desc">Practical, tailored digital systems that work for you.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
+
         </div>
 
-        <!-- Part 2: What We Look For -->
+        <!-- Part 2: What We Look For (5 Problem Cards with Diagnostic Reveals) -->
         <div class="understanding-problems-area reveal-on-scroll">
           <div class="editorial-divider">
             <span class="divider-line"></span>
@@ -273,49 +391,147 @@
 
           <div class="problems-grid">
             
-            <div class="problem-card">
-              <h3 class="problem-title" data-i18n="problems.card1_title">Too Much Manual Work</h3>
+            <!-- Card 1 -->
+            <div class="problem-card" tabindex="0">
+              <div class="problem-card-top">
+                <span class="problem-card-num">01</span>
+                <h3 class="problem-title" data-i18n="problems.card1_title">Too Much Manual Work</h3>
+              </div>
               <p class="problem-desc" data-i18n="problems.card1_desc">Your team spends hours repeating tasks that could be automated.</p>
+              
+              <div class="problem-card-diagnostic">
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card1_q">What could be automated?</p>
+                </div>
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card1_dir">Less repetitive work.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="problem-card">
-              <h3 class="problem-title" data-i18n="problems.card2_title">Information Everywhere</h3>
-              <p class="problem-desc" data-i18n="problems.card2_desc">Important data is spread across Excel, messages, and different tools.</p>
+            <!-- Card 2 -->
+            <div class="problem-card" tabindex="0">
+              <div class="problem-card-top">
+                <span class="problem-card-num">02</span>
+                <h3 class="problem-title" data-i18n="problems.card2_title">Information Everywhere</h3>
+              </div>
+              <p class="problem-desc" data-i18n="problems.card2_desc">Important business information is spread across different files, tools, and messages.</p>
+              
+              <div class="problem-card-diagnostic">
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card2_q">Where does your business data live?</p>
+                </div>
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card2_dir">A clearer flow of information.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="problem-card">
-              <h3 class="problem-title" data-i18n="problems.card3_title">Different Ways of Working</h3>
-              <p class="problem-desc" data-i18n="problems.card3_desc">The same task is handled differently by different people.</p>
+            <!-- Card 3 -->
+            <div class="problem-card" tabindex="0">
+              <div class="problem-card-top">
+                <span class="problem-card-num">03</span>
+                <h3 class="problem-title" data-i18n="problems.card3_title">Different Ways of Working</h3>
+              </div>
+              <p class="problem-desc" data-i18n="problems.card3_desc">The same task may be handled differently by different people.</p>
+              
+              <div class="problem-card-diagnostic">
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card3_q">Where does the process break down?</p>
+                </div>
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card3_dir">More consistent workflows.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="problem-card">
-              <h3 class="problem-title" data-i18n="problems.card4_title">No Clear Picture</h3>
-              <p class="problem-desc" data-i18n="problems.card4_desc">You don't have one clear view of what is happening in the business.</p>
+            <!-- Card 4 -->
+            <div class="problem-card" tabindex="0">
+              <div class="problem-card-top">
+                <span class="problem-card-num">04</span>
+                <h3 class="problem-title" data-i18n="problems.card4_title">No Clear Picture</h3>
+              </div>
+              <p class="problem-desc" data-i18n="problems.card4_desc">You don't always have one clear view of what is happening in the business.</p>
+              
+              <div class="problem-card-diagnostic">
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card4_q">What do you need to see more clearly?</p>
+                </div>
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card4_dir">Better visibility.</p>
+                </div>
+              </div>
             </div>
 
-            <div class="problem-card">
-              <h3 class="problem-title" data-i18n="problems.card5_title">Growing Work, Same Old Process</h3>
+            <!-- Card 5 -->
+            <div class="problem-card" tabindex="0">
+              <div class="problem-card-top">
+                <span class="problem-card-num">05</span>
+                <h3 class="problem-title" data-i18n="problems.card5_title">Growing Work, Same Old Process</h3>
+              </div>
               <p class="problem-desc" data-i18n="problems.card5_desc">As the business grows, manual processes become harder to manage.</p>
+              
+              <div class="problem-card-diagnostic">
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card5_q">What will become harder as you grow?</p>
+                </div>
+                <div class="diagnostic-block">
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card5_dir">Processes that can scale with the business.</p>
+                </div>
+              </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Part 3: This Is Where We Start (Closing + Flow to next section) -->
+        <!-- Part 3: This Is Where We Start (Closing Card + Flow to next section) -->
         <div class="understanding-closing reveal-on-scroll">
-          <div class="editorial-divider">
-            <span class="divider-line"></span>
-            <span class="divider-text" data-i18n="problems.start_tag">THIS IS WHERE WE START</span>
-          </div>
-          <p class="closing-lead" data-i18n="problems.start_lead">We don't start with a system. We start by understanding the business.</p>
-          <div class="closing-flow">
-            <span class="flow-step" data-i18n="problems.flow1">Understand</span>
-            <span class="flow-arrow">→</span>
-            <span class="flow-step" data-i18n="problems.flow2">Identify</span>
-            <span class="flow-arrow">→</span>
-            <span class="flow-step" data-i18n="problems.flow3">Design</span>
-            <span class="flow-arrow">→</span>
-            <span class="flow-step" data-i18n="problems.flow4">Build</span>
+          <div class="closing-card">
+            <div class="editorial-divider">
+              <span class="divider-line"></span>
+              <span class="divider-text" data-i18n="problems.start_tag">THIS IS WHERE WE START</span>
+            </div>
+            
+            <h3 class="closing-lead" data-i18n="problems.start_lead">We don't start with a system. We start with your business.</h3>
+            
+            <div class="closing-flow" aria-label="SOLVEXA Process Progression">
+              <div class="flow-step">
+                <span class="flow-step-num">01</span>
+                <span class="flow-step-text" data-i18n="problems.flow1">Understand</span>
+              </div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-step">
+                <span class="flow-step-num">02</span>
+                <span class="flow-step-text" data-i18n="problems.flow2">Identify</span>
+              </div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-step">
+                <span class="flow-step-num">03</span>
+                <span class="flow-step-text" data-i18n="problems.flow3">Design</span>
+              </div>
+              <span class="flow-arrow">→</span>
+              <div class="flow-step flow-step-highlight">
+                <span class="flow-step-num">04</span>
+                <span class="flow-step-text" data-i18n="problems.flow4">Build</span>
+              </div>
+            </div>
+
+            <div class="closing-lead-to-solutions">
+              <a href="#solutions" class="closing-next-hint" aria-label="Explore Business Solutions">
+                <span data-i18n="problems.explore_solutions">Explore Business Solutions</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+            </div>
           </div>
         </div>
 
