@@ -254,16 +254,22 @@ window.TRANSLATIONS = {
 
     "form.label_challenge": "What are you looking to improve?",
     "form.placeholder_challenge": "Tell us briefly about your current process, challenge, or idea.",
-    "form.group_meeting": "Meeting Preference",
+    "form.group_meeting": "Meeting Preference & Booking",
     "form.meeting_online": "💻 Online Meeting",
     "form.meeting_inperson": "🤝 In-Person Meeting",
+    "form.label_date": "Preferred Meeting Date",
+    "form.label_time": "Preferred Time Slot",
+    "form.time_any": "Flexible / Any time",
+    "form.time_morning": "Morning (10:00 AM - 1:00 PM)",
+    "form.time_afternoon": "Afternoon (1:00 PM - 5:00 PM)",
+    "form.time_evening": "Evening (5:00 PM - 9:00 PM)",
     "form.supporting_idea": "Let's understand how your business works and what could work better.",
-    "form.submit_btn": "Start the Conversation →",
-    "form.submit_processing": "Processing Request...",
+    "form.submit_btn": "Start Project with Us →",
+    "form.submit_processing": "Sending Request...",
 
     // Confirmation
-    "confirm.title": "Request Received",
-    "confirm.desc": "Thanks for telling us about your business. We'll review your details and get in touch to arrange the meeting.",
+    "confirm.title": "Request Received Successfully",
+    "confirm.desc": "Thanks for telling us about your business. Your request has been sent to our team, and we will get in touch shortly to confirm your meeting.",
 
     // Footer
     "footer.desc": "A business-first technology company helping businesses understand, organize, and improve their operations through customized digital solutions.",
@@ -523,16 +529,22 @@ window.TRANSLATIONS = {
 
     "form.label_challenge": "ما الذي تتطلع إلى تحسينه؟",
     "form.placeholder_challenge": "أخبرنا باختصار عن عمليتك الحالية، التحدي، أو الفكرة التي ترغب بتطويرها.",
-    "form.group_meeting": "تفضيل الاجتماع",
+    "form.group_meeting": "تفضيل الاجتماع وحجز الموعد",
     "form.meeting_online": "💻 اجتماع عبر الإنترنت (Online)",
     "form.meeting_inperson": "🤝 اجتماع حضوري (In-Person)",
+    "form.label_date": "تاريخ الاجتماع المفضل",
+    "form.label_time": "الوقت المفضل للاجتماع",
+    "form.time_any": "مرن / أي وقت متاح",
+    "form.time_morning": "صباحاً (10:00 ص - 1:00 م)",
+    "form.time_afternoon": "ظهراً (1:00 م - 5:00 م)",
+    "form.time_evening": "مساءً (5:00 م - 9:00 م)",
     "form.supporting_idea": "دعنا نفهم كيف تسير أعمالك وما الذي يمكن أن يعمل بشكل أفضل.",
-    "form.submit_btn": "ابدأ المحادثة ←",
-    "form.submit_processing": "جاري معالجة الطلب...",
+    "form.submit_btn": "ابدأ مشروعك معنا ←",
+    "form.submit_processing": "جاري إرسال الطلب...",
 
     // Confirmation
-    "confirm.title": "تم استلام طلبك",
-    "confirm.desc": "شكرًا لإخبارنا عن عملك. سنراجع تفاصيلك ونتواصل معك لترتيب الاجتماع.",
+    "confirm.title": "تم استلام طلبك بنجاح",
+    "confirm.desc": "شكرًا لمشاركتنا تفاصيل عملك. تم إرسال طلبك مباشرة لفريقنا، وسنتواصل معك في أقرب وقت لتأكيد الموعد ومناقشة تفاصيل المشروع.",
 
     // Footer
     "footer.desc": "شركة تكنولوجيا تبدأ من الأعمال، تساعد الشركات على فهم وتنظيم وتحسين عملياتها عبر حلول رقمية مخصصة.",

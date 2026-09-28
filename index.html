@@ -1111,8 +1111,8 @@
               <textarea id="current-challenge" name="challenge" class="form-textarea" placeholder="Tell us briefly about your current process, challenge, or idea." data-i18n-placeholder="form.placeholder_challenge"></textarea>
             </div>
 
-            <!-- Group 5: Meeting Preference -->
-            <div class="form-group-title"><span data-i18n="form.group_meeting">Meeting Preference</span> <span class="req">*</span></div>
+            <!-- Group 5: Meeting Preference & Booking -->
+            <div class="form-group-title"><span data-i18n="form.group_meeting">Meeting Preference & Booking</span> <span class="req">*</span></div>
 
             <div class="meeting-type-group">
               <div class="radio-pill">
@@ -1129,8 +1129,29 @@
               </div>
             </div>
 
+            <!-- Booking Date & Time slot (Custom Day Booking) -->
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="preferred-date" class="form-label">
+                  <span data-i18n="form.label_date">Preferred Meeting Date</span>
+                </label>
+                <input type="date" id="preferred-date" name="preferred_date" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label for="preferred-time" class="form-label">
+                  <span data-i18n="form.label_time">Preferred Time Slot</span>
+                </label>
+                <select id="preferred-time" name="preferred_time" class="form-select">
+                  <option value="Flexible / Any time" selected data-i18n="form.time_any">Flexible / Any time</option>
+                  <option value="Morning (10:00 AM - 1:00 PM)" data-i18n="form.time_morning">Morning (10:00 AM - 1:00 PM)</option>
+                  <option value="Afternoon (1:00 PM - 5:00 PM)" data-i18n="form.time_afternoon">Afternoon (1:00 PM - 5:00 PM)</option>
+                  <option value="Evening (5:00 PM - 9:00 PM)" data-i18n="form.time_evening">Evening (5:00 PM - 9:00 PM)</option>
+                </select>
+              </div>
+            </div>
+
             <button type="submit" class="btn btn-primary btn-lg form-submit-btn" id="submit-discovery-btn">
-              <span data-i18n="form.submit_btn">Start the Conversation →</span>
+              <span data-i18n="form.submit_btn">Start Project with Us →</span>
             </button>
 
           </form>

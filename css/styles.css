@@ -3856,6 +3856,13 @@ body.dark-theme {
   min-height: 100px;
   resize: vertical;
 }
+.form-input[type="date"] {
+  color-scheme: dark;
+}
+.form-input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.85);
+  cursor: pointer;
+}
 
 /* Multi-select Checkbox Pills */
 .pills-checkbox-group {
