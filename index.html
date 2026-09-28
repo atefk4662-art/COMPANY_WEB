@@ -88,11 +88,12 @@
 
       <div class="header-right-group">
         <nav class="nav-links" id="nav-links">
-          <a href="#built-for-work" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+          <a href="#solutions" class="nav-link" data-i18n="nav.solutions">Solutions</a>
           <a href="#our-approach" class="nav-link" data-i18n="nav.how_we_work">How We Work</a>
           <a href="#why-us" class="nav-link" data-i18n="nav.why_us">Why Choose Us</a>
           <a href="#selected-work" class="nav-link" data-i18n="nav.our_work">Our Work</a>
           <a href="#about-us" class="nav-link" data-i18n="nav.about_us">About Us</a>
+          <a href="#discovery-form" class="nav-link nav-contact-mobile-link" data-i18n="nav.contact_btn">Contact Us</a>
         </nav>
 
         <div class="header-social-pills">
@@ -103,8 +104,9 @@
             <button type="button" class="lang-btn" data-lang="ar">AR</button>
           </div>
 
-          <a href="#discovery-form" class="btn btn-pill-primary btn-icon-right header-talk-btn">
-            <span data-i18n="nav.cta">Tell Us About Your Business</span>
+          <!-- Primary Navbar Action: Contact Us -->
+          <a href="#discovery-form" class="btn btn-pill-primary btn-icon-right header-talk-btn" id="nav-contact-cta" aria-label="Contact SOLVEXA">
+            <span data-i18n="nav.contact_btn">Contact Us</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
@@ -151,47 +153,80 @@
                 <span data-i18n="hero.cta_primary">Tell Us About Your Business</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
-              <a href="#built-for-work" class="btn btn-outline-editorial btn-icon-right hover-icon-down">
+              <a href="#solutions" class="btn btn-outline-editorial btn-icon-right hover-icon-down">
                 <span data-i18n="hero.cta_secondary">Explore Our Solutions</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
               </a>
             </div>
           </div>
 
-          <!-- Right Column: Abstract Workflow Architecture Visual -->
+          <!-- Right Column: Clean SOLVEXA Business Philosophy Flow Visual (Req #8) -->
           <div class="kh-hero-visual-col reveal-on-scroll">
             <div class="hero-workflow-visual">
+              <div class="hero-flow-header">
+                <span class="hero-flow-badge">SOLVEXA • METHODOLOGY</span>
+              </div>
+              
               <div class="workflow-nodes-flow">
                 
+                <!-- 01: Business Operations -->
                 <div class="workflow-node-card">
                   <div class="workflow-node-icon">🏢</div>
                   <div class="workflow-node-text">
-                    <h4 data-i18n="hero.node1_title">Business Operations</h4>
-                    <p data-i18n="hero.node1_desc">Understanding real-world workflows, teams, and daily challenges.</p>
+                    <h4 data-i18n="hero.step1_title">Business Operations</h4>
+                    <p data-i18n="hero.step1_desc">Where real-world workflows and teams operate.</p>
                   </div>
                 </div>
 
                 <div class="workflow-connector-line">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="4" x2="12" y2="20"></line><polyline points="6 14 12 20 18 14"></polyline></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="4" x2="12" y2="20"></line><polyline points="6 14 12 20 18 14"></polyline></svg>
                 </div>
 
+                <!-- 02: Understand -->
                 <div class="workflow-node-card">
                   <div class="workflow-node-icon">🔍</div>
                   <div class="workflow-node-text">
-                    <h4 data-i18n="hero.node2_title">Process & Bottleneck Analysis</h4>
-                    <p data-i18n="hero.node2_desc">Diagnosing friction, manual steps, and visibility gaps.</p>
+                    <h4 data-i18n="hero.step2_title">Understand</h4>
+                    <p data-i18n="hero.step2_desc">Learning how the business actually works.</p>
                   </div>
                 </div>
 
                 <div class="workflow-connector-line">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="4" x2="12" y2="20"></line><polyline points="6 14 12 20 18 14"></polyline></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="4" x2="12" y2="20"></line><polyline points="6 14 12 20 18 14"></polyline></svg>
                 </div>
 
+                <!-- 03: Analyze -->
                 <div class="workflow-node-card">
-                  <div class="workflow-node-icon">⚡</div>
+                  <div class="workflow-node-icon">📊</div>
                   <div class="workflow-node-text">
-                    <h4 data-i18n="hero.node3_title">Custom Digital Solution</h4>
-                    <p data-i18n="hero.node3_desc">Tailored systems, automations, dashboards, and integrations.</p>
+                    <h4 data-i18n="hero.step3_title">Analyze</h4>
+                    <p data-i18n="hero.step3_desc">Diagnosing bottlenecks, manual steps & friction.</p>
+                  </div>
+                </div>
+
+                <div class="workflow-connector-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="4" x2="12" y2="20"></line><polyline points="6 14 12 20 18 14"></polyline></svg>
+                </div>
+
+                <!-- 04: Build -->
+                <div class="workflow-node-card">
+                  <div class="workflow-node-icon">⚙️</div>
+                  <div class="workflow-node-text">
+                    <h4 data-i18n="hero.step4_title">Build</h4>
+                    <p data-i18n="hero.step4_desc">Engineering practical, custom digital solutions.</p>
+                  </div>
+                </div>
+
+                <div class="workflow-connector-line">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="4" x2="12" y2="20"></line><polyline points="6 14 12 20 18 14"></polyline></svg>
+                </div>
+
+                <!-- 05: Improve -->
+                <div class="workflow-node-card active-flow-card">
+                  <div class="workflow-node-icon">📈</div>
+                  <div class="workflow-node-text">
+                    <h4 data-i18n="hero.step5_title">Improve</h4>
+                    <p data-i18n="hero.step5_desc">Supporting and optimizing operations continuously.</p>
                   </div>
                 </div>
 
@@ -204,62 +239,154 @@
       </div>
     </section>
 
-    <!-- ================= 02. BUILT FOR THE WAY YOU WORK ================= -->
-    <section class="section-spacing" id="built-for-work">
+    <!-- ================= 02. UNDERSTANDING YOUR BUSINESS ================= -->
+    <section class="section-spacing section-dark understanding-section" id="built-for-work">
       <div class="container">
         
-        <div class="section-header">
+        <!-- Part 1: Narrative Intro -->
+        <div class="understanding-intro reveal-on-scroll">
           <div class="editorial-divider">
             <span class="divider-line"></span>
-            <span class="divider-text" data-i18n="problems.tag">OPERATIONAL CLARITY</span>
+            <span class="divider-text" data-i18n="problems.tag">UNDERSTANDING YOUR BUSINESS</span>
           </div>
-          <h2 class="section-heading" data-i18n="problems.title">Built for the Way You Work</h2>
-          <p class="section-sub" data-i18n="problems.subtitle">Understanding the practical operational problems that slow down growing businesses.</p>
-        </div>
-
-        <div class="problems-grid reveal-on-scroll">
           
-          <div class="problem-card">
-            <div class="problem-card-icon">⏱️</div>
-            <h3 class="problem-card-title" data-i18n="problems.card1_title">Manual Work</h3>
-            <p class="problem-card-desc" data-i18n="problems.card1_desc">Repetitive tasks taking time away from the business.</p>
+          <h2 class="section-heading understanding-heading" data-i18n="problems.title">We Understand Your Business First</h2>
+          
+          <div class="understanding-narrative">
+            <p class="narrative-lead" data-i18n="problems.subtitle">Before we build anything, we learn how your business actually works.</p>
+            <p class="narrative-body" data-i18n="problems.subtitle2">We look at your daily work, the tools you use, the information you manage, and the steps that slow your team down. Then we identify where a better solution can make a real difference.</p>
           </div>
 
-          <div class="problem-card">
-            <div class="problem-card-icon">📂</div>
-            <h3 class="problem-card-title" data-i18n="problems.card2_title">Scattered Information</h3>
-            <p class="problem-card-desc" data-i18n="problems.card2_desc">Data spread across Excel files, tools, and different channels.</p>
+          <!-- Value Proposition Box -->
+          <div class="understanding-value-box">
+            <p class="value-line value-line-bold" data-i18n="problems.box_line1">Your business doesn't have to fit the software.</p>
+            <p class="value-line value-line-accent" data-i18n="problems.box_line2">We build the solution around the way you work.</p>
           </div>
-
-          <div class="problem-card">
-            <div class="problem-card-icon">🔄</div>
-            <h3 class="problem-card-title" data-i18n="problems.card3_title">Inconsistent Processes</h3>
-            <p class="problem-card-desc" data-i18n="problems.card3_desc">Different people handling the same process differently.</p>
-          </div>
-
-          <div class="problem-card">
-            <div class="problem-card-icon">📊</div>
-            <h3 class="problem-card-title" data-i18n="problems.card4_title">Limited Visibility</h3>
-            <p class="problem-card-desc" data-i18n="problems.card4_desc">Difficulty tracking operations and understanding performance.</p>
-          </div>
-
-          <div class="problem-card">
-            <div class="problem-card-icon">📈</div>
-            <h3 class="problem-card-title" data-i18n="problems.card5_title">Growing Complexity</h3>
-            <p class="problem-card-desc" data-i18n="problems.card5_desc">Processes that become harder to manage as the business grows.</p>
-          </div>
-
         </div>
 
-        <div class="section-anchor-banner reveal-on-scroll">
-          <p data-i18n="problems.banner">We identify where your business can work better, then build solutions around it.</p>
+        <!-- Part 2: What We Look For -->
+        <div class="understanding-problems-area reveal-on-scroll">
+          <div class="editorial-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text" data-i18n="problems.column_tag">WHAT WE LOOK FOR</span>
+          </div>
+
+          <div class="problems-grid">
+            
+            <div class="problem-card">
+              <h3 class="problem-title" data-i18n="problems.card1_title">Too Much Manual Work</h3>
+              <p class="problem-desc" data-i18n="problems.card1_desc">Your team spends hours repeating tasks that could be automated.</p>
+            </div>
+
+            <div class="problem-card">
+              <h3 class="problem-title" data-i18n="problems.card2_title">Information Everywhere</h3>
+              <p class="problem-desc" data-i18n="problems.card2_desc">Important data is spread across Excel, messages, and different tools.</p>
+            </div>
+
+            <div class="problem-card">
+              <h3 class="problem-title" data-i18n="problems.card3_title">Different Ways of Working</h3>
+              <p class="problem-desc" data-i18n="problems.card3_desc">The same task is handled differently by different people.</p>
+            </div>
+
+            <div class="problem-card">
+              <h3 class="problem-title" data-i18n="problems.card4_title">No Clear Picture</h3>
+              <p class="problem-desc" data-i18n="problems.card4_desc">You don't have one clear view of what is happening in the business.</p>
+            </div>
+
+            <div class="problem-card">
+              <h3 class="problem-title" data-i18n="problems.card5_title">Growing Work, Same Old Process</h3>
+              <p class="problem-desc" data-i18n="problems.card5_desc">As the business grows, manual processes become harder to manage.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Part 3: This Is Where We Start (Closing + Flow to next section) -->
+        <div class="understanding-closing reveal-on-scroll">
+          <div class="editorial-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text" data-i18n="problems.start_tag">THIS IS WHERE WE START</span>
+          </div>
+          <p class="closing-lead" data-i18n="problems.start_lead">We don't start with a system. We start by understanding the business.</p>
+          <div class="closing-flow">
+            <span class="flow-step" data-i18n="problems.flow1">Understand</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step" data-i18n="problems.flow2">Identify</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step" data-i18n="problems.flow3">Design</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step" data-i18n="problems.flow4">Build</span>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ================= 03. OUR APPROACH ================= -->
-    <section class="section-spacing" id="our-approach">
+    <!-- ================= 03. BUSINESS SOLUTIONS ================= -->
+    <section class="section-spacing section-dark solutions-section" id="solutions">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="editorial-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text" data-i18n="solutions.tag">BUSINESS SOLUTIONS</span>
+          </div>
+          <h2 class="section-heading" data-i18n="solutions.title">Solutions Built Around Your Business</h2>
+          <p class="section-sub" data-i18n="solutions.subtitle">We turn real operational needs into practical digital solutions designed around the way your business works.</p>
+        </div>
+
+        <div class="solutions-grid reveal-on-scroll">
+          
+          <div class="solution-card">
+            <div class="solution-card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3 class="solution-card-title" data-i18n="solutions.card1_title">Custom Business Systems</h3>
+            <p class="solution-card-desc" data-i18n="solutions.card1_desc">Purpose-built systems designed around your workflows, roles, and operational requirements.</p>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
+            </div>
+            <h3 class="solution-card-title" data-i18n="solutions.card2_title">Workflow & Process Automation</h3>
+            <p class="solution-card-desc" data-i18n="solutions.card2_desc">Reduce repetitive work, connect processes, and improve consistency across daily operations.</p>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <h3 class="solution-card-title" data-i18n="solutions.card3_title">Data & Business Intelligence</h3>
+            <p class="solution-card-desc" data-i18n="solutions.card3_desc">Turn operational data into structured reporting, clearer insights, and better visibility for decision-making.</p>
+          </div>
+
+          <div class="solution-card">
+            <div class="solution-card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+            </div>
+            <h3 class="solution-card-title" data-i18n="solutions.card4_title">AI-Powered Solutions</h3>
+            <p class="solution-card-desc" data-i18n="solutions.card4_desc">Apply AI where it can improve workflows, decision-making, customer interactions, or operational efficiency.</p>
+          </div>
+
+        </div>
+
+        <!-- Section 2 Closing Statement & Action Banner -->
+        <div class="solutions-cta-banner reveal-on-scroll">
+          <div class="solutions-cta-content">
+            <p class="solutions-cta-statement" data-i18n="solutions.closing_statement">The right solution starts with understanding the right problem.</p>
+            <a href="#discovery-form" class="btn btn-primary btn-icon-right">
+              <span data-i18n="solutions.cta_btn">Tell Us About Your Business</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= 04. OUR APPROACH ================= -->
+    <section class="section-spacing section-dark approach-section-directional" id="our-approach">
       <div class="container">
         
         <div class="section-header">
@@ -272,7 +399,7 @@
         </div>
 
         <!-- 5-Step Process (Main Visual Focus) -->
-        <div class="approach-steps-grid reveal-on-scroll">
+        <div class="approach-steps-grid directional-flow-grid reveal-on-scroll">
           
           <div class="step-card">
             <span class="step-number">01</span>
@@ -330,7 +457,7 @@
     </section>
 
     <!-- ================= 04. WHY CHOOSE US ================= -->
-    <section class="section-spacing" id="why-us">
+    <section class="section-spacing section-dark why-us-section" id="why-us">
       <div class="container">
         
         <div class="section-header">
@@ -395,7 +522,7 @@
     </section>
 
     <!-- ================= 05. SELECTED WORK ================= -->
-    <section class="section-spacing" id="selected-work">
+    <section class="section-spacing section-dark selected-work-section" id="selected-work">
       <div class="container">
         
         <div class="section-header flex-between reveal-on-scroll">
@@ -552,7 +679,22 @@
     </section>
 
     <!-- ================= 06. ABOUT US ================= -->
-    <section class="section-spacing" id="about-us">
+    <section class="section-spacing section-dark brand-symbol-section" id="about-us">
+      <!-- SOLVEXA Brand Symbol: Subtle background element -->
+      <div class="brand-symbol-bg brand-symbol-about" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="74" stroke="url(#solv-bg-grad-about)" stroke-width="6" stroke-linecap="round" />
+          <line x1="48" y1="152" x2="154" y2="46" stroke="url(#solv-bg-grad-about)" stroke-width="6" stroke-linecap="round" />
+          <path d="M125 35 L168 32 L165 75 Z" fill="url(#solv-bg-grad-about)" />
+          <path d="M 132 78 C 130 64 118 58 100 58 C 82 58 68 66 68 80 C 68 112 134 94 134 122 C 134 138 118 144 100 144 C 80 144 66 136 64 120" stroke="url(#solv-bg-grad-about)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <defs>
+            <linearGradient id="solv-bg-grad-about" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2563EB" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div class="container">
         
         <div class="section-header">
@@ -596,7 +738,22 @@
     </section>
 
     <!-- ================= 07. TELL US ABOUT YOUR BUSINESS ================= -->
-    <section class="section-spacing" id="discovery-form">
+    <section class="section-spacing section-dark brand-symbol-section" id="discovery-form">
+      <!-- SOLVEXA Brand Symbol: Subtle CTA background -->
+      <div class="brand-symbol-bg brand-symbol-cta" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="74" stroke="url(#solv-bg-grad-cta)" stroke-width="5" stroke-linecap="round" />
+          <line x1="48" y1="152" x2="154" y2="46" stroke="url(#solv-bg-grad-cta)" stroke-width="5" stroke-linecap="round" />
+          <path d="M125 35 L168 32 L165 75 Z" fill="url(#solv-bg-grad-cta)" />
+          <path d="M 132 78 C 130 64 118 58 100 58 C 82 58 68 66 68 80 C 68 112 134 94 134 122 C 134 138 118 144 100 144 C 80 144 66 136 64 120" stroke="url(#solv-bg-grad-cta)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <defs>
+            <linearGradient id="solv-bg-grad-cta" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2563EB" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div class="container discovery-container">
         
         <div class="discovery-card reveal-on-scroll">
@@ -608,7 +765,7 @@
               <span class="divider-line"></span>
             </div>
             <h2 class="section-heading" data-i18n="form.title">Tell Us About Your Business</h2>
-            <p class="section-sub" data-i18n="form.subtitle">Share a few details about your current operations and what you're looking to improve. We will review your details and contact you to arrange an initial meeting.</p>
+            <p class="section-sub" data-i18n="form.supporting_idea">Let's understand how your business works and what could work better.</p>
           </div>
 
           <form id="business-discovery-form" class="discovery-form">
@@ -778,7 +935,7 @@
   </main>
 
   <!-- ================= SITE FOOTER ================= -->
-  <footer class="site-footer">
+  <footer class="site-footer section-dark">
     <div class="container footer-container">
       <div class="footer-left">
         <a href="index.html" class="brand-logo-lockup" style="margin-bottom: 0.75rem;">
@@ -800,22 +957,57 @@
           </div>
         </a>
         <p class="footer-sub" data-i18n="footer.desc">A business-first technology company helping businesses understand, organize, and improve their operations through customized digital solutions.</p>
+        
+        <!-- Social Channels / Connect with SOLVEXA (Req #12 & #14) -->
+        <div class="footer-social-section">
+          <h4 class="footer-social-title" data-i18n="footer.connect">Connect with SOLVEXA</h4>
+          <div class="footer-social-links" id="footer-social-links">
+            <a href="https://www.facebook.com/people/Solvexa-Egy/pfbid02ou4kKAFJSu36mJUnUfdX2AKrX9n4kGCLoNG5GdoNKCB1XuJ4UKWMoZmbhfV1ug2Gl/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="SOLVEXA on Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/solvexaegy/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="SOLVEXA on Instagram" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/solvexa-egy-42702443b/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="SOLVEXA on LinkedIn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="mailto:Solvexaegy@gmail.com" class="social-icon-btn" aria-label="Email SOLVEXA" title="Email: Solvexaegy@gmail.com">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <a href="javascript:void(0)" class="social-icon-btn social-wa-soon" aria-label="WhatsApp (Connecting Soon)" title="WhatsApp (Connecting Soon)" data-channel="whatsapp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
+      
       <div class="footer-links">
-        <a href="#built-for-work" class="footer-link" data-i18n="nav.solutions">Solutions</a>
+        <a href="#solutions" class="footer-link" data-i18n="nav.solutions">Solutions</a>
         <a href="#our-approach" class="footer-link" data-i18n="nav.how_we_work">How We Work</a>
         <a href="#why-us" class="footer-link" data-i18n="nav.why_us">Why Choose Us</a>
         <a href="#selected-work" class="footer-link" data-i18n="nav.our_work">Our Work</a>
         <a href="#about-us" class="footer-link" data-i18n="nav.about_us">About Us</a>
-        <a href="#discovery-form" class="footer-link" data-i18n="nav.cta">Contact</a>
+        <a href="#discovery-form" class="footer-link" data-i18n="nav.contact_btn">Contact Us</a>
       </div>
     </div>
-    <div class="container" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-      <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="footer.rights">SOLVEXA &copy; 2026. All rights reserved.</span>
-      <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="footer.slogan">Business First. Technology Second.</span>
+    
+    <div class="container footer-bottom-bar">
+      <span class="footer-rights" data-i18n="footer.rights">SOLVEXA &copy; 2026. All rights reserved.</span>
+      <span class="footer-slogan" data-i18n="footer.slogan">Business First. Technology Second.</span>
     </div>
   </footer>
 
+  
+  <!-- ================= FLOATING MOBILE CONTACT BUTTON (Req #15) ================= -->
+  <a href="#discovery-form" class="floating-contact-btn" id="floating-contact-btn" aria-label="Contact SOLVEXA">
+    <span class="floating-contact-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </span>
+    <span class="floating-contact-text" data-i18n="floating.contact">Contact Us</span>
+  </a>
+
+  <!-- Centralized Config -->
+  <script src="js/config.js"></script>
   <script src="js/translations.js"></script>
   <script src="js/projects-data.js"></script>
   <script src="js/app.js"></script>
