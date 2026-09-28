@@ -173,13 +173,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* -----------------------------------------------------------
-     7. Business Discovery Form Handling
+     7. Business Discovery Form Handling + EmailJS Integration
   ----------------------------------------------------------- */
   const discoveryForm = document.getElementById('business-discovery-form');
   const businessTypeSelect = document.getElementById('business-type');
   const otherTypeGroup = document.getElementById('other-business-type-group');
   const otherTypeInput = document.getElementById('other-business-type');
   const confirmationBlock = document.getElementById('form-confirmation');
+
+  // ── EmailJS Configuration ──
+  // IMPORTANT: Replace these with your actual EmailJS credentials
+  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';      // Get from: EmailJS Dashboard → Account → API Keys
+  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';      // Get from: EmailJS Dashboard → Email Services
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';    // Get from: EmailJS Dashboard → Email Templates
+
+  // Initialize EmailJS
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }
 
   // Toggle 'Other' business type field
   if (businessTypeSelect && otherTypeGroup) {
@@ -194,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle Form Submission
+  // Handle Form Submission with EmailJS
   if (discoveryForm) {
     discoveryForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -202,24 +213,120 @@ document.addEventListener('DOMContentLoaded', () => {
       // Check that at least one need is selected
       const checkedNeeds = discoveryForm.querySelectorAll('input[name="needs[]"]:checked');
       if (checkedNeeds.length === 0) {
-        alert('Please select at least one area where you need assistance (or choose "Not Sure Yet").');
+        const currentLang = localStorage.getItem('preferred_language') || 'en';
+        const alertMsg = currentLang === 'ar'
+          ? 'يرجى اختيار مجال واحد على الأقل تحتاج فيه مساعدة (أو اختيار "لست متأكداً بعد").'
+          : 'Please select at least one area where you need assistance (or choose "Not Sure Yet").';
+        alert(alertMsg);
         return;
       }
 
       const submitBtn = document.getElementById('submit-discovery-btn');
+      const currentLang = localStorage.getItem('preferred_language') || 'en';
+
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>Processing Request...</span>`;
+        const processingText = currentLang === 'ar' ? 'جاري إرسال الطلب...' : 'Sending Request...';
+        submitBtn.innerHTML = `<span>${processingText}</span>`;
       }
 
-      // Simulate clean asynchronous submission
-      setTimeout(() => {
-        discoveryForm.style.display = 'none';
-        if (confirmationBlock) {
-          confirmationBlock.style.display = 'block';
-          confirmationBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }, 600);
+      // Collect all form data
+      const clientName = document.getElementById('client-name')?.value || '';
+      const companyName = document.getElementById('company-name')?.value || '';
+      const clientEmail = document.getElementById('client-email')?.value || '';
+      const clientWhatsApp = document.getElementById('client-whatsapp')?.value || 'Not provided';
+      
+      let businessType = businessTypeSelect?.value || '';
+      if (businessType === 'Other' && otherTypeInput) {
+        businessType = 'Other — ' + (otherTypeInput.value || '');
+      }
+
+      const selectedNeeds = Array.from(checkedNeeds).map(cb => cb.value).join(', ');
+      const challenge = document.getElementById('current-challenge')?.value || 'Not provided';
+      
+      const meetingType = discoveryForm.querySelector('input[name="meeting_type"]:checked')?.value || 'Not specified';
+      const preferredDate = document.getElementById('preferred-date')?.value || 'Flexible';
+      const preferredTime = document.getElementById('preferred-time')?.value || 'Flexible / Any time';
+
+      // Build the email template parameters
+      const templateParams = {
+        from_name: clientName,
+        company_name: companyName,
+        from_email: clientEmail,
+        whatsapp: clientWhatsApp,
+        business_type: businessType,
+        needs: selectedNeeds,
+        challenge: challenge,
+        meeting_type: meetingType,
+        preferred_date: preferredDate,
+        preferred_time: preferredTime,
+        // Full message summary for the email body
+        message: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NEW BUSINESS INQUIRY — SOLVEXA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 CONTACT INFORMATION
+   Name:       ${clientName}
+   Company:    ${companyName}
+   Email:      ${clientEmail}
+   WhatsApp:   ${clientWhatsApp}
+
+🏢 BUSINESS INFORMATION
+   Type:       ${businessType}
+
+🎯 AREAS OF ASSISTANCE NEEDED
+   ${selectedNeeds}
+
+📝 CHALLENGE / DESCRIPTION
+   ${challenge}
+
+📅 MEETING PREFERENCE
+   Type:       ${meetingType}
+   Date:       ${preferredDate}
+   Time Slot:  ${preferredTime}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Sent from SOLVEXA Website — Discovery Form
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        `.trim()
+      };
+
+      // Send via EmailJS
+      if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+          .then(() => {
+            // Success
+            discoveryForm.style.display = 'none';
+            if (confirmationBlock) {
+              confirmationBlock.style.display = 'block';
+              confirmationBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          })
+          .catch((error) => {
+            // Error
+            console.error('EmailJS Error:', error);
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              const btnText = currentLang === 'ar' ? 'ابدأ مشروعك معنا ←' : 'Start Project with Us →';
+              submitBtn.innerHTML = `<span>${btnText}</span>`;
+            }
+            const errorMsg = currentLang === 'ar'
+              ? 'عذرًا، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل معنا عبر البريد الإلكتروني مباشرة.'
+              : 'Sorry, there was an error sending your request. Please try again or contact us directly via email.';
+            alert(errorMsg);
+          });
+      } else {
+        // Fallback: EmailJS not configured yet — show confirmation anyway
+        console.warn('EmailJS is not configured. Form data:', templateParams);
+        setTimeout(() => {
+          discoveryForm.style.display = 'none';
+          if (confirmationBlock) {
+            confirmationBlock.style.display = 'block';
+            confirmationBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 600);
+      }
     });
   }
 
