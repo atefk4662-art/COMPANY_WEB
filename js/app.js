@@ -183,9 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── EmailJS Configuration ──
   // IMPORTANT: Replace these with your actual EmailJS credentials
-  const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';      // Get from: EmailJS Dashboard → Account → API Keys
-  const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';      // Get from: EmailJS Dashboard → Email Services
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';    // Get from: EmailJS Dashboard → Email Templates
+  const EMAILJS_PUBLIC_KEY = 'h3IBETs6jq_gVn0Pk';
+  const EMAILJS_SERVICE_ID = 'service_m2o0nhj';
+  const EMAILJS_TEMPLATE_ID = 'template_poca5y2';
 
   // Initialize EmailJS
   if (typeof emailjs !== 'undefined') {
