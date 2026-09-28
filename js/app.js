@@ -285,7 +285,30 @@ document.addEventListener('DOMContentLoaded', () => {
   applyLanguage(savedLang);
 
   /* -----------------------------------------------------------
-     9. SOLVEXA Opening Brand Intro Sequence
+     9. Brand Symbol Scroll Visibility
+  ----------------------------------------------------------- */
+  const brandSymbolSections = document.querySelectorAll('.brand-symbol-section');
+  if ('IntersectionObserver' in window && brandSymbolSections.length > 0) {
+    const symbolObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-symbol-visible');
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.15,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    brandSymbolSections.forEach(section => symbolObserver.observe(section));
+  } else {
+    // Fallback: make all brand symbols visible immediately
+    brandSymbolSections.forEach(s => s.classList.add('is-symbol-visible'));
+  }
+
+  /* -----------------------------------------------------------
+     10. SOLVEXA Opening Brand Intro Sequence
   ----------------------------------------------------------- */
   const introOverlay = document.getElementById('solvexa-intro-overlay');
   const skipBtn = document.getElementById('solvexa-skip-btn');
@@ -306,10 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hasSeenIntro === 'true' || prefersReducedMotion) {
       introOverlay.style.display = 'none';
     } else {
-      // Auto-transition after sequence finishes (~5.2s)
+      // Auto-transition after sequence finishes (~2.4s)
       const introTimer = setTimeout(() => {
         dismissIntro();
-      }, 5200);
+      }, 2400);
 
       if (skipBtn) {
         skipBtn.addEventListener('click', () => {
@@ -319,7 +342,58 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+  /* -----------------------------------------------------------
+     11. Contact Navigation & Social Channel Interactions (Req #12-18)
+  ----------------------------------------------------------- */
+  // WhatsApp channel click handler (for pending activation)
+  document.addEventListener('click', (e) => {
+    const waBtn = e.target.closest('[data-channel="whatsapp"]');
+    if (waBtn) {
+      e.preventDefault();
+      const currentLang = localStorage.getItem('preferred_language') || 'en';
+      const msg = currentLang === 'ar' 
+        ? 'قناة واتساب قيد التفعيل قريبًا — يُرجى مراسلتنا عبر البريد الإلكتروني أو نموذج الأعمال أدناه.'
+        : 'WhatsApp channel connecting soon — please reach out via email or the business form below.';
+      
+      let toast = document.getElementById('solvexa-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'solvexa-toast';
+        toast.setAttribute('role', 'alert');
+        toast.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#0E1420;color:#F8FAFC;border:1px solid #2563EB;padding:0.75rem 1.4rem;border-radius:9999px;font-size:0.88rem;box-shadow:0 10px 30px rgba(0,0,0,0.4);opacity:0;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);z-index:9999;pointer-events:none;text-align:center;max-width:90%;';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(20px)';
+      }, 3500);
+    }
+  });
+
+  // Mobile Floating Contact Button Scroll Logic
+  const floatingBtn = document.getElementById('floating-contact-btn');
+  if (floatingBtn) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const heroHeight = 400;
+      if (scrollY > heroHeight) {
+        floatingBtn.style.opacity = '1';
+        floatingBtn.style.pointerEvents = 'auto';
+      } else {
+        floatingBtn.style.opacity = '0';
+        floatingBtn.style.pointerEvents = 'none';
+      }
+    }, { passive: true });
+    // Initial state
+    floatingBtn.style.opacity = '0';
+    floatingBtn.style.pointerEvents = 'none';
+  }
 });
+
 
 
 

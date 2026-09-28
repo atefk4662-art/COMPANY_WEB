@@ -6,7 +6,7 @@
 /* ----------------- CSS Custom Properties (Design Tokens) ----------------- */
 :root {
   /* Color Palette: Canvas & Surfaces */
-  --bg-canvas: #080B11;
+  --bg-canvas: #08111F;
   --bg-surface: #0E1420;
   --bg-surface-elevated: #151D2E;
   --bg-card: rgba(18, 26, 42, 0.75);
@@ -3449,7 +3449,144 @@ body.dark-theme {
   color: var(--text-primary);
 }
 
-/* --- Section 3: Our Approach (5-Step Visual Flow) --- */
+/* --- Section 03: Business Solutions (4 Solution Cards) --- */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.solution-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  transition: all var(--transition-smooth);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.solution-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--solv-gradient);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+.solution-card:hover {
+  border-color: rgba(37, 99, 235, 0.35);
+  background: var(--bg-surface-elevated);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28), 0 0 24px rgba(37, 99, 235, 0.08);
+}
+.solution-card:hover::before {
+  opacity: 1;
+}
+.solution-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.solution-num {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-cyan-light);
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+.solution-card-icon,
+.solution-card-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  color: #38BDF8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+.solution-card:hover .solution-card-icon-wrap {
+  background: var(--solv-gradient);
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+.solution-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+.solution-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Section 2 Closing Statement & Action Banner */
+.solutions-cta-banner {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2.25rem;
+  margin-top: 1.5rem;
+}
+.solutions-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.solutions-cta-statement {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+  .solutions-cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* --- RTL (Arabic) Support --- */
+.rtl-mode, [dir="rtl"] {
+  font-family: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+.rtl-mode .btn-icon-right svg,
+[dir="rtl"] .btn-icon-right svg {
+  transform: scaleX(-1);
+}
+.rtl-mode .brand-logo-text-group,
+[dir="rtl"] .brand-logo-text-group {
+  text-align: right;
+}
+
+/* --- Section 4: Our Approach (5-Step Visual Flow) --- */
 .approach-steps-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -4173,7 +4310,7 @@ body.dark-theme {
 .intro-circle {
   stroke-dasharray: 470;
   stroke-dashoffset: 470;
-  animation: drawCircle 1.4s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+  animation: drawCircle 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
 }
 @keyframes drawCircle {
   to {
@@ -4184,7 +4321,7 @@ body.dark-theme {
 .intro-arrow-group {
   opacity: 0;
   transform: translate(-15px, 15px);
-  animation: arrowGlide 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+  animation: arrowGlide 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
 }
 @keyframes arrowGlide {
   to {
@@ -4196,7 +4333,7 @@ body.dark-theme {
 .intro-s-curve {
   stroke-dasharray: 380;
   stroke-dashoffset: 380;
-  animation: drawS 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+  animation: drawS 0.7s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
 }
 @keyframes drawS {
   to {
@@ -4208,7 +4345,7 @@ body.dark-theme {
 .intro-brand-block {
   opacity: 0;
   transform: translateY(12px);
-  animation: introReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
+  animation: introReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
 }
 .intro-wordmark {
   font-family: var(--font-heading);
@@ -4240,7 +4377,7 @@ body.dark-theme {
   color: var(--text-primary);
   opacity: 0;
   transform: translateY(12px);
-  animation: introReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2.4s forwards;
+  animation: introReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
   margin-bottom: 1.2rem;
 }
 
@@ -4259,14 +4396,14 @@ body.dark-theme {
   color: var(--accent-cyan-light);
   opacity: 0;
   transform: translateY(10px);
-  animation: introReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 3.3s forwards;
+  animation: introReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
 }
 .intro-phil-2 {
   font-weight: 600;
   color: var(--text-secondary);
   opacity: 0;
   transform: translateY(10px);
-  animation: introReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 3.8s forwards;
+  animation: introReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.7s forwards;
 }
 
 @keyframes introReveal {
@@ -4307,6 +4444,838 @@ body.dark-theme {
   text-align: right;
 }
 
+/* ==========================================================================
+   SOLVEXA BRAND SYMBOL — VISUAL IDENTITY SYSTEM
+   Subtle background SVG symbols woven into the page architecture
+   ========================================================================== */
+
+/* --- Base Brand Symbol Container --- */
+.brand-symbol-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-symbol-bg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-symbol-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Symbol becomes visible when section scrolls into view */
+.brand-symbol-section.is-symbol-visible .brand-symbol-bg {
+  opacity: 1;
+}
+
+/* --- About Us Section: Right-anchored, partially cropped --- */
+.brand-symbol-about {
+  width: 520px;
+  height: 520px;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  filter: blur(1.2px);
+}
+
+.brand-symbol-about svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+}
+
+/* Subtle radial glow behind the symbol */
+.brand-symbol-about::after {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(37, 99, 235, 0.08) 0%,
+    rgba(124, 58, 237, 0.04) 35%,
+    transparent 70%
+  );
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* --- CTA Section: Center-bottom, partially cropped below --- */
+.brand-symbol-cta {
+  width: 440px;
+  height: 440px;
+  left: 50%;
+  bottom: -140px;
+  transform: translateX(-50%);
+  opacity: 0;
+  filter: blur(0.8px);
+}
+
+.brand-symbol-cta svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.035;
+}
+
+/* Subtle upward glow from symbol */
+.brand-symbol-cta::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(124, 58, 237, 0.06) 0%,
+    rgba(37, 99, 235, 0.03) 40%,
+    transparent 70%
+  );
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* --- Extremely slow floating drift (elegant, no performance impact) --- */
+@keyframes brandSymbolFloat {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  50% { transform: translateY(calc(-50% + 8px)) rotate(1.5deg); }
+}
+
+@keyframes brandSymbolFloatCta {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  50% { transform: translateX(-50%) translateY(-6px) rotate(-1deg); }
+}
+
+.brand-symbol-section.is-symbol-visible .brand-symbol-about {
+  animation: brandSymbolFloat 20s ease-in-out infinite;
+}
+
+.brand-symbol-section.is-symbol-visible .brand-symbol-cta {
+  animation: brandSymbolFloatCta 24s ease-in-out infinite;
+}
+
+/* --- Reduced motion: no animation, static symbol --- */
+@media (prefers-reduced-motion: reduce) {
+  .brand-symbol-about,
+  .brand-symbol-cta {
+    animation: none !important;
+  }
+}
+
+/* --- RTL mirror for About Us symbol (move to left side) --- */
+[dir="rtl"] .brand-symbol-about {
+  right: auto;
+  left: -120px;
+}
+
+/* --- Responsive scaling --- */
+@media (max-width: 1024px) {
+  .brand-symbol-about {
+    width: 380px;
+    height: 380px;
+    right: -100px;
+  }
+  .brand-symbol-cta {
+    width: 340px;
+    height: 340px;
+    bottom: -100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-symbol-about {
+    width: 280px;
+    height: 280px;
+    right: -80px;
+  }
+  .brand-symbol-about svg {
+    opacity: 0.03;
+  }
+  .brand-symbol-cta {
+    width: 260px;
+    height: 260px;
+    bottom: -80px;
+  }
+  .brand-symbol-cta svg {
+    opacity: 0.025;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-symbol-about {
+    width: 200px;
+    height: 200px;
+    right: -60px;
+  }
+  .brand-symbol-cta {
+    width: 200px;
+    height: 200px;
+    bottom: -60px;
+  }
+}
+
+/* ==========================================================================
+   VISUAL POLISH — SECTION TRANSITIONS & AMBIENT ACCENTS
+   ========================================================================== */
+
+/* --- Subtle brand-echo gradient accent between key sections --- */
+#our-approach {
+  position: relative;
+}
+#our-approach::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.35), rgba(124, 58, 237, 0.35), transparent);
+}
+
+#about-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.3), rgba(124, 58, 237, 0.3), transparent);
+}
+
+/* --- Ambient glow accent on the CTA section top border --- */
+#discovery-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.4), rgba(124, 58, 237, 0.4), transparent);
+}
+
+/* --- Discovery card: elevated branded border glow on hover --- */
+.discovery-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.discovery-card:hover {
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow:
+    var(--shadow-subtle),
+    0 0 40px rgba(37, 99, 235, 0.06),
+    0 0 80px rgba(124, 58, 237, 0.03);
+}
+
+/* --- About pillar cards: subtle brand accent on hover --- */
+.about-pillar-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.about-pillar-card:hover {
+  border-color: rgba(37, 99, 235, 0.18);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2), 0 0 20px rgba(37, 99, 235, 0.04);
+}
+
+/* --- Step cards: gradient top-line accent on hover --- */
+.step-card {
+  overflow: hidden;
+}
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--solv-gradient);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+.step-card:hover::before {
+  opacity: 1;
+}
+
+/* --- Problem cards: consistent hover accent --- */
+.problem-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Why cards: brand-accent top stripe --- */
+.why-card {
+  overflow: hidden;
+  position: relative;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--solv-gradient);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+.why-card:hover::before {
+  opacity: 0.7;
+}
+
+/* --- Work cards: enhanced media overlay for brand presence --- */
+.work-card-media::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, var(--bg-surface) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- Footer: subtle brand gradient line above --- */
+.site-footer {
+  position: relative;
+}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.3), rgba(124, 58, 237, 0.3), transparent);
+}
+
+/* --- Section header: brand-colored editorial divider line --- */
+.editorial-divider .divider-line {
+  background: var(--solv-gradient);
+  height: 2px;
+}
+
+/* ==========================================================================
+   VISUAL POLISH — SPACING & CONSISTENCY REFINEMENTS
+   ========================================================================== */
+
+/* Ensure footer flex container wraps cleanly */
+.footer-container {
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-left {
+  max-width: 400px;
+}
+
+/* Footer links: tighter spacing on mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+}
+
+/* Section border-bottom: replace hard border with gradient fade */
+.section-spacing {
+  border-bottom: none;
+  position: relative;
+}
+.section-spacing::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(85%, 900px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-subtle) 30%, var(--border-subtle) 70%, transparent);
+}
+
+/* Remove double line on last section before footer */
+#discovery-form::after {
+  display: none;
+}
+
+/* ==========================================================================
+   SOLVEXA REFINEMENT: LIGHT / DARK SECTION RHYTHM & BRAND VISUALS
+   ========================================================================== */
+
+/* --- 1. Unified Dark Theme Across All Sections --- */
+.section-dark,
+.section-light,
+.section-light-neutral {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  position: relative;
+}
+
+.section-dark .section-heading,
+.section-light .section-heading,
+.section-light-neutral .section-heading {
+  color: var(--text-primary);
+}
+
+.section-dark .section-sub,
+.section-light .section-sub,
+.section-light-neutral .section-sub {
+  color: var(--text-secondary);
+}
+
+.editorial-divider .divider-text {
+  color: #3B82F6;
+}
+
+.editorial-divider .divider-line {
+  background: linear-gradient(90deg, #2563EB, #7C3AED);
+}
+
+/* --- 2. Understanding Your Business Section (Storytelling Layout) --- */
+.understanding-section {
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+  background-color: var(--bg-canvas);
+}
+
+/* Part 1: Narrative Intro */
+.understanding-intro {
+  max-width: 680px;
+  margin-bottom: 4rem;
+}
+
+.understanding-heading {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.understanding-narrative {
+  margin-bottom: 2.5rem;
+}
+
+.narrative-lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.narrative-body {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Value Proposition Box */
+.understanding-value-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  max-width: 560px;
+  position: relative;
+  overflow: hidden;
+}
+
+.understanding-value-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #2563EB, #7C3AED);
+}
+
+.value-line {
+  margin: 0;
+  font-family: var(--font-heading);
+  line-height: 1.5;
+}
+
+.value-line-bold {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.value-line-accent {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #3B82F6;
+}
+
+/* Part 2: What We Look For */
+.understanding-problems-area {
+  margin-bottom: 4rem;
+}
+
+.understanding-problems-area .editorial-divider {
+  margin-bottom: 1.75rem;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.1rem;
+}
+
+.problem-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.problem-card:hover {
+  border-color: rgba(37, 99, 235, 0.35);
+  background: var(--bg-surface-elevated);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+}
+
+.problem-card:hover::before {
+  background: linear-gradient(180deg, #2563EB, #7C3AED);
+}
+
+.problem-card .problem-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.problem-card .problem-desc {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Part 3: This Is Where We Start */
+.understanding-closing {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.understanding-closing .editorial-divider {
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.closing-lead {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.closing-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  padding: 0.6rem 1.35rem;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.flow-step:first-child {
+  border-color: rgba(37, 99, 235, 0.5);
+  color: #3B82F6;
+}
+
+.flow-step:hover {
+  border-color: rgba(37, 99, 235, 0.5);
+  color: #3B82F6;
+  transform: translateY(-2px);
+}
+
+.flow-arrow {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .problems-grid {
+    grid-template-columns: 1fr;
+  }
+  .understanding-intro {
+    max-width: 100%;
+  }
+  .understanding-value-box {
+    max-width: 100%;
+  }
+  .closing-flow {
+    gap: 0.5rem;
+  }
+  .flow-step {
+    font-size: 0.88rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* RTL support */
+.rtl-mode .understanding-value-box::before,
+[dir="rtl"] .understanding-value-box::before {
+  left: auto;
+  right: 0;
+}
+
+.rtl-mode .problem-card::before,
+[dir="rtl"] .problem-card::before {
+  left: auto;
+  right: 0;
+}
+
+.rtl-mode .flow-arrow,
+[dir="rtl"] .flow-arrow {
+  transform: scaleX(-1);
+}
+
+/* --- 3. Approach Section: Directional Path (Req #9) --- */
+.approach-section-directional {
+  position: relative;
+}
+
+.directional-flow-grid {
+  position: relative;
+}
+
+.directional-flow-grid .step-card {
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.directional-flow-grid .step-card::after {
+  content: '→';
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.directional-flow-grid .step-card:last-child::after {
+  display: none;
+}
+
+/* --- 4. Why Choose Us Light Section --- */
+/* All sections unified with dark theme surface styles */
+
+/* --- 6. Footer Social Channels & Connect Section (Req #12 & #14) --- */
+.footer-social-section {
+  margin-top: 1.5rem;
+}
+
+.footer-social-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.social-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.social-icon-btn:hover {
+  background: var(--solv-gradient);
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+}
+
+.social-icon-btn:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+.social-wa-soon {
+  opacity: 0.65;
+  position: relative;
+  cursor: pointer;
+}
+
+.social-wa-soon:hover {
+  opacity: 1;
+}
+
+.footer-bottom-bar {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-rights, .footer-slogan {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- 7. Mobile Floating Contact Button (Req #15) --- */
+.floating-contact-btn {
+  display: none;
+  position: fixed;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  right: 20px;
+  z-index: 990;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--solv-gradient);
+  color: #FFFFFF;
+  padding: 0.65rem 1.15rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+}
+
+.floating-contact-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.5);
+  color: #FFFFFF;
+}
+
+.floating-contact-btn:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 768px) {
+  .floating-contact-btn {
+    display: inline-flex;
+  }
+  
+  .editorial-understanding-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .understanding-left-col {
+    position: static;
+  }
+  
+  .directional-flow-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .directional-flow-grid .step-card::after {
+    display: none;
+  }
+}
+
+/* --- RTL adjustments for Editorial & Flow --- */
+.rtl-mode .editorial-understanding-section,
+[dir="rtl"] .editorial-understanding-section {
+  text-align: right;
+}
+
+.rtl-mode .understanding-anchor-callout,
+[dir="rtl"] .understanding-anchor-callout {
+  border-left: 1px solid rgba(15, 23, 42, 0.08);
+  border-right: 4px solid #2563EB;
+}
+
+.rtl-mode .diag-connector svg,
+[dir="rtl"] .diag-connector svg {
+  transform: scaleX(-1);
+}
+
+.rtl-mode .directional-flow-grid .step-card::after,
+[dir="rtl"] .directional-flow-grid .step-card::after {
+  content: '←';
+  right: auto;
+  left: -14px;
+}
+
+.rtl-mode .editorial-problem-card:hover,
+[dir="rtl"] .editorial-problem-card:hover {
+  transform: translateX(-4px);
+}
+
+.rtl-mode .floating-contact-btn,
+[dir="rtl"] .floating-contact-btn {
+  right: auto;
+  left: 20px;
+}
 
 
 
