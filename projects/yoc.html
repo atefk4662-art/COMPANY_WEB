@@ -3,79 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YOC (Your Only Chance) Youth Travel Platform | Atef Elasklany</title>
-  <meta name="description" content="YOC (Your Only Chance) - Graduation Project by Atef Elasklany and Team. An AI-powered youth travel booking platform designed for Egyptian domestic tourism with Stripe payments, AI Vibe Planner, and custom itineraries." />
+  <title>YOC Youth Travel Platform & Booking Engine | SOLVEXA</title>
+  <meta name="description" content="YOC (Your Only Chance) - An AI-powered domestic travel booking platform engineered for tourism operators with Stripe payments, AI Vibe Planner, and custom itineraries." />
   
-  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <!-- Google Fonts: Cairo, Plus Jakarta Sans, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="../css/styles.css" />
   <style>
-    /* Custom Styles for YOC Graduation Project Case Study */
-    .team-hero-banner {
-      position: relative;
-      border-radius: var(--radius-2xl, 20px);
-      overflow: hidden;
-      margin-top: 3rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    }
-    .team-hero-img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-      object-position: center 35%;
-      display: block;
-      filter: brightness(0.85);
-      transition: filter 0.3s ease;
-    }
-    .team-hero-banner:hover .team-hero-img {
-      filter: brightness(0.95);
-    }
-    .team-hero-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(10, 15, 25, 0.95) 0%, rgba(10, 15, 25, 0.6) 60%, transparent 100%);
-      padding: 2.5rem 2rem 2rem;
-      color: #ffffff;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    .team-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-    .team-subtitle {
-      font-size: 1rem;
-      color: var(--accent-cyan-light, #38bdf8);
-      font-weight: 500;
-    }
-    .team-grade-badge {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.2));
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      padding: 0.65rem 1.25rem;
-      border-radius: 50px;
-      font-weight: 700;
-      color: #38bdf8;
-      font-size: 1.1rem;
-      backdrop-filter: blur(8px);
-    }
     .feature-screens-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2rem;
     }
     .screen-card {
       background: var(--surface-card, rgba(255, 255, 255, 0.03));
@@ -85,68 +28,96 @@
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .screen-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
       border-color: rgba(56, 189, 248, 0.4);
     }
     .screen-img {
       width: 100%;
-      height: 240px;
+      height: 220px;
       object-fit: cover;
       object-position: top center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     .screen-info {
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem;
     }
     .screen-title {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
       color: var(--text-primary, #ffffff);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
     .screen-desc {
-      font-size: 0.925rem;
+      font-size: 0.9rem;
       color: var(--text-secondary, #94a3b8);
-      line-height: 1.6;
+      line-height: 1.55;
     }
     .pdf-download-box {
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
       border: 1px solid rgba(56, 189, 248, 0.3);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 1.75rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1.5rem;
-      margin-top: 3rem;
+      margin-top: 2.5rem;
     }
   </style>
 </head>
 <body class="dark-theme">
 
   <!-- ================= TOP NAVIGATION BAR ================= -->
-  <header class="site-header">
+  <header class="site-header" id="header">
     <div class="nav-container">
-      <a href="../index.html" class="brand-logo-lockup">
-        <span class="brand-wordmark-title" style="font-size: 1.2rem;">solvexa</span>
-        <span class="status-indicator">
-          <span class="status-dot"></span> Open for Projects
-        </span>
+      <a href="../index.html" class="brand-logo-lockup" aria-label="SOLVEXA Homepage">
+        <svg class="brand-logo-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="74" stroke="url(#solv-grad-nav-yoc)" stroke-width="14" stroke-linecap="round" />
+          <line x1="48" y1="152" x2="154" y2="46" stroke="url(#solv-grad-nav-yoc)" stroke-width="14" stroke-linecap="round" />
+          <path d="M125 35 L168 32 L165 75 Z" fill="url(#solv-grad-nav-yoc)" />
+          <path d="M 132 78 C 130 64 118 58 100 58 C 82 58 68 66 68 80 C 68 112 134 94 134 122 C 134 138 118 144 100 144 C 80 144 66 136 64 120" stroke="url(#solv-grad-nav-yoc)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <defs>
+            <linearGradient id="solv-grad-nav-yoc" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2563EB" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-logo-text-group">
+          <span class="brand-wordmark-title">solvexa</span>
+          <span class="brand-descriptor-tag" data-i18n="nav.descriptor">BUSINESS SOLUTIONS</span>
+        </div>
       </a>
 
-      <nav class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="../projects.html" style="color: var(--accent-cyan-light);">Selected Work</a>
-        <a href="#overview">Overview</a>
-        <a href="#team">Team & Defense</a>
-        <a href="#features">Key Features</a>
-        <a href="#payment">Checkout Engine</a>
-        <a href="#pdf">Documentation</a>
-      </nav>
+      <div class="header-right-group">
+        <nav class="nav-links" id="nav-links">
+          <a href="../index.html#built-for-work" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+          <a href="../index.html#our-approach" class="nav-link" data-i18n="nav.how_we_work">How We Work</a>
+          <a href="../index.html#why-us" class="nav-link" data-i18n="nav.why_us">Why Choose Us</a>
+          <a href="../projects.html" class="nav-link active" style="color: var(--accent-cyan-light);" data-i18n="nav.our_work">Our Work</a>
+          <a href="../index.html#about-us" class="nav-link" data-i18n="nav.about_us">About Us</a>
+        </nav>
 
-      <div class="nav-actions">
-        <a href="../index.html#discovery-form" class="btn btn-sm btn-primary">Tell Us About Your Business</a>
+        <div class="header-social-pills">
+          <!-- Language Switcher Pill -->
+          <div class="lang-switch-wrap" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <span class="lang-sep">|</span>
+            <button type="button" class="lang-btn" data-lang="ar">AR</button>
+          </div>
+
+          <a href="../index.html#discovery-form" class="btn btn-pill-primary btn-icon-right header-talk-btn">
+            <span data-i18n="nav.contact_btn">Tell Us About Your Business</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -161,86 +132,82 @@
         <div class="hero-top-meta">
           <a href="../projects.html" class="back-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Projects
+            <span data-i18n="cs.back">Back to Projects</span>
           </a>
-          <span class="badge badge-primary">Graduation Project • Smart Travel Ecosystem</span>
+          <span class="badge badge-primary" data-i18n="yoc.badge">E-Commerce & AI Platforms • Travel Booking System</span>
         </div>
 
         <!-- Title & Subtitle -->
-        <h1 class="cs-title">YOC (Your Only Chance) Youth Travel Platform</h1>
-        <p class="cs-subtitle">An end-to-end AI-powered domestic travel booking platform designed to transform youth exploration across Egypt through smart recommendations, custom itineraries, and instant payments.</p>
+        <h1 class="cs-title" data-i18n="yoc.title">YOC (Your Only Chance) Youth Travel Platform</h1>
+        <p class="cs-subtitle" data-i18n="yoc.sub">An end-to-end AI-powered domestic travel booking platform engineered for tourism operators to automate youth exploration across Egypt through mood-based planning and instant digital payments.</p>
 
-        <!-- Graduation Team Hero Banner -->
-        <div class="team-hero-banner" id="team">
-          <img src="../assets/yoc_team.png" alt="YOC Graduation Project Team & Supervised Faculty" class="team-hero-img" />
-          <div class="team-hero-overlay">
-            <div>
-              <h2 class="team-title">Graduation Project Defense & Team</h2>
-              <p class="team-subtitle">Supervised Project Presentation • Egyptian Russian University (ERU)</p>
+        <!-- Executive Project Snapshot (At A Glance) -->
+        <div class="executive-snapshot-card">
+          <div class="snapshot-header">
+            <div class="snapshot-title-wrap">
+              <span class="snapshot-badge" data-i18n="cs.snapshot_badge">Executive Snapshot</span>
+              <h3 class="snapshot-title" data-i18n="cs.at_a_glance">Project At A Glance</h3>
             </div>
-            <div class="team-grade-badge">🎓 Grade A / Excellent</div>
+            <span class="snapshot-tagline" data-i18n="cs.snapshot_tagline">15-Second Executive Overview</span>
+          </div>
+
+          <div class="snapshot-grid">
+            <div class="snapshot-item">
+              <span class="snapshot-item-label client">
+                <span>🏢</span> <span data-i18n="cs.label_client">Client & Scope</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="yoc.snap_client"><strong>Youth Travel & Tourism Platform</strong> — Full-stack smart booking ecosystem covering 8 Egyptian travel destinations.</p>
+            </div>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label problem">
+                <span>⚠️</span> <span data-i18n="cs.label_problem">Core Problem</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="yoc.snap_problem">Fragmented trip info across social groups, rigid travel packages, and slow manual payment confirmations.</p>
+            </div>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label solution">
+                <span>💡</span> <span data-i18n="cs.label_solution">Built Solution</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="yoc.snap_solution">An AI travel ecosystem with <strong>"Discover Your Vibe" AI Planner</strong>, user-generated programs, and <strong>Stripe Checkout</strong>.</p>
+            </div>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label impact">
+                <span>📈</span> <span data-i18n="cs.label_impact">Business Impact</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="yoc.snap_impact"><strong>100% automated booking receipts</strong>, instant multi-currency checkout, and seamless multi-destination itineraries.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Executive Summary Bento Box -->
-        <div class="hero-summary-grid" style="margin-top: 3rem;">
-          
-          <div class="summary-card main-summary">
-            <div class="summary-label">Executive Summary</div>
-            <p class="summary-text">
-              <strong>YOC (Your Only Chance)</strong> is an innovative travel ecosystem built to solve key challenges facing youth and domestic travelers in Egypt. Young travelers often struggle with fragmented trip information, rigid tour packages, and complicated booking processes. 
-            </p>
-            <p class="summary-text" style="margin-top: 1rem;">
-              Our team designed and developed YOC as an all-in-one web platform featuring an <strong>AI Travel Planner ("Discover Your Vibe")</strong>, a curated destination directory (Dahab, Siwa, Luxor, Aswan, Cairo, Giza, Hurghada, Gouna), a community trip-sharing hub, and a complete <strong>Stripe-integrated Checkout System</strong> with real-time automated booking confirmation receipts.
-            </p>
+        <!-- Hero Primary Visual Showcase (Clean Commercial Frame) -->
+        <div class="hero-visual-frame" style="background: #0B101A; border: 1px solid var(--border-medium); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-glow); margin-top: 2.5rem;">
+          <div class="window-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="window-title" data-i18n="yoc.title">YOC (Your Only Chance) Youth Travel Platform</div>
+            <div class="window-tag" data-i18n="cs.live_ui">Production UI</div>
           </div>
-
-          <div class="summary-card side-metrics">
-            <div class="summary-label">Project Highlights</div>
-            <ul class="quick-facts-list">
-              <li>
-                <span class="fact-icon">🗺️</span>
-                <div>
-                  <strong>Covered Destinations</strong>
-                  <span>8 Top Egyptian Tourist Hubs</span>
-                </div>
-              </li>
-              <li>
-                <span class="fact-icon">🤖</span>
-                <div>
-                  <strong>AI Travel Planner</strong>
-                  <span>Mood & Vibe Based Itineraries</span>
-                </div>
-              </li>
-              <li>
-                <span class="fact-icon">💳</span>
-                <div>
-                  <strong>Payment Integration</strong>
-                  <span>Stripe Gateway & Instant Receipts</span>
-                </div>
-              </li>
-              <li>
-                <span class="fact-icon">👥</span>
-                <div>
-                  <strong>Community Hub</strong>
-                  <span>User-Generated Trip Programs</span>
-                </div>
-              </li>
-            </ul>
+          <div class="dashboard-render" style="padding: 0; background: #070B12; display: flex; justify-content: center; align-items: center;">
+            <img src="../assets/yoc_hero.jpg" alt="YOC Youth Travel Platform Production UI" style="width: 100%; height: auto; display: block; object-fit: contain;" />
           </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- ================= 02. PLATFORM FEATURES & USER FLOW ================= -->
+    <!-- ================= 02. PLATFORM FEATURES ================= -->
     <section class="cs-section section-spacing" id="features">
       <div class="container">
         <div class="section-header center">
-          <span class="section-tag">User Experience</span>
-          <h2 class="section-title">Core Platform Features</h2>
-          <p class="section-desc">Explore how YOC delivers a seamless experience from destination discovery to custom trip creation.</p>
+          <span class="section-tag" data-i18n="yoc.feat_tag">Core Capabilities</span>
+          <h2 class="section-title" data-i18n="yoc.feat_title">Key Platform Features</h2>
+          <p class="section-desc" data-i18n="yoc.feat_sub">From AI mood-based itinerary creation to direct e-commerce checkout.</p>
         </div>
 
         <div class="feature-screens-grid">
@@ -249,8 +216,8 @@
           <div class="screen-card">
             <img src="../assets/yoc_hero.jpg" alt="YOC Landing Page" class="screen-img" />
             <div class="screen-info">
-              <h3 class="screen-title">1. Landing & Search Hero</h3>
-              <p class="screen-desc">Inspiring hero layout encouraging exploration with quick destination search across ancient wonders, oases, and coastal beaches.</p>
+              <h3 class="screen-title" data-i18n="yoc.f1_title">1. Landing & Search Hero</h3>
+              <p class="screen-desc" data-i18n="yoc.f1_desc">Inspiring hero layout encouraging exploration with quick destination search across ancient wonders, oases, and beaches.</p>
             </div>
           </div>
 
@@ -258,8 +225,8 @@
           <div class="screen-card">
             <img src="../assets/yoc_explore.png" alt="Explore Destinations" class="screen-img" />
             <div class="screen-info">
-              <h3 class="screen-title">2. Destination & Experience Hub</h3>
-              <p class="screen-desc">Categorized trip filters (Camps, Activities, Hotels) and curated cards for popular spots like Dahab, Siwa, Luxor, and Aswan.</p>
+              <h3 class="screen-title" data-i18n="yoc.f2_title">2. Destination & Activity Hub</h3>
+              <p class="screen-desc" data-i18n="yoc.f2_desc">Categorized trip filters (Camps, Activities, Hotels) for top spots like Dahab, Siwa, Luxor, and Aswan.</p>
             </div>
           </div>
 
@@ -267,8 +234,8 @@
           <div class="screen-card">
             <img src="../assets/yoc_vibe.png" alt="Discover Your Vibe" class="screen-img" />
             <div class="screen-info">
-              <h3 class="screen-title">3. AI Planner ("Discover Your Vibe")</h3>
-              <p class="screen-desc">Smart questionnaire letting users pick their travel vibe: History & Culture, Sea & Relaxation, Desert Safari, City Pulse, or Budget Wanderer.</p>
+              <h3 class="screen-title" data-i18n="yoc.f3_title">3. AI Planner ("Discover Your Vibe")</h3>
+              <p class="screen-desc" data-i18n="yoc.f3_desc">Smart questionnaire letting travelers pick their vibe: History & Culture, Sea & Relaxation, Desert Safari, or Budget Wanderer.</p>
             </div>
           </div>
 
@@ -276,8 +243,8 @@
           <div class="screen-card">
             <img src="../assets/yoc_trip_ideas.png" alt="Trip Ideas" class="screen-img" />
             <div class="screen-info">
-              <h3 class="screen-title">4. Community Trip Ideas</h3>
-              <p class="screen-desc">Enables local guides and experienced travelers to publish custom programs (e.g., Cairo History, Deep Diving in Dahab) with price per guest.</p>
+              <h3 class="screen-title" data-i18n="yoc.f4_title">4. Community Trip Ideas</h3>
+              <p class="screen-desc" data-i18n="yoc.f4_desc">Enables local guides and experienced travelers to publish custom programs with pricing and full itineraries.</p>
             </div>
           </div>
 
@@ -289,9 +256,9 @@
     <section class="cs-section section-spacing" id="payment" style="background: rgba(255, 255, 255, 0.015);">
       <div class="container">
         <div class="section-header center">
-          <span class="section-tag">Systems & E-Commerce Logic</span>
-          <h2 class="section-title">End-to-End Booking & Checkout Engine</h2>
-          <p class="section-desc">Designed a secure, transparent step-by-step transaction flow tailored for local and international payment methods.</p>
+          <span class="section-tag" data-i18n="yoc.pay_tag">E-Commerce Architecture</span>
+          <h2 class="section-title" data-i18n="yoc.pay_title">End-to-End Booking & Checkout</h2>
+          <p class="section-desc" data-i18n="yoc.pay_sub">Secure Stripe gateway integration with instant automated PDF booking receipts.</p>
         </div>
 
         <div class="feature-screens-grid">
@@ -300,8 +267,8 @@
           <div class="screen-card">
             <img src="../assets/yoc_details.png" alt="Trip Overview and Dates" class="screen-img" />
             <div class="screen-info">
-              <h3 class="screen-title">Step 1: Program Overview & Tour Plan</h3>
-              <p class="screen-desc">Detailed itinerary view breakdown (Day 1 Training, Day 2 Deep Diving), date picker, guest selection, and total pricing transparent calculation.</p>
+              <h3 class="screen-title" data-i18n="yoc.b1_title">1. Program Overview & Itinerary</h3>
+              <p class="screen-desc" data-i18n="yoc.b1_desc">Clear day-by-day tour plan, date picker, guest selection, and automatic pricing calculation.</p>
             </div>
           </div>
 
@@ -309,35 +276,26 @@
           <div class="screen-card">
             <img src="../assets/yoc_booking.png" alt="Guest Details Input" class="screen-img" />
             <div class="screen-info">
-              <h3 class="screen-title">Step 2: Traveler Information</h3>
-              <p class="screen-desc">Guest contact form collecting full name, email, and phone number with clear fee summary and free 48-hour cancellation policy.</p>
+              <h3 class="screen-title" data-i18n="yoc.b2_title">2. Traveler Information</h3>
+              <p class="screen-desc" data-i18n="yoc.b2_desc">Secure traveler details collection with transparent fee breakdown and cancellation policies.</p>
             </div>
           </div>
 
-          <!-- Booking Screen 3: Payment Method -->
-          <div class="screen-card">
-            <img src="../assets/yoc_payment_options.png" alt="Choose Payment Method" class="screen-img" />
-            <div class="screen-info">
-              <h3 class="screen-title">Step 3: Payment Method Selection</h3>
-              <p class="screen-desc">Flexible options supporting Credit/Debit Cards (Visa, Mastercard, Meeza) and local mobile transfers (InstaPay).</p>
-            </div>
-          </div>
-
-          <!-- Booking Screen 4: Stripe Checkout -->
+          <!-- Booking Screen 3: Stripe Checkout -->
           <div class="screen-card">
             <img src="../assets/yoc_stripe.png" alt="Stripe Payment Sandbox" class="screen-img" />
             <div class="screen-info">
-              <h3 class="screen-title">Step 4: Stripe Payment Gateway</h3>
-              <p class="screen-desc">Integrated Stripe Sandbox checkout enforcing SSL encryption, card verification, and automatic currency conversion.</p>
+              <h3 class="screen-title" data-i18n="yoc.b3_title">3. Stripe Payment Gateway</h3>
+              <p class="screen-desc" data-i18n="yoc.b3_desc">Encrypted checkout enforcing card verification, 3D Secure authentication, and currency conversion.</p>
             </div>
           </div>
 
-          <!-- Booking Screen 5: Confirmation Ticket -->
-          <div class="screen-card" style="grid-column: 1 / -1; max-width: 720px; margin: 0 auto;">
-            <img src="../assets/yoc_confirmation.png" alt="Booking Confirmation Ticket" class="screen-img" style="height: 320px;" />
+          <!-- Booking Screen 4: Confirmation Ticket -->
+          <div class="screen-card">
+            <img src="../assets/yoc_confirmation.png" alt="Booking Confirmation Ticket" class="screen-img" />
             <div class="screen-info">
-              <h3 class="screen-title">Step 5: Instant Booking Confirmation Ticket</h3>
-              <p class="screen-desc">Generates a unique Booking Reference (e.g., <strong>YOC-7F39F831</strong>) with complete trip breakdown, date, location, paid status badge, and receipt summary.</p>
+              <h3 class="screen-title" data-i18n="yoc.b4_title">4. Instant Booking Confirmation</h3>
+              <p class="screen-desc" data-i18n="yoc.b4_desc">Generates a unique Booking Reference with trip breakdown, paid status badge, and receipt summary.</p>
             </div>
           </div>
 
@@ -351,17 +309,17 @@
         
         <div class="pdf-download-box">
           <div>
-            <h3 style="font-size: 1.35rem; color: #ffffff; margin-bottom: 0.5rem; font-weight: 700;">
-              📄 Graduation Project Full Documentation (PDF)
+            <h3 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 0.4rem; font-weight: 700;" data-i18n="yoc.doc_title">
+              📄 Platform System Architecture (PDF)
             </h3>
-            <p style="color: var(--text-secondary, #94a3b8); margin: 0; font-size: 0.95rem;">
-              Download the complete graduation project report covering System Requirements, Business Model, UI/UX Wireframes, and Technical Implementation.
+            <p style="color: var(--text-secondary, #94a3b8); margin: 0; font-size: 0.925rem;" data-i18n="yoc.doc_desc">
+              Download the complete system specification covering platform requirements, business workflows, UI/UX architecture, and payment engine implementation.
             </p>
           </div>
           <div>
             <a href="../graduation project _ yoc.pdf" target="_blank" class="btn btn-primary" style="gap: 0.5rem;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              View PDF Document
+              <span data-i18n="cs.view_pdf">View Presentation (PDF)</span>
             </a>
           </div>
         </div>
@@ -369,18 +327,48 @@
       </div>
     </section>
 
+    <!-- ================= 05. CASE STUDY CTA ================= -->
+    <section class="cs-cta-section section-spacing">
+      <div class="container">
+        <div class="cs-cta-box">
+          <h2 class="cs-cta-title" data-i18n="cs.cta_title">Have a Similar Operational Challenge in Your Business?</h2>
+          <p class="cs-cta-desc" data-i18n="cs.cta_sub">We understand how your business works first, then engineer custom solutions tailored to your real workflows.</p>
+          <div class="cs-cta-actions">
+            <a href="../index.html#discovery-form" class="btn btn-pill-primary btn-lg" data-i18n="cs.cta_btn">Tell Us About Your Business</a>
+            <a href="../projects.html" class="btn btn-pill-glass btn-lg" data-i18n="cs.back">Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ================= SITE FOOTER ================= -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <p>&copy; 2026 Atef Elasklany. Graduation Project • YOC Platform.</p>
-        <a href="../index.html" class="back-to-top">Back to Top ↑</a>
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="brand-logo-text-group">
+          <span class="brand-wordmark-title" style="font-size: 1.25rem;">solvexa</span>
+          <span class="brand-descriptor-tag" data-i18n="nav.descriptor">BUSINESS SOLUTIONS</span>
+        </div>
+        <p class="footer-sub" data-i18n="footer.desc">A business-first technology company helping businesses understand, organize, and improve their operations through customized digital solutions.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../projects.html" class="footer-link" data-i18n="nav.our_work">Our Work</a>
+        <a href="../index.html#built-for-work" class="footer-link" data-i18n="nav.solutions">Solutions</a>
+        <a href="../index.html#why-us" class="footer-link" data-i18n="nav.why_us">Why Choose Us</a>
+        <a href="../index.html#discovery-form" class="footer-link" data-i18n="nav.cta">Tell Us About Your Business</a>
+      </div>
+    </div>
+    <div class="container footer-bottom-container">
+      <div class="footer-bottom-flex">
+        <p class="footer-copy" data-i18n="footer.rights">SOLVEXA © 2026. All rights reserved.</p>
+        <p class="footer-slogan" data-i18n="footer.slogan">Business First. Technology Second.</p>
       </div>
     </div>
   </footer>
 
+  <script src="../js/translations.js"></script>
   <script src="../js/app.js"></script>
 </body>
 </html>

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FOUSH Restaurant POS & Operations System | Atef Elasklany</title>
-  <meta name="description" content="FOUSH Integrated System - A robust, hybrid, offline-first restaurant management & Point of Sale ecosystem designed and engineered by Atef Elasklany." />
+  <title>FOUSH Restaurant POS & Operations System | SOLVEXA</title>
+  <meta name="description" content="FOUSH Integrated System - A robust, hybrid, offline-first restaurant management & Point of Sale ecosystem engineered by SOLVEXA." />
   
-  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <!-- Google Fonts: Cairo, Plus Jakarta Sans, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="../css/styles.css" />
@@ -17,29 +17,55 @@
 <body class="dark-theme">
 
   <!-- ================= TOP NAVIGATION BAR ================= -->
-  <header class="site-header">
+  <header class="site-header" id="header">
     <div class="nav-container">
-      <a href="../index.html" class="brand-logo-lockup">
-        <span class="brand-wordmark-title" style="font-size: 1.2rem;">solvexa</span>
-        <span class="status-indicator">
-          <span class="status-dot"></span> Open for Projects
-        </span>
+      <a href="../index.html" class="brand-logo-lockup" aria-label="SOLVEXA Homepage">
+        <svg class="brand-logo-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="74" stroke="url(#solv-grad-nav-foush)" stroke-width="14" stroke-linecap="round" />
+          <line x1="48" y1="152" x2="154" y2="46" stroke="url(#solv-grad-nav-foush)" stroke-width="14" stroke-linecap="round" />
+          <path d="M125 35 L168 32 L165 75 Z" fill="url(#solv-grad-nav-foush)" />
+          <path d="M 132 78 C 130 64 118 58 100 58 C 82 58 68 66 68 80 C 68 112 134 94 134 122 C 134 138 118 144 100 144 C 80 144 66 136 64 120" stroke="url(#solv-grad-nav-foush)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <defs>
+            <linearGradient id="solv-grad-nav-foush" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2563EB" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-logo-text-group">
+          <span class="brand-wordmark-title">solvexa</span>
+          <span class="brand-descriptor-tag" data-i18n="nav.descriptor">BUSINESS SOLUTIONS</span>
+        </div>
       </a>
 
-      <nav class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="../projects.html" style="color: var(--accent-cyan-light);">Selected Work</a>
-        <a href="#challenge">The Challenge</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#portals">The 5 Portals</a>
-        <a href="#inventory">Food Cost</a>
-        <a href="#devops">DevOps</a>
-        <a href="#gallery">Gallery</a>
-      </nav>
+      <div class="header-right-group">
+        <nav class="nav-links" id="nav-links">
+          <a href="../index.html#built-for-work" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+          <a href="../index.html#our-approach" class="nav-link" data-i18n="nav.how_we_work">How We Work</a>
+          <a href="../index.html#why-us" class="nav-link" data-i18n="nav.why_us">Why Choose Us</a>
+          <a href="../projects.html" class="nav-link active" style="color: var(--accent-cyan-light);" data-i18n="nav.our_work">Our Work</a>
+          <a href="../index.html#about-us" class="nav-link" data-i18n="nav.about_us">About Us</a>
+        </nav>
 
-      <div class="nav-actions">
-        <a href="../index.html#discovery-form" class="btn btn-sm btn-primary">Tell Us About Your Business</a>
+        <div class="header-social-pills">
+          <!-- Language Switcher Pill -->
+          <div class="lang-switch-wrap" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <span class="lang-sep">|</span>
+            <button type="button" class="lang-btn" data-lang="ar">AR</button>
+          </div>
+
+          <a href="../index.html#discovery-form" class="btn btn-pill-primary btn-icon-right header-talk-btn">
+            <span data-i18n="nav.contact_btn">Tell Us About Your Business</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -54,55 +80,65 @@
         <div class="hero-top-meta">
           <a href="../projects.html" class="back-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Projects
+            <span data-i18n="cs.back">Back to Projects</span>
           </a>
-          <span class="badge badge-primary">Systems & Software Architecture • Hybrid POS</span>
+          <span class="badge badge-primary" data-i18n="foush.badge">Systems & Software Architecture • Hybrid POS</span>
         </div>
 
         <!-- Title & Subtitle -->
-        <h1 class="cs-title">FOUSH Restaurant POS & Operations System</h1>
-        <p class="cs-subtitle">A high-availability, offline-first restaurant management & Point of Sale ecosystem engineered for high-pressure dining operations.</p>
+        <h1 class="cs-title" data-i18n="foush.title">FOUSH Restaurant POS & Operations System</h1>
+        <p class="cs-subtitle" data-i18n="foush.sub">A high-availability, offline-first restaurant management & Point of Sale ecosystem engineered for high-pressure dining operations.</p>
 
-        <!-- Executive Summary Bento Box -->
-        <div class="hero-summary-grid">
-          
-          <div class="summary-card main-summary">
-            <div class="summary-label">Executive Summary</div>
-            <p class="summary-text">
-              Traditional cloud-only POS systems completely freeze during internet outages, causing lost orders, delayed kitchens, and cashier chaos. To eliminate this critical operational vulnerability for <strong>"FOUSH Ibn Sayed Restaurant"</strong> (a high-volume traditional dining establishment), I architected and developed <strong>FOUSH</strong>—a bespoke, resilient POS and kitchen ecosystem running on a <strong>Dual-Engine Architecture</strong>. It combines a local LAN Node.js server with SQLite WAL concurrency for <strong>100% offline-first reliability</strong>, direct TCP socket ESC/POS thermal printing, and continuous Firebase Cloud replication for global remote management.
-            </p>
+        <!-- Executive Project Snapshot (At A Glance) -->
+        <div class="executive-snapshot-card">
+          <div class="snapshot-header">
+            <div class="snapshot-title-wrap">
+              <span class="snapshot-badge" data-i18n="cs.snapshot_badge">Executive Snapshot</span>
+              <h3 class="snapshot-title" data-i18n="cs.at_a_glance">Project At A Glance</h3>
+            </div>
+            <span class="snapshot-tagline" data-i18n="cs.snapshot_tagline">15-Second Executive Overview</span>
           </div>
 
-          <div class="summary-card meta-sidebar">
-            <div class="meta-row">
-              <span class="meta-label">Domain</span>
-              <span class="meta-val">Restaurant Tech / Food & Beverage</span>
+          <div class="snapshot-grid">
+            <div class="snapshot-item">
+              <span class="snapshot-item-label client">
+                <span>🏢</span> <span data-i18n="cs.label_client">Client & Scope</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="foush.snap_client"><strong>FOUSH Ibn Sayed Restaurant</strong> — High-volume multi-station dining, takeaway, and delivery operations.</p>
             </div>
-            <div class="meta-row">
-              <span class="meta-label">Role</span>
-              <span class="meta-val">System Architect & Full-Stack Developer</span>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label problem">
+                <span>⚠️</span> <span data-i18n="cs.label_problem">Core Problem</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="foush.snap_problem">Cloud POS systems crashed during internet outages, creating billing queues, lost orders, and kitchen ticket delays.</p>
             </div>
-            <div class="meta-row">
-              <span class="meta-label">Architecture</span>
-              <span class="meta-val">Dual-Engine (Node.js + SQLite + Firebase)</span>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label solution">
+                <span>💡</span> <span data-i18n="cs.label_solution">Built Solution</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="foush.snap_solution">A custom <strong>Dual-Engine Offline-First POS</strong> with local LAN Node.js + SQLite, instant thermal socket printing, and cloud sync.</p>
             </div>
-            <div class="meta-row">
-              <span class="meta-label">Core Capabilities</span>
-              <span class="meta-val highlight-kpi">Offline-First • ESC/POS Sockets • 5 PWAs</span>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label impact">
+                <span>📈</span> <span data-i18n="cs.label_impact">Business Impact</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="foush.snap_impact"><strong>100% Zero Downtime</strong> during network cuts, <strong>0.2s instant printing</strong>, and 5 dedicated operational PWAs.</p>
             </div>
           </div>
-
         </div>
 
         <!-- Project Official PDF & Asset Links -->
         <div class="project-action-links" style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
           <a href="../assets/FOUSH_Integrated_System_Architecture.pdf" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>View Architecture Presentation (PDF)</span>
+            <span data-i18n="cs.view_pdf">View Presentation (PDF)</span>
           </a>
           <a href="../assets/FOUSH_Restaurant_POS_Guide.pdf" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-            <span>View Technical User Guide (PDF)</span>
+            <span data-i18n="cs.view_guide">View User Guide (PDF)</span>
           </a>
         </div>
 
@@ -114,8 +150,8 @@
               <span class="dot yellow"></span>
               <span class="dot green"></span>
             </div>
-            <div class="window-title">FOUSH POS — Central Cashier & Table Management Station (Production UI)</div>
-            <div class="window-tag">Live System Deployment</div>
+            <div class="window-title" data-i18n="foush.title">FOUSH POS — Central Cashier & Table Management Station</div>
+            <div class="window-tag" data-i18n="cs.live_ui">Production UI</div>
           </div>
           <div class="dashboard-render" style="padding: 0; background: #070B12; display: flex; justify-content: center; align-items: center;">
             <img src="../assets/screenshot_pos.png" alt="FOUSH POS Central Cashier Station" style="width: 100%; height: auto; display: block; object-fit: contain;" />
@@ -130,9 +166,12 @@
       <div class="container">
         
         <div class="section-header">
-          <span class="section-tag">02 / Problem Statement</span>
-          <h2 class="section-heading">The Operational Fragility of Cloud POS</h2>
-          <p class="section-sub">Why off-the-shelf software repeatedly fails in high-throughput restaurant environments.</p>
+          <div class="editorial-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text" data-i18n="foush.prob_tag">01 / Operational Challenge</span>
+          </div>
+          <h2 class="section-heading" data-i18n="foush.prob_title">The Fragility of Standard Cloud POS</h2>
+          <p class="section-sub" data-i18n="foush.prob_sub">Why off-the-shelf software repeatedly fails in high-throughput restaurant environments.</p>
         </div>
 
         <div class="grid-3-col">
@@ -141,9 +180,9 @@
             <div class="card-icon alert-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
             </div>
-            <h3 class="card-h">Internet Dependency Vulnerability</h3>
-            <p class="card-p">
-              Cloud-only POS systems halt completely during ISP outages or bandwidth drops. In a busy dinner rush, a 10-minute disconnection leads to lost ticket sequencing, billing discrepancies, and kitchen bottlenecks.
+            <h3 class="card-h" data-i18n="foush.p1_title">Internet Dependency Vulnerability</h3>
+            <p class="card-p" data-i18n="foush.p1_desc">
+              Cloud POS halts completely during ISP drops. In a dinner rush, a 10-minute disconnection leads to lost tickets and billing chaos.
             </p>
           </div>
 
@@ -151,9 +190,9 @@
             <div class="card-icon warning-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
             </div>
-            <h3 class="card-h">Sluggish Browser Print Dialogs</h3>
-            <p class="card-p">
-              Standard web-based systems rely on browser print modals that require manual confirmations and take 3–5 seconds per bill. This creates cashier queues and delays kitchen ticket dispatch.
+            <h3 class="card-h" data-i18n="foush.p2_title">Sluggish Browser Print Dialogs</h3>
+            <p class="card-p" data-i18n="foush.p2_desc">
+              Standard web systems open browser print modals taking 3–5 seconds per receipt, creating cashier queues and kitchen delays.
             </p>
           </div>
 
@@ -161,9 +200,9 @@
             <div class="card-icon info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             </div>
-            <h3 class="card-h">Role Fragmentation & Data Exposure</h3>
-            <p class="card-p">
-              Generic software forces waiters, chefs, and cashiers onto a single cluttered screen. This exposes sensitive profit margins and gross sales figures to floor staff while complicating simple tasks.
+            <h3 class="card-h" data-i18n="foush.p3_title">Role Clutter & Data Exposure</h3>
+            <p class="card-p" data-i18n="foush.p3_desc">
+              Generic software forces all staff onto a single screen, exposing sensitive profit margins to floor staff and complicating simple tasks.
             </p>
           </div>
 
@@ -177,42 +216,27 @@
       <div class="container">
         
         <div class="section-header">
-          <span class="section-tag">03 / System Engineering</span>
-          <h2 class="section-heading">The Dual-Engine Architecture</h2>
-          <p class="section-sub">A localized high-speed network for zero-latency floor operations, paired with resilient cloud replication.</p>
+          <div class="editorial-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text" data-i18n="foush.arch_tag">02 / System Architecture</span>
+          </div>
+          <h2 class="section-heading" data-i18n="foush.arch_title">The Dual-Engine Architecture</h2>
+          <p class="section-sub" data-i18n="foush.arch_sub">A localized high-speed network for zero-latency floor operations, paired with resilient cloud replication.</p>
         </div>
 
         <div class="journey-flow">
           
           <div class="journey-step">
-            <div class="step-badge">Engine 01 (Local Core)</div>
+            <div class="step-badge">Local Core</div>
             <div class="step-card">
               <div class="step-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
               </div>
-              <h3 class="step-title">Local Node.js & SQLite WAL</h3>
-              <p class="step-desc">
-                Operates locally inside the venue across the local Wi-Fi router. SQLite in Write-Ahead Logging (WAL) mode enables concurrent table orders, KDS ticket routing, and drawer tallies with zero internet requirement.
+              <h3 class="step-title" data-i18n="foush.a1_title">Local Node.js & SQLite Core</h3>
+              <p class="step-desc" data-i18n="foush.a1_desc">
+                Runs inside the venue across internal Wi-Fi. SQLite WAL mode enables concurrent order taking and billing with zero internet requirement.
               </p>
-              <div class="step-metric">100% Offline-First Uptime</div>
-            </div>
-          </div>
-
-          <div class="journey-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-8.31l-4.5 4.5"></path></svg>
-          </div>
-
-          <div class="journey-step">
-            <div class="step-badge">Engine 02 (Cloud Sync)</div>
-            <div class="step-card">
-              <div class="step-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
-              </div>
-              <h3 class="step-title">Firebase Realtime Sync</h3>
-              <p class="step-desc">
-                An asynchronous background replication queue syncs completed transactions, shift closures, and inventory state to Firebase whenever internet is detected, enabling remote owner visibility.
-              </p>
-              <div class="step-metric">Global Remote Management</div>
+              <div class="step-metric">100% Offline-First</div>
             </div>
           </div>
 
@@ -226,11 +250,29 @@
               <div class="step-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
               </div>
-              <h3 class="step-title">Raw ESC/POS Thermal Sockets</h3>
-              <p class="step-desc">
-                Communicates directly over TCP port 9100 with kitchen and cashier thermal printers. Bypasses the browser completely to fire raw ESC/POS byte streams the millisecond an order is confirmed.
+              <h3 class="step-title" data-i18n="foush.a2_title">Direct Thermal TCP Sockets</h3>
+              <p class="step-desc" data-i18n="foush.a2_desc">
+                Communicates directly over TCP port 9100 with kitchen and cashier thermal printers, firing raw ESC/POS byte streams in milliseconds.
               </p>
-              <div class="step-metric">Sub-Second Printing</div>
+              <div class="step-metric">&lt; 0.2s Direct Print</div>
+            </div>
+          </div>
+
+          <div class="journey-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-8.31l-4.5 4.5"></path></svg>
+          </div>
+
+          <div class="journey-step">
+            <div class="step-badge">Cloud Sync</div>
+            <div class="step-card">
+              <div class="step-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+              </div>
+              <h3 class="step-title" data-i18n="foush.a3_title">Real-Time Cloud Replication</h3>
+              <p class="step-desc" data-i18n="foush.a3_desc">
+                Background sync queue pushes completed transactions and shift totals to the cloud for real-time remote owner monitoring.
+              </p>
+              <div class="step-metric">Remote Owner Pulse</div>
             </div>
           </div>
 
@@ -239,130 +281,40 @@
       </div>
     </section>
 
-    <!-- ================= 04. END-TO-END WORKFLOW ================= -->
-    <section class="cs-workflow section-spacing" id="workflow">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">04 / Business Process Modeling</span>
-          <h2 class="section-heading">End-to-End Operational Lifecycle</h2>
-          <p class="section-sub">Mapping the live restaurant transaction cycle from initial table seat to shift reconciliation.</p>
-        </div>
-
-        <div class="kpi-banner" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 2rem;">
-          <div class="kpi-banner-item">
-            <span class="k-label">Order Latency</span>
-            <span class="k-val">Instant (< 100ms)</span>
-            <span class="k-desc">Direct Local Wi-Fi</span>
-          </div>
-          <div class="kpi-banner-item">
-            <span class="k-label">Print Dispatch</span>
-            <span class="k-val">Zero Dialog</span>
-            <span class="k-desc">Raw Network TCP Sockets</span>
-          </div>
-          <div class="kpi-banner-item">
-            <span class="k-label">Role Isolation</span>
-            <span class="k-val">5 Standalone PWAs</span>
-            <span class="k-desc">Role-Based Access Control</span>
-          </div>
-          <div class="kpi-banner-item">
-            <span class="k-label">Audit Accuracy</span>
-            <span class="k-val">100% Reconciled</span>
-            <span class="k-desc">Shift X/Z Ledger Control</span>
-          </div>
-        </div>
-
-        <div class="objectives-grid" style="grid-template-columns: repeat(3, 1fr);">
-          <div class="objective-box">
-            <div class="obj-number">01</div>
-            <h3 class="obj-title">Order Capture & Table Dispatch</h3>
-            <ul class="obj-list">
-              <li>Waiters input dine-in orders on mobile tablet PWAs.</li>
-              <li>Cashier logs counter takeaway and delivery requests.</li>
-              <li>Item modifications, add-ons, and notes attached per dish.</li>
-            </ul>
-          </div>
-          <div class="objective-box">
-            <div class="obj-number">02</div>
-            <h3 class="obj-title">Kitchen Routing & Auto-Printing</h3>
-            <ul class="obj-list">
-              <li>Instant visual card rendering on the Kitchen Display System (KDS).</li>
-              <li>Audible chime alerts kitchen staff to new tickets.</li>
-              <li>Simultaneous ESC/POS ticket printing in the kitchen area.</li>
-            </ul>
-          </div>
-          <div class="objective-box">
-            <div class="obj-number">03</div>
-            <h3 class="obj-title">Customer Notification & Ready Status</h3>
-            <ul class="obj-list">
-              <li>Chef taps "Ready" on the KDS when cooking is complete.</li>
-              <li>External Lobby TV screen updates order number automatically.</li>
-              <li>Automated voice announcement calls takeaway customers.</li>
-            </ul>
-          </div>
-          <div class="objective-box">
-            <div class="obj-number">04</div>
-            <h3 class="obj-title">Billing, Payment & Table Clearance</h3>
-            <ul class="obj-list">
-              <li>Cashier executes split bill, discounts, and service charges.</li>
-              <li>Accepts Cash, Debit Card, and Home Delivery tenders.</li>
-              <li>Customer receipt printed and table reset for next turnover.</li>
-            </ul>
-          </div>
-          <div class="objective-box">
-            <div class="obj-number">05</div>
-            <h3 class="obj-title">Automated Inventory Depletion</h3>
-            <ul class="obj-list">
-              <li>Raw ingredients (meat, rice, clay pots, oil) deducted via BOM recipe link.</li>
-              <li>Tracks daily spoilage, kitchen waste, and remaining safety stock.</li>
-              <li>Prevents inventory shrinkage and unrecorded usage.</li>
-            </ul>
-          </div>
-          <div class="objective-box">
-            <div class="obj-number">06</div>
-            <h3 class="obj-title">Shift Closure & Cloud Replication</h3>
-            <ul class="obj-list">
-              <li>Cashier performs mandatory drawer count and generates Z-Report.</li>
-              <li>Local server syncs financial snapshot to Firebase Realtime DB.</li>
-              <li>Owner monitors live sales, food cost, and net margins globally.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= 05. THE 5 ROLE PORTALS (INTERACTIVE TABS) ================= -->
+    <!-- ================= 04. THE 5 ROLE PORTALS (INTERACTIVE TABS) ================= -->
     <section class="cs-ecosystem section-spacing" id="portals">
       <div class="container">
         
         <div class="section-header">
-          <span class="section-tag">05 / Role-Isolated UX</span>
-          <h2 class="section-heading">5 Dedicated PWA Portals</h2>
-          <p class="section-sub">Purpose-built interfaces engineered specifically for each operational job in the restaurant.</p>
+          <div class="editorial-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text" data-i18n="foush.portals_tag">03 / The 5 Role Portals</span>
+          </div>
+          <h2 class="section-heading" data-i18n="foush.portals_title">5 Dedicated Operational PWAs</h2>
+          <p class="section-sub" data-i18n="foush.portals_sub">Purpose-built interfaces engineered specifically for each operational role in the restaurant.</p>
         </div>
 
         <!-- Interactive Tabs Navigation -->
         <div class="dashboard-tabs">
           <button class="tab-btn active" data-tab="portal-pos">
             <span class="tab-index">01</span>
-            <span class="tab-text">Cashier POS</span>
+            <span class="tab-text" data-i18n="foush.tab_pos">Cashier POS</span>
           </button>
           <button class="tab-btn" data-tab="portal-kds">
             <span class="tab-index">02</span>
-            <span class="tab-text">Kitchen Display</span>
+            <span class="tab-text" data-i18n="foush.tab_kds">Kitchen Display</span>
           </button>
           <button class="tab-btn" data-tab="portal-waiter">
             <span class="tab-index">03</span>
-            <span class="tab-text">Floor Waiter</span>
+            <span class="tab-text" data-i18n="foush.tab_waiter">Floor Waiter</span>
           </button>
           <button class="tab-btn" data-tab="portal-admin">
             <span class="tab-index">04</span>
-            <span class="tab-text">Owner Dashboard</span>
+            <span class="tab-text" data-i18n="foush.tab_admin">Owner Dashboard</span>
           </button>
           <button class="tab-btn" data-tab="portal-security">
             <span class="tab-index">05</span>
-            <span class="tab-text">Security PINs</span>
+            <span class="tab-text" data-i18n="foush.tab_security">Security PINs</span>
           </button>
         </div>
 
@@ -371,7 +323,7 @@
           <div class="eco-card-grid">
             <div class="eco-screen-wrap">
               <div class="mockup-header">
-                <span>Station 1: Central Cashier POS & Billing Terminal</span>
+                <span>Central Cashier POS & Billing Terminal</span>
                 <span class="status-pill">Offline-First Core</span>
               </div>
               <div class="mockup-content" style="padding: 0; background: #070B12;">
@@ -379,21 +331,10 @@
               </div>
             </div>
             <div class="eco-info-wrap">
-              <h3 class="eco-title">Central Billing & Table Management Terminal</h3>
+              <h3 class="eco-title">Central Billing & Table Station</h3>
               <p class="eco-desc">
-                The central transaction hub for cashiers. Built for high-speed touch interactions, table map management, split payments, delivery driver dispatch, and raw thermal receipt printing.
+                The central transaction hub for cashiers. Built for high-speed touch interactions, table map management, split payments, delivery dispatch, and raw thermal receipt printing.
               </p>
-              <div class="eco-feature-list">
-                <div class="eco-item">
-                  <strong>Multi-Channel Fulfillment:</strong> Seamlessly handles Dine-In tables, Takeaway counters, and Home Delivery orders with driver tracking.
-                </div>
-                <div class="eco-item">
-                  <strong>Direct Thermal Trigger:</strong> Instantly prints receipts via raw TCP sockets without invoking the browser dialog.
-                </div>
-                <div class="eco-item">
-                  <strong>Shift Reconciliations:</strong> Enforces blind drawer cash counts and prints end-of-shift X/Z audit summaries.
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -403,7 +344,7 @@
           <div class="eco-card-grid">
             <div class="eco-screen-wrap">
               <div class="mockup-header">
-                <span>Station 2: Kitchen Display System (KDS Screen)</span>
+                <span>Kitchen Display System (KDS Screen)</span>
                 <span class="status-pill">Zero Latency Queue</span>
               </div>
               <div class="mockup-content" style="padding: 0; background: #070B12;">
@@ -413,19 +354,8 @@
             <div class="eco-info-wrap">
               <h3 class="eco-title">Real-Time Kitchen Order Dispatch (KDS)</h3>
               <p class="eco-desc">
-                Mounted on touch monitors inside the kitchen, replacing paper tickets with an interactive digital preparation queue designed for high-heat, high-speed environments.
+                Mounted on touch monitors inside the kitchen, replacing paper tickets with an interactive digital preparation queue with audible ticket alerts.
               </p>
-              <div class="eco-feature-list">
-                <div class="eco-item">
-                  <strong>Live Ticket Queuing:</strong> Color-coded order cards showing elapsed prep time, table numbers, and item modification notes.
-                </div>
-                <div class="eco-item">
-                  <strong>Audible Order Chime:</strong> Synthesizes alert chimes upon receiving new tickets over the local WebSocket/polling stream.
-                </div>
-                <div class="eco-item">
-                  <strong>One-Tap Completion:</strong> Tapping "Ready" immediately notifies the floor waiter and updates the customer waiting display.
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -435,7 +365,7 @@
           <div class="eco-card-grid">
             <div class="eco-screen-wrap">
               <div class="mockup-header">
-                <span>Station 3: Mobile Waiter Tablet & Handheld PWA</span>
+                <span>Mobile Waiter Tablet PWA</span>
                 <span class="status-pill">Mobile-First PWA</span>
               </div>
               <div class="mockup-content" style="padding: 0; background: #070B12;">
@@ -445,19 +375,8 @@
             <div class="eco-info-wrap">
               <h3 class="eco-title">Handheld Table Ordering for Floor Staff</h3>
               <p class="eco-desc">
-                A lightweight, standalone Progressive Web App installable on any Android or iOS smartphone/tablet. Enables waiters to take orders directly at the guest table without returning to the cashier.
+                A lightweight standalone Progressive Web App installable on any tablet or smartphone, letting floor staff send orders directly to the kitchen from the guest table.
               </p>
-              <div class="eco-feature-list">
-                <div class="eco-item">
-                  <strong>Visual Category Navigation:</strong> Large, responsive touch buttons categorized by clay pots (طواجن), appetizers, and drinks.
-                </div>
-                <div class="eco-item">
-                  <strong>Table Assignment:</strong> Links orders directly to active tables and tracks table availability status in real time.
-                </div>
-                <div class="eco-item">
-                  <strong>App-Like Standalone Mode:</strong> Runs full-screen with custom icons, zero browser URL bars, and aggressive local asset caching.
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -467,7 +386,7 @@
           <div class="eco-card-grid">
             <div class="eco-screen-wrap">
               <div class="mockup-header">
-                <span>Station 4: Remote Owner Executive Dashboard (admin.html)</span>
+                <span>Remote Owner Executive Dashboard</span>
                 <span class="status-pill">Cloud Analytics</span>
               </div>
               <div class="mockup-content" style="padding: 0; background: #070B12;">
@@ -475,21 +394,10 @@
               </div>
             </div>
             <div class="eco-info-wrap">
-              <h3 class="eco-title">Off-Premises Business Intelligence Portal</h3>
+              <h3 class="eco-title">Commercial Business Intelligence Portal</h3>
               <p class="eco-desc">
-                Accessible via web browser from anywhere globally. Provides ownership with a high-level commercial cockpit tracking gross revenue, net profit, food costs, and payroll.
+                Accessible via web browser from anywhere globally. Provides ownership with live gross revenue, net profit, food costs, and payroll tracking.
               </p>
-              <div class="eco-feature-list">
-                <div class="eco-item">
-                  <strong>Profitability & Food Cost Auditing:</strong> Calculates true gross margin by matching sold dishes against raw ingredient purchase costs.
-                </div>
-                <div class="eco-item">
-                  <strong>Staff Payroll & Attendance:</strong> Logs employee shifts, advances, deductions, and calculate net monthly salary balances.
-                </div>
-                <div class="eco-item">
-                  <strong>Historical Analytics:</strong> Interactive Chart.js graphs displaying daily sales volumes, peak rush hours, and item popularity rankings.
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -499,7 +407,7 @@
           <div class="eco-card-grid">
             <div class="eco-screen-wrap">
               <div class="mockup-header">
-                <span>Station 5: Role-Based PIN Access & Privacy Screen</span>
+                <span>Role-Based PIN Access & Privacy</span>
                 <span class="status-pill">Access Security</span>
               </div>
               <div class="mockup-content" style="padding: 0; background: #070B12;">
@@ -507,21 +415,10 @@
               </div>
             </div>
             <div class="eco-info-wrap">
-              <h3 class="eco-title">Role-Based Access Matrix & Data Governance</h3>
+              <h3 class="eco-title">Role-Based Access Matrix & Governance</h3>
               <p class="eco-desc">
-                Restricts access to confidential financial data through secure numeric PINs, ensuring staff can operate necessary floor tools while sensitive profits remain protected.
+                Restricts access to confidential financial data through secure numeric PINs, keeping profit margins protected from floor staff.
               </p>
-              <div class="eco-feature-list">
-                <div class="eco-item">
-                  <strong>Executive Master PIN (Boss):</strong> Full unrestricted access to net profit margins, financial balance sheets, and wage controls.
-                </div>
-                <div class="eco-item">
-                  <strong>Operational Manager PIN (Ops):</strong> Allows inventory stock-in, shift audits, and menu adjustments without exposing overall profitability.
-                </div>
-                <div class="eco-item">
-                  <strong>Session Auto-Lock:</strong> Automatic timer locks admin views after inactivity to prevent unauthorized access on shared devices.
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -529,203 +426,62 @@
       </div>
     </section>
 
-    <!-- ================= 06. INVENTORY & FOOD COSTING ================= -->
-    <section class="cs-inventory section-spacing" id="inventory">
+    <!-- ================= 05. BUSINESS IMPACT & ROI ================= -->
+    <section class="cs-workflow section-spacing" id="results">
       <div class="container">
         
         <div class="section-header">
-          <span class="section-tag">06 / Cost Accounting</span>
-          <h2 class="section-heading">Recipe BOM & Inventory Control</h2>
-          <p class="section-sub">Stopping kitchen shrinkage and protecting gross margins through automated ingredient tracking.</p>
+          <div class="editorial-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text" data-i18n="foush.roi_tag">04 / Measurable Business Value</span>
+          </div>
+          <h2 class="section-heading" data-i18n="foush.roi_title">Operational Impact & ROI</h2>
+          <p class="section-sub" data-i18n="foush.roi_sub">How FOUSH transformed restaurant throughput and eliminated revenue leakage.</p>
         </div>
 
-        <div class="grid-3-col">
-          
-          <div class="glass-card">
-            <div class="card-icon info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-            </div>
-            <h3 class="card-h">Bill of Materials (BOM)</h3>
-            <p class="card-p">
-              Every menu item (e.g. Clay Pot Beef with Onion) is mapped to its exact recipe ingredients: raw meat (grams), onions, cooking fat, and specialized spice blends.
-            </p>
+        <div class="kpi-banner" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 2.5rem;">
+          <div class="kpi-banner-item">
+            <span class="k-label" data-i18n="foush.m1_lbl">Offline-First Uptime</span>
+            <span class="k-val" data-i18n="foush.m1_val">100%</span>
+            <span class="k-desc">Zero Internet Halts</span>
           </div>
-
-          <div class="glass-card">
-            <div class="card-icon warning-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
-            </div>
-            <h3 class="card-h">Real-Time Stock Depletion</h3>
-            <p class="card-p">
-              The moment an order transitions to "Prepared" or "Paid", raw stock levels are automatically decremented in the SQLite database, reflecting true inventory on hand.
-            </p>
+          <div class="kpi-banner-item">
+            <span class="k-label" data-i18n="foush.m2_lbl">Direct Socket Print</span>
+            <span class="k-val" data-i18n="foush.m2_val">&lt; 0.2s</span>
+            <span class="k-desc">Raw Byte Stream</span>
           </div>
-
-          <div class="glass-card">
-            <div class="card-icon alert-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-            </div>
-            <h3 class="card-h">Spoilage & Waste Logging</h3>
-            <p class="card-p">
-              Kitchen supervisors can log burned, expired, or dropped food items separately. This differentiates legitimate recipe consumption from operational kitchen waste.
-            </p>
+          <div class="kpi-banner-item">
+            <span class="k-label" data-i18n="foush.m3_lbl">Role-Isolated PWAs</span>
+            <span class="k-val" data-i18n="foush.m3_val">5 Apps</span>
+            <span class="k-desc">Tailored Workflows</span>
           </div>
-
+          <div class="kpi-banner-item">
+            <span class="k-label" data-i18n="foush.m4_lbl">Shift Discrepancies</span>
+            <span class="k-val" data-i18n="foush.m4_val">0%</span>
+            <span class="k-desc">Shift Ledger Audits</span>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ================= 07. DEVOPS & AUTOMATION ================= -->
-    <section class="cs-devops section-spacing" id="devops">
+    <!-- ================= 06. FINAL CTA BANNER ================= -->
+    <section class="cs-takeaway section-spacing" id="cta">
       <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">07 / DevOps & Automation</span>
-          <h2 class="section-heading">1-Click Self-Healing Operations</h2>
-          <p class="section-sub">Ensuring non-technical restaurant staff can launch, troubleshoot, and maintain the system effortlessly.</p>
-        </div>
-
-        <div class="rec-grid">
-          
-          <div class="rec-card">
-            <div class="rec-header">
-              <span class="rec-number">01</span>
-              <h3 class="rec-title">1-Click Launch Script (start_foush.bat)</h3>
-            </div>
-            <p class="rec-p">
-              Launches the background Node.js process, binds the local network port, and opens the POS interface in full-screen kiosk mode with a single double-click.
-            </p>
+        <div class="takeaway-box" style="text-align: center; padding: 3rem 2rem;">
+          <div class="editorial-divider center">
+            <span class="divider-line"></span>
+            <span class="divider-text" data-i18n="nav.descriptor">BUSINESS SOLUTIONS</span>
           </div>
-
-          <div class="rec-card">
-            <div class="rec-header">
-              <span class="rec-number">02</span>
-              <h3 class="rec-title">Self-Healing Network Fixer</h3>
-            </div>
-            <p class="rec-p">
-              Automated repair script (<code>اصلاح_جهاز_المطعم_تلقائيا.bat</code>) that resets lingering socket bindings, resolves local IP port conflicts, and unblocks firewall ports.
-            </p>
-          </div>
-
-          <div class="rec-card">
-            <div class="rec-header">
-              <span class="rec-number">03</span>
-              <h3 class="rec-title">Clean Deployment Bundler</h3>
-            </div>
-            <p class="rec-p">
-              Automated script (<code>create_restaurant_version.bat</code>) that packages a pristine production build ready for deployment on new restaurant hardware in under 2 minutes.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= 08. PROJECT GALLERY ================= -->
-    <section class="cs-gallery section-spacing" id="gallery">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">08 / High-Resolution Showcase</span>
-          <h2 class="section-heading">System Production Gallery</h2>
-          <p class="section-sub">Authentic screenshots captured directly from the live FOUSH restaurant system.</p>
-        </div>
-
-        <div class="gallery-grid">
-          
-          <div class="gallery-card" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
-            <a href="../assets/screenshot_pos.png" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-              <div class="gal-preview" style="height: 190px; overflow: hidden; background: #070B12; position: relative;">
-                <div class="gal-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); color: var(--accent-cyan-light); padding: 0.25rem 0.6rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.72rem; z-index: 2; border: 1px solid var(--border-subtle);">Station 01</div>
-                <img src="../assets/screenshot_pos.png" alt="POS Terminal UI" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
-              </div>
-              <div class="gal-info" style="padding: 1.25rem;">
-                <h4 class="gal-title" style="margin-bottom: 0.4rem; color: var(--text-primary);">Cashier POS Terminal</h4>
-                <p class="gal-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">High-speed billing terminal with table layout, split tender, and raw ESC/POS network print integration.</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="gallery-card" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
-            <a href="../assets/screenshot_kitchen.png" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-              <div class="gal-preview" style="height: 190px; overflow: hidden; background: #070B12; position: relative;">
-                <div class="gal-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); color: var(--accent-cyan-light); padding: 0.25rem 0.6rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.72rem; z-index: 2; border: 1px solid var(--border-subtle);">Station 02</div>
-                <img src="../assets/screenshot_kitchen.png" alt="Kitchen Display System" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
-              </div>
-              <div class="gal-info" style="padding: 1.25rem;">
-                <h4 class="gal-title" style="margin-bottom: 0.4rem; color: var(--text-primary);">Kitchen Display System (KDS)</h4>
-                <p class="gal-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Real-time digital ticket cards, preparation countdown timers, and audible order notifications for chefs.</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="gallery-card" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
-            <a href="../assets/screenshot_waiter.png" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-              <div class="gal-preview" style="height: 190px; overflow: hidden; background: #070B12; position: relative;">
-                <div class="gal-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); color: var(--accent-cyan-light); padding: 0.25rem 0.6rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.72rem; z-index: 2; border: 1px solid var(--border-subtle);">Station 03</div>
-                <img src="../assets/screenshot_waiter.png" alt="Waiter Tablet UI" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
-              </div>
-              <div class="gal-info" style="padding: 1.25rem;">
-                <h4 class="gal-title" style="margin-bottom: 0.4rem; color: var(--text-primary);">Floor Waiter Tablet PWA</h4>
-                <p class="gal-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Touch-optimized mobile PWA for floor staff to take orders directly at the guest table and route to kitchen.</p>
-              </div>
-            </a>
-          </div>
-
-          <div class="gallery-card" style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
-            <a href="../assets/screenshot_admin_dashboard.png" target="_blank" style="text-decoration: none; color: inherit; display: block;">
-              <div class="gal-preview" style="height: 190px; overflow: hidden; background: #070B12; position: relative;">
-                <div class="gal-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.75); backdrop-filter: blur(4px); color: var(--accent-cyan-light); padding: 0.25rem 0.6rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.72rem; z-index: 2; border: 1px solid var(--border-subtle);">Station 04</div>
-                <img src="../assets/screenshot_admin_dashboard.png" alt="Admin Dashboard" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
-              </div>
-              <div class="gal-info" style="padding: 1.25rem;">
-                <h4 class="gal-title" style="margin-bottom: 0.4rem; color: var(--text-primary);">Remote Owner Dashboard</h4>
-                <p class="gal-desc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">Cloud-synced analytics cockpit to monitor gross sales, net margins, food costs, and employee payroll.</p>
-              </div>
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= 09. FINAL TAKEAWAY ================= -->
-    <section class="cs-takeaway section-spacing" id="takeaway">
-      <div class="container">
-        
-        <div class="takeaway-box">
-          <div class="takeaway-tag">09 / Professional Takeaway</div>
-          <h2 class="takeaway-heading">Bulletproof Systems Engineered for Commercial Reality</h2>
-          <p class="takeaway-p">
-            The FOUSH project exemplifies the core philosophy of <strong>Business Information Systems (BIS)</strong>: Technology must adapt to the physical and operational reality of the business. By engineering an Offline-First Dual-Engine architecture, interfacing directly with thermal printers via raw TCP sockets, and isolating staff workflows into dedicated PWAs, this solution delivers 100% operational uptime, eliminates ticket errors, and protects business profitability.
+          <h2 class="takeaway-heading" style="margin-bottom: 1rem;" data-i18n="cs.cta_title">Have a Similar Operational Challenge in Your Business?</h2>
+          <p class="takeaway-p" style="max-width: 680px; margin: 0 auto 2rem;" data-i18n="cs.cta_sub">
+            We understand how your business works first, then engineer custom solutions tailored to your real workflows.
           </p>
-          
-          <div class="takeaway-footer">
-            <div class="author-block">
-              <div class="author-avatar">AA</div>
-              <div>
-                <div class="author-name">Atef Elasklany</div>
-                <div class="author-title">Data Analyst | Business Systems Developer</div>
-              </div>
-            </div>
-            <div class="takeaway-actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-              <a href="../assets/FOUSH_Integrated_System_Architecture.pdf" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                <span>Architecture PDF</span>
-              </a>
-              <a href="../assets/FOUSH_Restaurant_POS_Guide.pdf" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                <span>User Guide PDF</span>
-              </a>
-              <a href="../projects.html" class="btn btn-secondary">← Back to Projects</a>
-              <a href="../index.html#contact" class="btn btn-primary">Discuss This Project →</a>
-            </div>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="../projects.html" class="btn btn-secondary" data-i18n="cs.back">← Back to Projects</a>
+            <a href="../index.html#discovery-form" class="btn btn-primary" data-i18n="cs.cta_btn">Tell Us About Your Business →</a>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -735,18 +491,42 @@
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-left">
-        <div class="footer-brand">Atef Elasklany</div>
-        <p class="footer-sub">Data Analyst & Business Systems Developer • BIS Graduate</p>
+        <a href="../index.html" class="brand-logo-lockup" style="margin-bottom: 0.75rem;">
+          <svg class="brand-logo-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="74" stroke="url(#solv-grad-foot-foush)" stroke-width="14" stroke-linecap="round" />
+            <line x1="48" y1="152" x2="154" y2="46" stroke="url(#solv-grad-foot-foush)" stroke-width="14" stroke-linecap="round" />
+            <path d="M125 35 L168 32 L165 75 Z" fill="url(#solv-grad-foot-foush)" />
+            <path d="M 132 78 C 130 64 118 58 100 58 C 82 58 68 66 68 80 C 68 112 134 94 134 122 C 134 138 118 144 100 144 C 80 144 66 136 64 120" stroke="url(#solv-grad-foot-foush)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <defs>
+              <linearGradient id="solv-grad-foot-foush" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#2563EB" />
+                <stop offset="100%" stop-color="#7C3AED" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="brand-logo-text-group">
+            <span class="brand-wordmark-title">solvexa</span>
+            <span class="brand-descriptor-tag" data-i18n="nav.descriptor">BUSINESS SOLUTIONS</span>
+          </div>
+        </a>
+        <p class="footer-sub" data-i18n="footer.desc">A business-first technology company helping businesses understand, organize, and improve their operations through customized digital solutions.</p>
       </div>
       <div class="footer-links">
-        <a href="../projects.html" class="footer-link">Projects</a>
-        <a href="../index.html#capabilities" class="footer-link">Capabilities</a>
-        <a href="../index.html#about" class="footer-link">About</a>
-        <a href="../index.html#contact" class="footer-link">Contact</a>
+        <a href="../index.html#built-for-work" class="footer-link" data-i18n="nav.solutions">Solutions</a>
+        <a href="../index.html#our-approach" class="footer-link" data-i18n="nav.how_we_work">How We Work</a>
+        <a href="../index.html#why-us" class="footer-link" data-i18n="nav.why_us">Why Choose Us</a>
+        <a href="../projects.html" class="footer-link" data-i18n="nav.our_work">Our Work</a>
+        <a href="../index.html#about-us" class="footer-link" data-i18n="nav.about_us">About Us</a>
+        <a href="../index.html#discovery-form" class="footer-link" data-i18n="nav.contact_btn">Contact</a>
       </div>
+    </div>
+    <div class="container" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="footer.rights">SOLVEXA &copy; 2026. All rights reserved.</span>
+      <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="footer.slogan">Business First. Technology Second.</span>
     </div>
   </footer>
 
+  <script src="../js/translations.js"></script>
   <script src="../js/app.js"></script>
 </body>
 </html>

@@ -68,7 +68,7 @@
   <!-- ================= TOP NAVIGATION BAR ================= -->
   <header class="site-header" id="header">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo-lockup" aria-label="SOLVEXA Homepage">
+      <a href="#home" class="brand-logo-lockup" aria-label="SOLVEXA Homepage">
         <!-- SVG Symbol Mark -->
         <svg class="brand-logo-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="100" cy="100" r="74" stroke="url(#solv-grad-nav)" stroke-width="14" stroke-linecap="round" />
@@ -263,6 +263,7 @@
           <!-- Left Column: Story & Value Proposition -->
           <div class="understanding-hero-content reveal-on-scroll">
             <div class="editorial-divider">
+              <span class="chapter-badge" data-i18n="stage.01">STAGE 01</span>
               <span class="divider-line"></span>
               <span class="divider-text" data-i18n="problems.tag">UNDERSTANDING YOUR BUSINESS</span>
             </div>
@@ -385,11 +386,29 @@
 
         </div>
 
-        <!-- Part 2: What We Look For (5 Problem Cards with Diagnostic Reveals) -->
+        <!-- Visual Transition 1: Stage 01 -> Stage 02 Visual Bridge -->
+        <div class="stage-transition stage-transition-one reveal-on-scroll" aria-label="Visual Transition to Stage 2">
+          <div class="transition-connector">
+            <span class="connector-line"></span>
+            <span class="connector-node"></span>
+            <span class="connector-line"></span>
+          </div>
+          <div class="transition-content">
+            <span class="transition-lead" data-i18n="transition1.lead">FIRST, WE UNDERSTAND.</span>
+            <p class="transition-sub" data-i18n="transition1.sub">Then we identify what is holding your business back.</p>
+          </div>
+        </div>
+
+        <!-- Part 2: Common Business Challenges (5 Problem Cards with Diagnostic Details) -->
         <div class="understanding-problems-area reveal-on-scroll">
-          <div class="editorial-divider">
-            <span class="divider-line"></span>
-            <span class="divider-text" data-i18n="problems.column_tag">WHAT WE LOOK FOR</span>
+          <div class="problems-section-header">
+            <div class="editorial-divider">
+              <span class="chapter-badge" data-i18n="stage.02">STAGE 02</span>
+              <span class="divider-line"></span>
+              <span class="divider-text" data-i18n="problems.column_tag">COMMON BUSINESS CHALLENGES</span>
+            </div>
+            <h3 class="problems-stage-heading" data-i18n="problems.stage_heading">Business Challenges</h3>
+            <p class="problems-stage-subtitle" data-i18n="problems.stage_sub">Common problems that can slow down your business, waste time, and make growth harder.</p>
           </div>
 
           <div class="problems-grid">
@@ -400,16 +419,16 @@
                 <span class="problem-card-num">01</span>
                 <h3 class="problem-title" data-i18n="problems.card1_title">Too Much Manual Work</h3>
               </div>
-              <p class="problem-desc" data-i18n="problems.card1_desc">Your team spends hours repeating tasks that could be automated.</p>
+              <p class="problem-desc" data-i18n="problems.card1_desc">Your team spends too much time doing tasks by hand that could be made easier.</p>
               
               <div class="problem-card-diagnostic">
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
-                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card1_q">What could be automated?</p>
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE LOOK FOR</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card1_q">Where can repetitive work be reduced or automated?</p>
                 </div>
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
-                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card1_dir">Less repetitive work.</p>
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">BUSINESS IMPACT</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card1_dir">More productive teams.</p>
                 </div>
               </div>
             </div>
@@ -420,16 +439,16 @@
                 <span class="problem-card-num">02</span>
                 <h3 class="problem-title" data-i18n="problems.card2_title">Information Everywhere</h3>
               </div>
-              <p class="problem-desc" data-i18n="problems.card2_desc">Important business information is spread across different files, tools, and messages.</p>
+              <p class="problem-desc" data-i18n="problems.card2_desc">Your business information is spread across Excel files, messages, and different tools.</p>
               
               <div class="problem-card-diagnostic">
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
-                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card2_q">Where does your business data live?</p>
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE LOOK FOR</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card2_q">Can your team access the right information when they need it?</p>
                 </div>
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
-                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card2_dir">A clearer flow of information.</p>
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">BUSINESS IMPACT</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card2_dir">Better visibility and faster decisions.</p>
                 </div>
               </div>
             </div>
@@ -440,16 +459,16 @@
                 <span class="problem-card-num">03</span>
                 <h3 class="problem-title" data-i18n="problems.card3_title">Different Ways of Working</h3>
               </div>
-              <p class="problem-desc" data-i18n="problems.card3_desc">The same task may be handled differently by different people.</p>
+              <p class="problem-desc" data-i18n="problems.card3_desc">People handle the same task in different ways, which can cause delays and mistakes.</p>
               
               <div class="problem-card-diagnostic">
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
-                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card3_q">Where does the process break down?</p>
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE LOOK FOR</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card3_q">Can the process be made clearer and more consistent?</p>
                 </div>
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
-                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card3_dir">More consistent workflows.</p>
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">BUSINESS IMPACT</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card3_dir">More consistent operations.</p>
                 </div>
               </div>
             </div>
@@ -458,18 +477,18 @@
             <div class="problem-card" tabindex="0">
               <div class="problem-card-top">
                 <span class="problem-card-num">04</span>
-                <h3 class="problem-title" data-i18n="problems.card4_title">No Clear Picture</h3>
+                <h3 class="problem-title" data-i18n="problems.card4_title">No Clear Business Picture</h3>
               </div>
-              <p class="problem-desc" data-i18n="problems.card4_desc">You don't always have one clear view of what is happening in the business.</p>
+              <p class="problem-desc" data-i18n="problems.card4_desc">You have the information, but it is not easy to see what is really happening in your business.</p>
               
               <div class="problem-card-diagnostic">
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
-                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card4_q">What do you need to see more clearly?</p>
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE LOOK FOR</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card4_q">What information does management need to see clearly?</p>
                 </div>
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
-                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card4_dir">Better visibility.</p>
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">BUSINESS IMPACT</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card4_dir">Better decisions with better visibility.</p>
                 </div>
               </div>
             </div>
@@ -478,18 +497,18 @@
             <div class="problem-card" tabindex="0">
               <div class="problem-card-top">
                 <span class="problem-card-num">05</span>
-                <h3 class="problem-title" data-i18n="problems.card5_title">Growing Work, Same Old Process</h3>
+                <h3 class="problem-title" data-i18n="problems.card5_title">Growing Business, Same Processes</h3>
               </div>
-              <p class="problem-desc" data-i18n="problems.card5_desc">As the business grows, manual processes become harder to manage.</p>
+              <p class="problem-desc" data-i18n="problems.card5_desc">What worked before may become harder to manage as your business grows.</p>
               
               <div class="problem-card-diagnostic">
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE ASK</span>
-                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card5_q">What will become harder as you grow?</p>
+                  <span class="diagnostic-label" data-i18n="problems.ask_label">WHAT WE LOOK FOR</span>
+                  <p class="diagnostic-text diagnostic-question" data-i18n="problems.card5_q">Can your processes support the next stage of growth?</p>
                 </div>
                 <div class="diagnostic-block">
-                  <span class="diagnostic-label" data-i18n="problems.dir_label">EXPECTED DIRECTION</span>
-                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card5_dir">Processes that can scale with the business.</p>
+                  <span class="diagnostic-label" data-i18n="problems.dir_label">BUSINESS IMPACT</span>
+                  <p class="diagnostic-text diagnostic-direction" data-i18n="problems.card5_dir">Processes that scale with the business.</p>
                 </div>
               </div>
             </div>
@@ -545,8 +564,44 @@
     <section class="section-spacing section-dark solutions-section" id="solutions">
       <div class="container">
         
-        <div class="section-header">
+        <!-- Visual Transition 2: Stage 02 -> Stage 03 Visual Bridge -->
+        <div class="stage-transition stage-transition-two reveal-on-scroll" aria-label="Visual Transition from Challenges to Solutions">
+          <div class="transition-connector transition-connector-vertical">
+            <span class="connector-line"></span>
+            <div class="transition-marker-emblem" aria-hidden="true" title="SOLVEXA">
+              <svg class="transition-solvexa-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="74" stroke="url(#solv-grad-trans-bridge)" stroke-width="14" stroke-linecap="round" />
+                <line x1="48" y1="152" x2="154" y2="46" stroke="url(#solv-grad-trans-bridge)" stroke-width="14" stroke-linecap="round" />
+                <path d="M125 35 L168 32 L165 75 Z" fill="url(#solv-grad-trans-bridge)" />
+                <path d="M 132 78 C 130 64 118 58 100 58 C 82 58 68 66 68 80 C 68 112 134 94 134 122 C 134 138 118 144 100 144 C 80 144 66 136 64 120" stroke="url(#solv-grad-trans-bridge)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                <defs>
+                  <linearGradient id="solv-grad-trans-bridge" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#38BDF8" />
+                    <stop offset="50%" stop-color="#3B82F6" />
+                    <stop offset="100%" stop-color="#818CF8" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="connector-line"></span>
+          </div>
+
+          <div class="transition-content">
+            <span class="transition-lead" data-i18n="transition2.lead">FROM CHALLENGES TO SOLUTIONS</span>
+            <p class="transition-sub" data-i18n="transition2.sub">We find where these problems start, then build the right solution around your business.</p>
+          </div>
+
+          <div class="transition-arrow-wrap" aria-hidden="true">
+            <svg class="transition-down-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <div class="section-header reveal-on-scroll">
           <div class="editorial-divider">
+            <span class="chapter-badge" data-i18n="stage.03">STAGE 03</span>
             <span class="divider-line"></span>
             <span class="divider-text" data-i18n="solutions.tag">BUSINESS SOLUTIONS</span>
           </div>
@@ -561,7 +616,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
             </div>
             <h3 class="solution-card-title" data-i18n="solutions.card1_title">Custom Business Systems</h3>
-            <p class="solution-card-desc" data-i18n="solutions.card1_desc">Purpose-built systems designed around your workflows, roles, and operational requirements.</p>
+            <p class="solution-card-desc" data-i18n="solutions.card1_desc">Custom systems built around the way your business operates, from daily tasks and team roles to management and reporting.</p>
           </div>
 
           <div class="solution-card">
@@ -569,7 +624,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg>
             </div>
             <h3 class="solution-card-title" data-i18n="solutions.card2_title">Workflow & Process Automation</h3>
-            <p class="solution-card-desc" data-i18n="solutions.card2_desc">Reduce repetitive work, connect processes, and improve consistency across daily operations.</p>
+            <p class="solution-card-desc" data-i18n="solutions.card2_desc">Reduce repetitive work, connect business processes, and make daily operations faster and more consistent.</p>
           </div>
 
           <div class="solution-card">
@@ -577,15 +632,15 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
             </div>
             <h3 class="solution-card-title" data-i18n="solutions.card3_title">Data & Business Intelligence</h3>
-            <p class="solution-card-desc" data-i18n="solutions.card3_desc">Turn operational data into structured reporting, clearer insights, and better visibility for decision-making.</p>
+            <p class="solution-card-desc" data-i18n="solutions.card3_desc">Turn your business data into clear reports, useful insights, and better visibility for everyday decisions.</p>
           </div>
 
           <div class="solution-card">
             <div class="solution-card-icon-wrap">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
             </div>
-            <h3 class="solution-card-title" data-i18n="solutions.card4_title">AI-Powered Solutions</h3>
-            <p class="solution-card-desc" data-i18n="solutions.card4_desc">Apply AI where it can improve workflows, decision-making, customer interactions, or operational efficiency.</p>
+            <h3 class="solution-card-title" data-i18n="solutions.card4_title">AI Solutions for Business</h3>
+            <p class="solution-card-desc" data-i18n="solutions.card4_desc">Use AI where it adds real value, from smarter workflows and customer interactions to faster analysis and decision-making.</p>
           </div>
 
         </div>
@@ -921,36 +976,38 @@
             <span class="divider-line"></span>
             <span class="divider-text" data-i18n="about.tag">ABOUT THE COMPANY</span>
           </div>
-          <h2 class="section-heading" data-i18n="about.title">Built at the intersection of Business & Technology</h2>
-          <p class="section-sub" data-i18n="about.subtitle">We are a multidisciplinary team combining business analysis, systems development, data, and technology to help businesses work better.</p>
+          <h2 class="section-heading" data-i18n="about.title">Built Around Your Business. Built by Our Teams.</h2>
+          <p class="section-sub" data-i18n="about.subtitle">Our teams work together to understand your business, build the right solution, and keep it running smoothly.</p>
         </div>
 
         <div class="about-pillars-grid reveal-on-scroll">
           
           <div class="about-pillar-card">
-            <div class="pillar-card-icon">💼</div>
             <h3 class="pillar-card-title" data-i18n="about.card1_title">Business Analysis</h3>
-            <p class="pillar-card-desc" data-i18n="about.card1_desc">Operational discovery, workflow mapping, and identifying where processes create bottlenecks.</p>
+            <p class="pillar-card-desc" data-i18n="about.card1_desc">We understand your business, map your processes, and find what can be improved.</p>
           </div>
 
           <div class="about-pillar-card">
-            <div class="pillar-card-icon">⚙️</div>
-            <h3 class="pillar-card-title" data-i18n="about.card2_title">Custom Systems</h3>
-            <p class="pillar-card-desc" data-i18n="about.card2_desc">Purpose-built operational software, internal management tools, and tailored business platforms.</p>
+            <h3 class="pillar-card-title" data-i18n="about.card2_title">Development</h3>
+            <p class="pillar-card-desc" data-i18n="about.card2_desc">We build custom systems and digital solutions around your business needs.</p>
           </div>
 
           <div class="about-pillar-card">
-            <div class="pillar-card-icon">📊</div>
-            <h3 class="pillar-card-title" data-i18n="about.card3_title">Data & BI</h3>
-            <p class="pillar-card-desc" data-i18n="about.card3_desc">Relational data modeling, automated reporting, and interactive KPI dashboards for decision clarity.</p>
+            <h3 class="pillar-card-title" data-i18n="about.card3_title">DevOps & Infrastructure</h3>
+            <p class="pillar-card-desc" data-i18n="about.card3_desc">We manage deployment, infrastructure, and the technology behind your solution.</p>
           </div>
 
           <div class="about-pillar-card">
-            <div class="pillar-card-icon">⚡</div>
-            <h3 class="pillar-card-title" data-i18n="about.card4_title">Technology & Automation</h3>
-            <p class="pillar-card-desc" data-i18n="about.card4_desc">System integrations, workflow automations, and practical AI applications where they provide real value.</p>
+            <h3 class="pillar-card-title" data-i18n="about.card4_title">Sales & Client Relations</h3>
+            <p class="pillar-card-desc" data-i18n="about.card4_desc">We understand your needs, guide the project, and keep communication clear from start to finish.</p>
           </div>
 
+        </div>
+
+        <!-- Supporting Statement -->
+        <div class="about-footer-line reveal-on-scroll">
+          <span class="about-footer-bullet" aria-hidden="true">✦</span>
+          <p class="about-footer-text" data-i18n="about.footer_statement">Different teams. One goal: helping your business work better.</p>
         </div>
 
       </div>

@@ -158,8 +158,7 @@ function renderProjectCard(project, basePath = "") {
 
   const ctaHtml = project.status === "completed" && project.caseStudyUrl
     ? `<a href="${basePath}${project.caseStudyUrl}" class="btn btn-primary" style="width: 100%;">
-        View Case Study
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        <span data-i18n="work.view_case_study">View Case Study →</span>
        </a>`
     : `<span class="btn btn-secondary" style="width: 100%; cursor: default; opacity: 0.6;">Coming Soon</span>`;
 

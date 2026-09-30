@@ -40,16 +40,23 @@
 
       <div class="header-right-group">
         <nav class="nav-links" id="nav-links">
-          <a href="index.html#built-for-work" class="nav-link">Solutions</a>
-          <a href="index.html#our-approach" class="nav-link">How We Work</a>
-          <a href="index.html#why-us" class="nav-link">Why Choose Us</a>
-          <a href="projects.html" class="nav-link active" style="color: var(--accent-cyan-light);">Our Work</a>
-          <a href="index.html#about-us" class="nav-link">About Us</a>
+          <a href="index.html#built-for-work" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+          <a href="index.html#our-approach" class="nav-link" data-i18n="nav.how_we_work">How We Work</a>
+          <a href="index.html#why-us" class="nav-link" data-i18n="nav.why_us">Why Choose Us</a>
+          <a href="projects.html" class="nav-link active" style="color: var(--accent-cyan-light);" data-i18n="nav.our_work">Our Work</a>
+          <a href="index.html#about-us" class="nav-link" data-i18n="nav.about_us">About Us</a>
         </nav>
 
         <div class="header-social-pills">
+          <!-- Language Switcher Pill -->
+          <div class="lang-switch-wrap" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <span class="lang-sep">|</span>
+            <button type="button" class="lang-btn" data-lang="ar">AR</button>
+          </div>
+
           <a href="index.html#discovery-form" class="btn btn-pill-primary btn-icon-right header-talk-btn">
-            <span>Tell Us About Your Business</span>
+            <span data-i18n="nav.contact_btn">Tell Us About Your Business</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
@@ -72,19 +79,19 @@
         <div class="section-header">
           <div class="editorial-divider">
             <span class="divider-line"></span>
-            <span class="divider-text">PROVEN CAPABILITY</span>
+            <span class="divider-text" data-i18n="proj.tag">PROVEN CAPABILITY</span>
           </div>
-          <h1 class="section-heading" style="font-size: 2.75rem; margin-bottom: 1rem;">Selected Work & Prior Systems</h1>
-          <p class="section-sub" style="max-width: 780px; font-size: 1.05rem;">
+          <h1 class="section-heading" style="font-size: 2.75rem; margin-bottom: 1rem;" data-i18n="proj.title">Selected Work & Prior Systems</h1>
+          <p class="section-sub" style="max-width: 780px; font-size: 1.05rem;" data-i18n="proj.sub">
             A catalog of purpose-built business systems, data analytics architectures, and operational solutions engineered to solve specific operational challenges.
           </p>
         </div>
 
         <!-- Project Filter System -->
         <div class="project-filters">
-          <button class="filter-btn active" data-filter="all">All Work</button>
-          <button class="filter-btn" data-filter="data">Data & Analytics</button>
-          <button class="filter-btn" data-filter="systems">Systems & Architecture</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="proj.filter_all">All Work</button>
+          <button class="filter-btn" data-filter="data" data-i18n="proj.filter_data">Data & Analytics</button>
+          <button class="filter-btn" data-filter="systems" data-i18n="proj.filter_systems">Systems & Architecture</button>
         </div>
 
         <!-- Full Projects Grid rendered dynamically by app.js -->
@@ -116,27 +123,28 @@
           </svg>
           <div class="brand-logo-text-group">
             <span class="brand-wordmark-title">solvexa</span>
-            <span class="brand-descriptor-tag">BUSINESS SOLUTIONS</span>
+            <span class="brand-descriptor-tag" data-i18n="nav.descriptor">BUSINESS SOLUTIONS</span>
           </div>
         </a>
-        <p class="footer-sub">A business-first technology company helping businesses understand, organize, and improve their operations through customized digital solutions.</p>
+        <p class="footer-sub" data-i18n="footer.desc">A business-first technology company helping businesses understand, organize, and improve their operations through customized digital solutions.</p>
       </div>
       <div class="footer-links">
-        <a href="index.html#built-for-work" class="footer-link">Solutions</a>
-        <a href="index.html#our-approach" class="footer-link">How We Work</a>
-        <a href="index.html#why-us" class="footer-link">Why Choose Us</a>
-        <a href="projects.html" class="footer-link">Our Work</a>
-        <a href="index.html#about-us" class="footer-link">About Us</a>
-        <a href="index.html#discovery-form" class="footer-link">Contact</a>
+        <a href="index.html#built-for-work" class="footer-link" data-i18n="nav.solutions">Solutions</a>
+        <a href="index.html#our-approach" class="footer-link" data-i18n="nav.how_we_work">How We Work</a>
+        <a href="index.html#why-us" class="footer-link" data-i18n="nav.why_us">Why Choose Us</a>
+        <a href="projects.html" class="footer-link" data-i18n="nav.our_work">Our Work</a>
+        <a href="index.html#about-us" class="footer-link" data-i18n="nav.about_us">About Us</a>
+        <a href="index.html#discovery-form" class="footer-link" data-i18n="nav.contact_btn">Contact</a>
       </div>
     </div>
     <div class="container" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-      <span style="font-size: 0.85rem; color: var(--text-muted);">SOLVEXA &copy; 2026. All rights reserved.</span>
-      <span style="font-size: 0.85rem; color: var(--text-muted);">Business First. Technology Second.</span>
+      <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="footer.rights">SOLVEXA &copy; 2026. All rights reserved.</span>
+      <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="footer.slogan">Business First. Technology Second.</span>
     </div>
   </footer>
 
   <script src="js/projects-data.js"></script>
+  <script src="js/translations.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

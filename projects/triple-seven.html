@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Triple Seven PlayStation Lounge & Café POS | Atef Elasklany</title>
-  <meta name="description" content="Triple Seven PlayStation Gaming Lounge & Café Management System by Atef Elasklany. Real-time console timers, integrated café billing, live shift reconciliation, and secure remote VPN auditing." />
+  <title>Triple Seven PlayStation Lounge & Café POS | SOLVEXA</title>
+  <meta name="description" content="Triple Seven PlayStation Gaming Lounge & Café Management System by SOLVEXA. Real-time console timers, integrated café billing, live shift reconciliation, and secure remote VPN auditing." />
   
-  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <!-- Google Fonts: Cairo, Plus Jakarta Sans, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="../css/styles.css" />
@@ -17,27 +17,55 @@
 <body class="dark-theme">
 
   <!-- ================= TOP NAVIGATION BAR ================= -->
-  <header class="site-header">
+  <header class="site-header" id="header">
     <div class="nav-container">
-      <a href="../index.html" class="brand-logo-lockup">
-        <span class="brand-wordmark-title" style="font-size: 1.2rem;">solvexa</span>
-        <span class="status-indicator">
-          <span class="status-dot"></span> Open for Projects
-        </span>
+      <a href="../index.html" class="brand-logo-lockup" aria-label="SOLVEXA Homepage">
+        <svg class="brand-logo-icon" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="74" stroke="url(#solv-grad-nav-t7)" stroke-width="14" stroke-linecap="round" />
+          <line x1="48" y1="152" x2="154" y2="46" stroke="url(#solv-grad-nav-t7)" stroke-width="14" stroke-linecap="round" />
+          <path d="M125 35 L168 32 L165 75 Z" fill="url(#solv-grad-nav-t7)" />
+          <path d="M 132 78 C 130 64 118 58 100 58 C 82 58 68 66 68 80 C 68 112 134 94 134 122 C 134 138 118 144 100 144 C 80 144 66 136 64 120" stroke="url(#solv-grad-nav-t7)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <defs>
+            <linearGradient id="solv-grad-nav-t7" x1="20" y1="20" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2563EB" />
+              <stop offset="100%" stop-color="#7C3AED" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-logo-text-group">
+          <span class="brand-wordmark-title">solvexa</span>
+          <span class="brand-descriptor-tag" data-i18n="nav.descriptor">BUSINESS SOLUTIONS</span>
+        </div>
       </a>
 
-      <nav class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="../projects.html" style="color: var(--accent-cyan-light);">Selected Work</a>
-        <a href="#challenge">The Challenge</a>
-        <a href="#stations">Station Timers</a>
-        <a href="#ecosystem">Modules</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#value">Business Value</a>
-      </nav>
+      <div class="header-right-group">
+        <nav class="nav-links" id="nav-links">
+          <a href="../index.html#built-for-work" class="nav-link" data-i18n="nav.solutions">Solutions</a>
+          <a href="../index.html#our-approach" class="nav-link" data-i18n="nav.how_we_work">How We Work</a>
+          <a href="../index.html#why-us" class="nav-link" data-i18n="nav.why_us">Why Choose Us</a>
+          <a href="../projects.html" class="nav-link active" style="color: var(--accent-cyan-light);" data-i18n="nav.our_work">Our Work</a>
+          <a href="../index.html#about-us" class="nav-link" data-i18n="nav.about_us">About Us</a>
+        </nav>
 
-      <div class="nav-actions">
-        <a href="../index.html#discovery-form" class="btn btn-sm btn-primary">Tell Us About Your Business</a>
+        <div class="header-social-pills">
+          <!-- Language Switcher Pill -->
+          <div class="lang-switch-wrap" aria-label="Language Switcher">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <span class="lang-sep">|</span>
+            <button type="button" class="lang-btn" data-lang="ar">AR</button>
+          </div>
+
+          <a href="../index.html#discovery-form" class="btn btn-pill-primary btn-icon-right header-talk-btn">
+            <span data-i18n="nav.contact_btn">Tell Us About Your Business</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -52,51 +80,61 @@
         <div class="hero-top-meta">
           <a href="../projects.html" class="back-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Back to Projects
+            <span data-i18n="cs.back">Back to Projects</span>
           </a>
-          <span class="badge badge-primary">Systems & Software Architecture • Gaming Lounge POS</span>
+          <span class="badge badge-primary" data-i18n="triple.badge">Systems & Software Architecture • Gaming Lounge POS</span>
         </div>
 
         <!-- Title & Subtitle -->
-        <h1 class="cs-title">Triple Seven PlayStation Lounge & Café POS</h1>
-        <p class="cs-subtitle">A purpose-built management system managing real-time PlayStation station timers, integrated café orders, and zero-leakage shift finances.</p>
+        <h1 class="cs-title" data-i18n="triple.title">Triple Seven PlayStation Lounge & Café POS</h1>
+        <p class="cs-subtitle" data-i18n="triple.sub">A purpose-built management system managing real-time PlayStation station timers, integrated café orders, and zero-leakage shift finances.</p>
 
-        <!-- Executive Summary Bento Box -->
-        <div class="hero-summary-grid">
-          
-          <div class="summary-card main-summary">
-            <div class="summary-label">Executive Summary</div>
-            <p class="summary-text">
-              Managing a high-traffic PlayStation gaming lounge and café involves fast-paced challenges: tracking multi-console timers (Single vs. Multiplayer rates), adding drinks and snacks to active player tabs, and ensuring zero cash shrinkage between staff shift handovers. I architected and developed <strong>Triple Seven</strong> from scratch (Zero Templates)—a custom management system featuring a <strong>live station timer engine</strong>, integrated <strong>Café POS</strong>, automated <strong>Shift Cash Drawer audits</strong>, and <strong>secure Tailscale VPN tunneling</strong> for real-time remote business monitoring.
-            </p>
+        <!-- Executive Project Snapshot (At A Glance) -->
+        <div class="executive-snapshot-card">
+          <div class="snapshot-header">
+            <div class="snapshot-title-wrap">
+              <span class="snapshot-badge" data-i18n="cs.snapshot_badge">Executive Snapshot</span>
+              <h3 class="snapshot-title" data-i18n="cs.at_a_glance">Project At A Glance</h3>
+            </div>
+            <span class="snapshot-tagline" data-i18n="cs.snapshot_tagline">15-Second Executive Overview</span>
           </div>
 
-          <div class="summary-card meta-sidebar">
-            <div class="meta-row">
-               <span class="meta-label">Domain</span>
-               <span class="meta-val">Gaming Lounges & Café Operations</span>
+          <div class="snapshot-grid">
+            <div class="snapshot-item">
+              <span class="snapshot-item-label client">
+                <span>🏢</span> <span data-i18n="cs.label_client">Client & Scope</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="triple.snap_client"><strong>Triple Seven Gaming Lounge & Café</strong> — Fast-paced multi-station entertainment center with F&B service.</p>
             </div>
-            <div class="meta-row">
-               <span class="meta-label">Role</span>
-               <span class="meta-val">System Architect & Full-Stack Developer</span>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label problem">
+                <span>⚠️</span> <span data-i18n="cs.label_problem">Core Problem</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="triple.snap_problem">Paper notes caused billing disputes, forgotten café items on player tabs, and cash shrinkage during shift handovers.</p>
             </div>
-            <div class="meta-row">
-               <span class="meta-label">Tech Stack</span>
-               <span class="meta-val">JavaScript • PHP • MySQL • Tailscale VPN</span>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label solution">
+                <span>💡</span> <span data-i18n="cs.label_solution">Built Solution</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="triple.snap_solution">A custom <strong>Live Station Timer Engine</strong> with integrated Café POS, shift drawer audits, and secure <strong>Tailscale VPN</strong>.</p>
             </div>
-            <div class="meta-row">
-               <span class="meta-label">Core Capabilities</span>
-               <span class="meta-val highlight-kpi">Console Timers • Café POS • Shift Control</span>
+
+            <div class="snapshot-item">
+              <span class="snapshot-item-label impact">
+                <span>📈</span> <span data-i18n="cs.label_impact">Business Impact</span>
+              </span>
+              <p class="snapshot-item-text" data-i18n="triple.snap_impact"><strong>Zero revenue leakage</strong>, 100% accurate time billing, automated shift audit balances, and 24/7 remote owner monitoring.</p>
             </div>
           </div>
-
         </div>
 
         <!-- Project Asset Action Buttons -->
-        <div class="project-action-links" style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <div class="project-action-links" style="display: flex; gap: 1rem; margin-top: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
           <a href="../assets/Triple_Seven_Portfolio.pdf" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>View Official Presentation (PDF)</span>
+            <span data-i18n="cs.view_pdf">View Presentation (PDF)</span>
           </a>
         </div>
 
@@ -108,8 +146,8 @@
               <span class="dot yellow"></span>
               <span class="dot green"></span>
             </div>
-            <div class="window-title">Triple Seven — Station Timers, Café Orders & Shift Command Dashboard</div>
-            <div class="window-tag">Live System Interface</div>
+            <div class="window-title" data-i18n="triple.title">Triple Seven — Station Timers, Café Orders & Shift Command Dashboard</div>
+            <div class="window-tag" data-i18n="cs.live_ui">Live System Interface</div>
           </div>
           <div class="dashboard-render" style="padding: 0; background: #070B12; display: flex; justify-content: center; align-items: center;">
             <img src="../assets/triple_seven_gaming_cover.jpg" alt="Triple Seven PlayStation Lounge Management System" style="width: 100%; height: auto; display: block; object-fit: contain;" />
@@ -123,10 +161,10 @@
     <section class="cs-challenge section-spacing" id="challenge">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-tag">02 / The Operational Need</span>
-          <h2 class="section-heading">Why Generic POS Fails in Gaming Lounges</h2>
-          <p class="section-sub">Gaming centers operate very differently from standard retail shops, requiring time-based billing and integrated hospitality.</p>
+        <div class="section-header center">
+          <span class="section-tag" data-i18n="triple.prob_tag">01 / Operational Challenge</span>
+          <h2 class="section-heading" data-i18n="triple.prob_title">Why Generic POS Fails in Gaming Lounges</h2>
+          <p class="section-sub" data-i18n="triple.prob_sub">Gaming lounges require live time-based billing tightly coupled with hospitality and shift control.</p>
         </div>
 
         <div class="grid-3-col">
@@ -134,27 +172,27 @@
             <div class="card-icon alert-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             </div>
-            <h3 class="card-h">Complex Time-Based Billing</h3>
-            <p class="card-p">
-              PlayStation sessions constantly shift between Single and Multi-player modes, normal stations vs. VIP rooms. Tracking match durations on paper or clocks leads to billing disputes and lost minutes.
+            <h3 class="card-h" data-i18n="triple.p1_title">Dynamic Time-Based Billing</h3>
+            <p class="card-p" data-i18n="triple.p1_desc">
+              Sessions shift between Single and Multiplayer rates mid-game. Tracking minutes manually leads to disputes and lost revenue.
             </p>
           </div>
           <div class="glass-card feature-card">
             <div class="card-icon warning-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
             </div>
-            <h3 class="card-h">Café & Snack Order Leakage</h3>
-            <p class="card-p">
-              Players order hot drinks, energy drinks, and snacks throughout multi-hour gaming sessions. Without direct attachment to active station tabs, café items get forgotten at checkout.
+            <h3 class="card-h" data-i18n="triple.p2_title">Snack & Drink Leakage</h3>
+            <p class="card-p" data-i18n="triple.p2_desc">
+              Players order beverages throughout long sessions. Without direct attachment to station tabs, items get forgotten at checkout.
             </p>
           </div>
           <div class="glass-card feature-card">
             <div class="card-icon info-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="6" y1="12" x2="18" y2="12"></line></svg>
             </div>
-            <h3 class="card-h">Shift Discrepancies & Remote Blindness</h3>
-            <p class="card-p">
-              Operating 16+ hours a day across multiple staff handovers creates cash drawer discrepancies. Owners need complete financial visibility into live revenues from their phones without being glued to the front desk.
+            <h3 class="card-h" data-i18n="triple.p3_title">Shift Handover Blindness</h3>
+            <p class="card-p" data-i18n="triple.p3_desc">
+              Multiple staff shifts cause cash discrepancies. Owners need complete live financial visibility from their phones.
             </p>
           </div>
         </div>
@@ -162,98 +200,32 @@
       </div>
     </section>
 
-    <!-- ================= 03. STATION TIMERS & HOW IT WORKS ================= -->
-    <section class="cs-workflow section-spacing" id="stations">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">03 / Core Functionality</span>
-          <h2 class="section-heading">How the System Runs the Lounge</h2>
-          <p class="section-sub">A simple, rock-solid operational flow connecting stations, hospitality, and shift accounting.</p>
-        </div>
-
-        <div class="kpi-banner" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 2rem;">
-          <div class="kpi-banner-item">
-            <span class="k-label">Timer Precision</span>
-            <span class="k-val">100% Real-Time</span>
-            <span class="k-desc">Live Second-by-Second Tracking</span>
-          </div>
-          <div class="kpi-banner-item">
-            <span class="k-label">Rate Flexibility</span>
-            <span class="k-val">Single / Multi / VIP</span>
-            <span class="k-desc">Dynamic Hourly Switching</span>
-          </div>
-          <div class="kpi-banner-item">
-            <span class="k-label">Hospitality Tab</span>
-            <span class="k-val">Attached to Station</span>
-            <span class="k-desc">Zero Forgotten Items</span>
-          </div>
-          <div class="kpi-banner-item">
-            <span class="k-label">Remote Auditing</span>
-            <span class="k-val">Tailnet Encrypted</span>
-            <span class="k-desc">Global Mobile Access</span>
-          </div>
-        </div>
-
-        <div class="objectives-grid" style="grid-template-columns: repeat(3, 1fr);">
-          <div class="objective-box">
-            <div class="obj-number">01</div>
-            <h3 class="obj-title">Station Session Start</h3>
-            <ul class="obj-list">
-              <li>Cashier selects console (e.g., PS5 Station A1 / VIP Lounge).</li>
-              <li>Selects pricing rate: Single Player vs. Multiplayer (2–4 players).</li>
-              <li>Session timer starts immediately with live visual status.</li>
-            </ul>
-          </div>
-          <div class="objective-box">
-            <div class="obj-number">02</div>
-            <h3 class="obj-title">Café & Snack Tab Integration</h3>
-            <ul class="obj-list">
-              <li>Waitstaff adds drinks (Coffee, Cold Soda, Energy Drinks) to Station A1.</li>
-              <li>Inventory automatically decrements from café stock.</li>
-              <li>Items appear directly on the active gaming session bill.</li>
-            </ul>
-          </div>
-          <div class="objective-box">
-            <div class="obj-number">03</div>
-            <h3 class="obj-title">Checkout & Combined Receipt</h3>
-            <ul class="obj-list">
-              <li>Click "End Session": timer calculates exact time cost.</li>
-              <li>Gaming cost + Café items summed automatically into one bill.</li>
-              <li>Drawer cash updated and station reset for new guests.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= 04. SYSTEM MODULES (INTERACTIVE TABS) ================= -->
+    <!-- ================= 03. CORE MODULES ================= -->
     <section class="cs-ecosystem section-spacing" id="ecosystem">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-tag">04 / System Modules</span>
-          <h2 class="section-heading">The 4 Core Management Modules</h2>
-          <p class="section-sub">A clean suite of tools engineered for cashiers, baristas, and business owners.</p>
+        <div class="section-header center">
+          <span class="section-tag" data-i18n="triple.mod_tag">02 / Core Modules</span>
+          <h2 class="section-heading" data-i18n="triple.mod_title">The 4 Core Management Modules</h2>
+          <p class="section-sub" data-i18n="triple.mod_sub">Built from scratch without templates for maximum speed and simplicity.</p>
         </div>
 
         <div class="dashboard-tabs">
           <button class="tab-btn active" data-tab="tab-stations">
             <span class="tab-index">01</span>
-            <span class="tab-text">Station Timers</span>
+            <span class="tab-text" data-i18n="triple.m1_tab">Station Timers</span>
           </button>
           <button class="tab-btn" data-tab="tab-cafe">
             <span class="tab-index">02</span>
-            <span class="tab-text">Café & Snacks POS</span>
+            <span class="tab-text" data-i18n="triple.m2_tab">Café & Snacks POS</span>
           </button>
           <button class="tab-btn" data-tab="tab-shift">
             <span class="tab-index">03</span>
-            <span class="tab-text">Shift & Cash Control</span>
+            <span class="tab-text" data-i18n="triple.m3_tab">Shift Control</span>
           </button>
           <button class="tab-btn" data-tab="tab-remote">
             <span class="tab-index">04</span>
-            <span class="tab-text">Owner Remote Pulse</span>
+            <span class="tab-text" data-i18n="triple.m4_tab">Owner VPN</span>
           </button>
         </div>
 
@@ -261,17 +233,17 @@
         <div class="tab-panel active" id="tab-stations">
           <div class="eco-card-grid">
             <div class="eco-screen-wrap" style="background: #0A0F1A; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-medium);">
-              <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 1rem;">Live Gaming Stations & Console Timers</h4>
-              <p style="color: var(--text-secondary); line-height: 1.6;">
-                A visual dashboard grid displaying all active PlayStation 5 and PS4 stations. Each station card shows the active player, game title, live countdown timer, and current hourly billing rate (Single vs. Multiplayer). One click starts, pauses, or ends the session with exact-to-the-minute cost calculations.
+              <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 1rem;" data-i18n="triple.m1_title">Station Timers Engine</h4>
+              <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="triple.m1_desc">
+                Live second-by-second countdown for PS5/PS4 consoles with 1-click Single vs. Multiplayer dynamic rate switching.
               </p>
             </div>
             <div class="eco-info-wrap">
-              <h3 class="eco-title">Station Timer Engine</h3>
+              <h3 class="eco-title" data-i18n="triple.m1_features_title">Key Timing Capabilities</h3>
               <ul class="eco-feature-list" style="margin-top: 1rem;">
-                <li class="eco-item"><strong>Dynamic Rate Switching:</strong> Shift between Single (e.g. $8/hr) and Multiplayer ($12/hr) mid-session seamlessly.</li>
-                <li class="eco-item"><strong>Visual Color Status:</strong> Active (Cyan), Available (Gray), Paused (Amber), Cleaning (Red).</li>
-                <li class="eco-item"><strong>VIP Lounge Management:</strong> Higher-tier hourly rate setups for private rooms and large screens.</li>
+                <li class="eco-item" data-i18n="triple.m1_f1"><strong>Dynamic Rate Switching:</strong> Shift between Single and Multiplayer mid-session seamlessly.</li>
+                <li class="eco-item" data-i18n="triple.m1_f2"><strong>Visual Status Colors:</strong> Live visual cues for Active, Available, Paused, and Cleaning.</li>
+                <li class="eco-item" data-i18n="triple.m1_f3"><strong>VIP Lounge Setup:</strong> Tiered hourly rates for private rooms and large screens.</li>
               </ul>
             </div>
           </div>
@@ -281,17 +253,17 @@
         <div class="tab-panel" id="tab-cafe">
           <div class="eco-card-grid">
             <div class="eco-screen-wrap" style="background: #0A0F1A; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-medium);">
-              <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 1rem;">Integrated Café & Snack Ordering</h4>
-              <p style="color: var(--text-secondary); line-height: 1.6;">
-                A touch-friendly cafeteria interface where staff can add hot coffees, cold beverages, energy drinks, and snacks directly to any active PlayStation station. Orders are tracked in a pending/ready queue for the barista and appended automatically to the final invoice.
+              <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 1rem;" data-i18n="triple.m2_title">Café Hospitality Hub</h4>
+              <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="triple.m2_desc">
+                Attaches hot & cold drink orders directly to active gaming tabs, with real-time stock deductions.
               </p>
             </div>
             <div class="eco-info-wrap">
-              <h3 class="eco-title">Café Hospitality Hub</h3>
+              <h3 class="eco-title" data-i18n="triple.m2_features_title">Hospitality Flow</h3>
               <ul class="eco-feature-list" style="margin-top: 1rem;">
-                <li class="eco-item"><strong>Station Tab Attachment:</strong> Eliminates separate bills; drinks are consolidated into the player's gaming tab.</li>
-                <li class="eco-item"><strong>Real-Time Stock Alerts:</strong> Automatically flags beverages and snacks reaching low inventory thresholds.</li>
-                <li class="eco-item"><strong>Profit Margin Tracking:</strong> Calculates purchase cost vs. selling price per item.</li>
+                <li class="eco-item" data-i18n="triple.m2_f1"><strong>Station Tab Attachment:</strong> Eliminates separate bills; drinks are consolidated into player tab.</li>
+                <li class="eco-item" data-i18n="triple.m2_f2"><strong>Real-Time Stock Deductions:</strong> Automatically tracks remaining soda, energy drinks, and snacks.</li>
+                <li class="eco-item" data-i18n="triple.m2_f3"><strong>Fast Touch Interface:</strong> Quick 2-tap ordering for cashiers and baristas.</li>
               </ul>
             </div>
           </div>
@@ -301,17 +273,17 @@
         <div class="tab-panel" id="tab-shift">
           <div class="eco-card-grid">
             <div class="eco-screen-wrap" style="background: #0A0F1A; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-medium);">
-              <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 1rem;">Shift Handover & Cash Drawer Governance</h4>
-              <p style="color: var(--text-secondary); line-height: 1.6;">
-                Enforces absolute financial accountability during staff shift transitions. The system separates gaming revenue from café sales, computes expected cash in the drawer, and requires staff to log handover counts to prevent cash leakage.
+              <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 1rem;" data-i18n="triple.m3_title">Shift & Drawer Auditing</h4>
+              <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="triple.m3_desc">
+                Mandatory blind cash counts and automated X/Z reports ensure complete financial accountability across handovers.
               </p>
             </div>
             <div class="eco-info-wrap">
-              <h3 class="eco-title">Shift Guard & Drawer Auditing</h3>
+              <h3 class="eco-title" data-i18n="triple.m3_features_title">Financial Governance</h3>
               <ul class="eco-feature-list" style="margin-top: 1rem;">
-                <li class="eco-item"><strong>Expected Cash Calculation:</strong> Opening Drawer Float + Gaming Revenue + Café Sales - Petty Cash Outflows.</li>
-                <li class="eco-item"><strong>Blind Shift Handover:</strong> Outgoing cashier inputs physical count without seeing expected total first, eliminating tampering.</li>
-                <li class="eco-item"><strong>Shift X/Z Reports:</strong> Instant printed summaries for staff records and owner archives.</li>
+                <li class="eco-item" data-i18n="triple.m3_f1"><strong>Expected Cash Formula:</strong> Opening Float + Gaming + Café - Petty Cash.</li>
+                <li class="eco-item" data-i18n="triple.m3_f2"><strong>Blind Handover:</strong> Cashier enters physical cash count without seeing the expected sum first.</li>
+                <li class="eco-item" data-i18n="triple.m3_f3"><strong>Instant Shift Reports:</strong> Shift summaries exported for owner auditing.</li>
               </ul>
             </div>
           </div>
@@ -321,17 +293,17 @@
         <div class="tab-panel" id="tab-remote">
           <div class="eco-card-grid">
             <div class="eco-screen-wrap" style="background: #0A0F1A; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-medium);">
-              <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 1rem;">Encrypted Tailnet VPN Remote Access</h4>
-              <p style="color: var(--text-secondary); line-height: 1.6;">
-                Using secure Tailscale VPN technology, the lounge owner can open the full management dashboard on their smartphone or laptop from anywhere. Provides live visibility into current occupied consoles, shift cash tallies, and monthly net profit.
+              <h4 style="color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 1rem;" data-i18n="triple.m4_title">Encrypted Tailnet VPN</h4>
+              <p style="color: var(--text-secondary); line-height: 1.6;" data-i18n="triple.m4_desc">
+                Zero-trust encrypted remote connection allowing the owner to monitor live revenue and occupancy from anywhere.
               </p>
             </div>
             <div class="eco-info-wrap">
-              <h3 class="eco-title">Executive Remote Cockpit</h3>
+              <h3 class="eco-title" data-i18n="triple.m4_features_title">Remote Intelligence</h3>
               <ul class="eco-feature-list" style="margin-top: 1rem;">
-                <li class="eco-item"><strong>Zero Public Internet Exposure:</strong> Database and server are hidden behind encrypted zero-trust Tailnet tunnels.</li>
-                <li class="eco-item"><strong>Live Occupancy Pulse:</strong> Check how many consoles are currently active and generating revenue in real-time.</li>
-                <li class="eco-item"><strong>Monthly Net Margin:</strong> Gross revenues minus rent, electricity, Wi-Fi, and staff wages.</li>
+                <li class="eco-item" data-i18n="triple.m4_f1"><strong>Zero Public Exposure:</strong> Database and server hidden behind encrypted zero-trust mesh tunnels.</li>
+                <li class="eco-item" data-i18n="triple.m4_f2"><strong>Live Occupancy Pulse:</strong> Check active consoles and revenue on mobile in real-time.</li>
+                <li class="eco-item" data-i18n="triple.m4_f3"><strong>24/7 Security:</strong> Protected against unauthorized external network scans.</li>
               </ul>
             </div>
           </div>
@@ -340,98 +312,43 @@
       </div>
     </section>
 
-    <!-- ================= 05. TECHNICAL ARCHITECTURE ================= -->
-    <section class="cs-insights section-spacing" id="architecture">
-      <div class="container">
-        
-        <div class="section-header">
-          <span class="section-tag">05 / The Architecture</span>
-          <h2 class="section-heading">Custom-Built Software Architecture</h2>
-          <p class="section-sub">Built from scratch without bloated templates for lightning-fast responsiveness.</p>
-        </div>
-
-        <div class="insights-bento">
-          <div class="insight-tile highlight-green">
-            <div class="tile-top">
-              <span class="tile-tag">Zero Templates</span>
-              <span class="tile-icon">💻</span>
-            </div>
-            <h3 class="tile-title">Custom JavaScript State Engine</h3>
-            <p class="tile-desc">
-              Engineered a bespoke lightweight state engine managing station countdowns, multi-timer states, and dynamic pricing calculations with zero lag.
-            </p>
-          </div>
-          <div class="insight-tile highlight-red">
-            <div class="tile-top">
-              <span class="tile-tag">Backend & DB</span>
-              <span class="tile-icon">⚙️</span>
-            </div>
-            <h3 class="tile-title">PHP & MySQL Transaction Core</h3>
-            <p class="tile-desc">
-              Structured relational database tables linking sessions, café inventory items, staff accounts, and financial shift records with strict ACID transactional integrity.
-            </p>
-          </div>
-          <div class="insight-tile full-width">
-            <div class="tile-top">
-              <span class="tile-tag">Zero-Trust Network</span>
-              <span class="tile-icon">🛡️</span>
-            </div>
-            <div class="tile-split">
-              <div>
-                <h3 class="tile-title">Encrypted Tailscale Mesh Tunneling</h3>
-                <p class="tile-desc">
-                  To provide secure remote management ("Lounge in your pocket"), the system routes all off-premises connections through private Tailscale mesh tunnels, keeping the local venue server invisible to external internet threats.
-                </p>
-              </div>
-              <div class="badge-cluster" style="background: #000; padding: 1rem; border-radius: 8px; font-family: var(--font-mono); color: #10B981; font-size: 0.8rem;">
-                > Network: Encrypted Tailnet Mesh<br>
-                > Security: Zero Public Ports Exposed<br>
-                > Status: Production Deployed
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= 06. BUSINESS VALUE ================= -->
+    <!-- ================= 04. STRATEGIC BUSINESS VALUE ================= -->
     <section class="cs-value section-spacing" id="value">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-tag">06 / Strategic Impact</span>
-          <h2 class="section-heading">Business Transformation</h2>
-          <p class="section-sub">How Triple Seven turned an informal gaming venue into an automated, profitable commercial operation.</p>
+        <div class="section-header center">
+          <span class="section-tag" data-i18n="triple.val_tag">03 / Strategic Impact</span>
+          <h2 class="section-heading" data-i18n="triple.val_title">Business Transformation</h2>
+          <p class="section-sub" data-i18n="triple.val_sub">How Triple Seven turned an informal gaming venue into an automated, profitable commercial operation.</p>
         </div>
 
         <div class="value-matrix">
           <div class="value-item">
             <div class="val-icon">⏱️</div>
             <div class="val-content">
-              <h3 class="val-h">Zero Time-Billing Disputes</h3>
-              <p class="val-p">Live visible timers eliminate disagreements with customers about session start times and multi-player rates.</p>
+              <h3 class="val-h" data-i18n="triple.v1_title">Zero Time-Billing Disputes</h3>
+              <p class="val-p" data-i18n="triple.v1_desc">Live visible timers eliminate disagreements with customers about session start times and multi-player rates.</p>
             </div>
           </div>
           <div class="value-item">
             <div class="val-icon">☕</div>
             <div class="val-content">
-              <h3 class="val-h">100% Hospitality Capture</h3>
-              <p class="val-p">Every beverage and snack ordered during a game is appended directly to the station invoice, preventing unrecorded drinks.</p>
+              <h3 class="val-h" data-i18n="triple.v2_title">100% Hospitality Capture</h3>
+              <p class="val-p" data-i18n="triple.v2_desc">Every beverage and snack ordered during a game is appended directly to the station invoice, preventing unrecorded drinks.</p>
             </div>
           </div>
           <div class="value-item">
             <div class="val-icon">💵</div>
             <div class="val-content">
-              <h3 class="val-h">Drawer Cash Integrity</h3>
-              <p class="val-p">Strict shift handover calculations eliminate cash shrinkage between morning and evening staff.</p>
+              <h3 class="val-h" data-i18n="triple.v3_title">Drawer Cash Integrity</h3>
+              <p class="val-p" data-i18n="triple.v3_desc">Strict shift handover calculations eliminate cash shrinkage between morning and evening staff.</p>
             </div>
           </div>
           <div class="value-item">
             <div class="val-icon">📱</div>
             <div class="val-content">
-              <h3 class="val-h">Owner Peace of Mind</h3>
-              <p class="val-p">Management can check live station occupancy, shift revenue, and inventory alerts from any phone anywhere.</p>
+              <h3 class="val-h" data-i18n="triple.v4_title">Owner Peace of Mind</h3>
+              <p class="val-p" data-i18n="triple.v4_desc">Management can check live station occupancy, shift revenue, and inventory alerts from any phone anywhere.</p>
             </div>
           </div>
         </div>
@@ -439,36 +356,17 @@
       </div>
     </section>
 
-    <!-- ================= 07. FINAL TAKEAWAY ================= -->
-    <section class="cs-takeaway section-spacing" id="takeaway">
+    <!-- ================= 05. CASE STUDY CTA ================= -->
+    <section class="cs-cta-section section-spacing">
       <div class="container">
-        
-        <div class="takeaway-box">
-          <div class="takeaway-tag">07 / Professional Takeaway</div>
-          <h2 class="takeaway-heading">Solving Real Business Problems with Practical Systems</h2>
-          <p class="takeaway-p">
-            The Triple Seven project illustrates the power of <strong>Business Information Systems (BIS)</strong>: understanding the granular, daily realities of a hospitality and gaming venue, and building tailored software that protects revenue, streamlines customer billing, and gives owners total operational control.
-          </p>
-          
-          <div class="takeaway-footer">
-            <div class="author-block">
-              <div class="author-avatar">AA</div>
-              <div>
-                <div class="author-name">Atef Elasklany</div>
-                <div class="author-title">Data Analyst | Business Systems Developer</div>
-              </div>
-            </div>
-            <div class="takeaway-actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-              <a href="../assets/Triple_Seven_Portfolio.pdf" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                <span>Presentation PDF</span>
-              </a>
-              <a href="../projects.html" class="btn btn-secondary">← Back to Projects</a>
-              <a href="../index.html#contact" class="btn btn-primary">Discuss This Project →</a>
-            </div>
+        <div class="cs-cta-box">
+          <h2 class="cs-cta-title" data-i18n="cs.cta_title">Have a Similar Operational Challenge in Your Business?</h2>
+          <p class="cs-cta-desc" data-i18n="cs.cta_sub">We understand how your business works first, then engineer custom solutions tailored to your real workflows.</p>
+          <div class="cs-cta-actions">
+            <a href="../index.html#discovery-form" class="btn btn-pill-primary btn-lg" data-i18n="cs.cta_btn">Tell Us About Your Business</a>
+            <a href="../projects.html" class="btn btn-pill-glass btn-lg" data-i18n="cs.back">Back to Projects</a>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -478,18 +376,28 @@
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-left">
-        <div class="footer-brand">Atef Elasklany</div>
-        <p class="footer-sub">Data Analyst & Business Systems Developer • BIS Graduate</p>
+        <div class="brand-logo-text-group">
+          <span class="brand-wordmark-title" style="font-size: 1.25rem;">solvexa</span>
+          <span class="brand-descriptor-tag" data-i18n="nav.descriptor">BUSINESS SOLUTIONS</span>
+        </div>
+        <p class="footer-sub" data-i18n="footer.desc">A business-first technology company helping businesses understand, organize, and improve their operations through customized digital solutions.</p>
       </div>
       <div class="footer-links">
-        <a href="../projects.html" class="footer-link">Projects</a>
-        <a href="../index.html#capabilities" class="footer-link">Capabilities</a>
-        <a href="../index.html#about" class="footer-link">About</a>
-        <a href="../index.html#contact" class="footer-link">Contact</a>
+        <a href="../projects.html" class="footer-link" data-i18n="nav.our_work">Our Work</a>
+        <a href="../index.html#built-for-work" class="footer-link" data-i18n="nav.solutions">Solutions</a>
+        <a href="../index.html#why-us" class="footer-link" data-i18n="nav.why_us">Why Choose Us</a>
+        <a href="../index.html#discovery-form" class="footer-link" data-i18n="nav.cta">Tell Us About Your Business</a>
+      </div>
+    </div>
+    <div class="container footer-bottom-container">
+      <div class="footer-bottom-flex">
+        <p class="footer-copy" data-i18n="footer.rights">SOLVEXA © 2026. All rights reserved.</p>
+        <p class="footer-slogan" data-i18n="footer.slogan">Business First. Technology Second.</p>
       </div>
     </div>
   </footer>
 
+  <script src="../js/translations.js"></script>
   <script src="../js/app.js"></script>
 </body>
 </html>

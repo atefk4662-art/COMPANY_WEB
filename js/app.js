@@ -347,10 +347,11 @@ Sent from SOLVEXA Website — Discovery Form
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key] !== undefined) {
-        if (el.getAttribute('data-i18n-html') === 'true') {
-          el.innerHTML = dict[key];
+        const val = dict[key];
+        if (el.getAttribute('data-i18n-html') === 'true' || (typeof val === 'string' && val.includes('<'))) {
+          el.innerHTML = val;
         } else {
-          el.textContent = dict[key];
+          el.textContent = val;
         }
       }
     });
@@ -436,10 +437,10 @@ Sent from SOLVEXA Website — Discovery Form
     if (hasSeenIntro === 'true' || prefersReducedMotion) {
       introOverlay.style.display = 'none';
     } else {
-      // Auto-transition after sequence finishes (~2.4s)
+      // Auto-transition after sequence finishes (~2.8s)
       const introTimer = setTimeout(() => {
         dismissIntro();
-      }, 2400);
+      }, 2800);
 
       if (skipBtn) {
         skipBtn.addEventListener('click', () => {
