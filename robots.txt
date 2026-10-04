@@ -1,0 +1,6 @@
+# robots.txt for https://solvexaegy.com/
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://solvexaegy.com/sitemap.xml
