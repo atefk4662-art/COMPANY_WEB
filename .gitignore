@@ -13,3 +13,22 @@ Thumbs.db
 node_modules/
 Atef asklany portflio/
 
+# Video & Reel Production Scratch Files
+output/
+assets/storyboard_final_12/
+assets/storyboard_frames/
+assets/user_storyboard_12/
+assets/solvexa_intro_reel.*
+assets/reel_*
+assets/scene_*
+assets/solvexa_*ref.jpg
+benchmark_render.js
+render_video.js
+test_frame.js
+verify_scenes.js
+solvexa_render.html
+reel-production-suite.html
+extract_*.ps1
+check_scene_*.jpg
+test_frame_*.jpg
+صور التعديل الاخير/

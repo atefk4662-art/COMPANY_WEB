@@ -205,6 +205,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Reusable Toast Notification
+  function showToast(msg, isError = false) {
+    let toast = document.getElementById('solvexa-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'solvexa-toast';
+      toast.setAttribute('role', 'alert');
+      toast.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#0E1420;color:#F8FAFC;border:1px solid #2563EB;padding:0.75rem 1.4rem;border-radius:9999px;font-size:0.88rem;box-shadow:0 10px 30px rgba(0,0,0,0.4);opacity:0;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);z-index:9999;pointer-events:none;text-align:center;max-width:90%;';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.style.borderColor = isError ? '#EF4444' : '#2563EB';
+    toast.style.boxShadow = isError ? '0 10px 30px rgba(239, 68, 68, 0.35)' : '0 10px 30px rgba(0,0,0,0.4)';
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(20px)';
+    }, 3800);
+  }
+
   // Handle Form Submission with EmailJS
   if (discoveryForm) {
     discoveryForm.addEventListener('submit', (e) => {
@@ -217,7 +238,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const alertMsg = currentLang === 'ar'
           ? 'يرجى اختيار مجال واحد على الأقل تحتاج فيه مساعدة (أو اختيار "لست متأكداً بعد").'
           : 'Please select at least one area where you need assistance (or choose "Not Sure Yet").';
-        alert(alertMsg);
+        showToast(alertMsg, true);
+        const needsGroup = discoveryForm.querySelector('.pills-checkbox-group');
+        if (needsGroup) {
+          needsGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         return;
       }
 
@@ -314,7 +339,7 @@ Sent from SOLVEXA Website — Discovery Form
             const errorMsg = currentLang === 'ar'
               ? 'عذرًا، حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل معنا عبر البريد الإلكتروني مباشرة.'
               : 'Sorry, there was an error sending your request. Please try again or contact us directly via email.';
-            alert(errorMsg);
+            showToast(errorMsg, true);
           });
       } else {
         // Fallback: EmailJS not configured yet — show confirmation anyway
@@ -463,22 +488,7 @@ Sent from SOLVEXA Website — Discovery Form
       const msg = currentLang === 'ar' 
         ? 'قناة واتساب قيد التفعيل قريبًا — يُرجى مراسلتنا عبر البريد الإلكتروني أو نموذج الأعمال أدناه.'
         : 'WhatsApp channel connecting soon — please reach out via email or the business form below.';
-      
-      let toast = document.getElementById('solvexa-toast');
-      if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'solvexa-toast';
-        toast.setAttribute('role', 'alert');
-        toast.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#0E1420;color:#F8FAFC;border:1px solid #2563EB;padding:0.75rem 1.4rem;border-radius:9999px;font-size:0.88rem;box-shadow:0 10px 30px rgba(0,0,0,0.4);opacity:0;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);z-index:9999;pointer-events:none;text-align:center;max-width:90%;';
-        document.body.appendChild(toast);
-      }
-      toast.textContent = msg;
-      toast.style.opacity = '1';
-      toast.style.transform = 'translateX(-50%) translateY(0)';
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateX(-50%) translateY(20px)';
-      }, 3500);
+      showToast(msg);
     }
   });
 
